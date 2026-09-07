@@ -1,0 +1,1507 @@
+{
+  "catalog_version": "2026年8月",
+  "generated_for_navigation": "v34-no354",
+  "source_workbook": "New_製品価格表【20260801】_20260611ver3.xlsx",
+  "source_title": "オンチップ・バイオテクノロジーズ 製品価格表（2026年8月版）",
+  "price_fields_included": false,
+  "display_notice": "価格情報は掲載していません。",
+  "abbreviations": {
+    "OS": "On-chip Sort / Flow",
+    "DG": "On-chip Droplet Generator",
+    "DS": "On-chip Droplet Selector",
+    "SP": "On-chip SPiS",
+    "ALL": "全製品"
+  },
+  "notes": [
+    "※適応製品名：OS= On-chip Sort/Flow, DG= On-chip Droplet Generator, DS= On-chip Droplet Selector, SP= On-chip SPiS略称となります。",
+    "※SPiS Dispensing Tip 384S は 2028 年末を以って販売終了となります"
+  ],
+  "groups": [
+    {
+      "group_id": "category",
+      "label": "装置",
+      "categories": [
+        {
+          "category_id": "01-01",
+          "label": "マイクロ流路チップセルソーター（On-chip Sort）",
+          "products": [
+            {
+              "product_number": "362S3001",
+              "product_name": "On-chip Sort HS",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 3,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n638 nm & 405 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "362S3001G",
+              "product_name": "On-chip Sort HSG",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 3,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n561 nm & 405 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "362S3001GR",
+              "product_name": "On-chip Sort HSGR",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 3,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n561 nm & 638 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "262S3001",
+              "product_name": "On-chip Sort MS6",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 2,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n405 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "252S3001",
+              "product_name": "On-chip Sort MS5",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 2,\nFS, SS, FL (5 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n638 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "543/22 nm, 607/36 nm, 676/37 nm,\n716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "252S3001G",
+              "product_name": "On-chip Sort MS5G",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 2,\nFS, SS, FL (5 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n561 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "543/22 nm, 607/36 nm, 676/37 nm,\n716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "152S3001",
+              "product_name": "On-chip Sort LS5",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 1,\nFS, SS, FL (5 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "543/22 nm, 607/36 nm,\n676/37 nm,716/40 nm, 775/46 nm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "01-02",
+          "label": "新型ドロップレット生成装置（On-chip Droplet Generator S）",
+          "products": [
+            {
+              "product_number": "64682-C",
+              "product_name": "On-chip\nDroplet Generator S\nT タイプ  ホルダーAB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、温調観察ユニット\n２液混合 Chip Holder\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 35-45 [µm]\n直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O & GMD"
+                }
+              ]
+            },
+            {
+              "product_number": "64002-C",
+              "product_name": "On-chip\nDroplet Generator S\nT タイプ  ホルダーAセット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、温調観察ユニット\n２液混合 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 35-45 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O & GMD"
+                }
+              ]
+            },
+            {
+              "product_number": "64602-C",
+              "product_name": "On-chip\nDroplet Generator S\nT タイプ  ホルダーB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、温調観察ユニット、\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O & GMD"
+                }
+              ]
+            },
+            {
+              "product_number": "64681",
+              "product_name": "On-chip\nDroplet Generator S\nホルダーAB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、観察ユニット\n２液混合 Chip Holder\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 35-45 [µm]\n直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            },
+            {
+              "product_number": "64001",
+              "product_name": "On-chip\nDroplet Generator S\nホルダーAセット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、観察ユニット\n２液混合 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 35-45 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            },
+            {
+              "product_number": "64601",
+              "product_name": "On-chip\nDroplet Generator S\nホルダーB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、観察ユニット\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            },
+            {
+              "product_number": "64682-N",
+              "product_name": "On-chip\nDroplet Generator S\nホルダーAB セット\n(スタンド無し)",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体\n２液混合 Chip Holder\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 35-45 [µm]\n直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            },
+            {
+              "product_number": "64002-N",
+              "product_name": "On-chip\nDroplet Generator S\nホルダーAセット\n(スタンド無し)",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体\n２液混合 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 35-45 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            },
+            {
+              "product_number": "64602-N",
+              "product_name": "On-chip\nDroplet Generator S\nホルダーB セット\n(スタンド無し)",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            },
+            {
+              "product_number": "64000",
+              "product_name": "On-chip\nDroplet Generator S\n本体のみ\n(ホルダー／スタンド無し)",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "作製可能ドロップレット",
+                  "value": "W/O"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "01-03",
+          "label": "ドロップレット生成装置（On-chip Droplet Generator）",
+          "products": [
+            {
+              "product_number": "60001",
+              "product_name": "On-chip\nDroplet Generator\nホルダーAセット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、観察ユニット\nDG8 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 20-40 [µm]"
+                },
+                {
+                  "label": "作製数",
+                  "value": "約 5,000,000個\n(直径 30 μm、5 分、8連使用）"
+                }
+              ]
+            },
+            {
+              "product_number": "60002-C",
+              "product_name": "On-chip\nDroplet Generator\nT タイプ ホルダーAセット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、温調観察ユニット\nDG8 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 20-40 [µm]"
+                },
+                {
+                  "label": "作製数",
+                  "value": "約 5,000,000個\n(直径 30 μm、5 分、8連使用）"
+                }
+              ]
+            },
+            {
+              "product_number": "60601",
+              "product_name": "On-chip\nDroplet Generator\nホルダーB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、観察ユニット\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製数",
+                  "value": "約 1,000,000個\n(直径 80 μm、5 分)"
+                }
+              ]
+            },
+            {
+              "product_number": "60602-C",
+              "product_name": "On-chip\nDroplet Generator\nT タイプ ホルダーB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、温調観察ユニット\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製数",
+                  "value": "約 1,000,000個\n(直径 80 μm、5 分)"
+                }
+              ]
+            },
+            {
+              "product_number": "60681",
+              "product_name": "On-chip\nDroplet Generator\nホルダーAB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、観察ユニット、\nDG8 Chip Holder\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径 20-40 [µm]\n直径 60-120 [µm]"
+                },
+                {
+                  "label": "作製数",
+                  "value": "約 5,000,000個\n(直径 30 μm、5 分、8連使用）\n約 1,000,000個\n(直径 80 μm、5 分)"
+                }
+              ]
+            },
+            {
+              "product_number": "60682-C",
+              "product_name": "On-chip\nDroplet Generator\nT タイプ ホルダーAB セット",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、温調観察ユニット\nDG8 Chip Holder\nDG1 Chip Holder"
+                },
+                {
+                  "label": "送液系統",
+                  "value": "3系統\n（サンプル、オイル、試薬）"
+                },
+                {
+                  "label": "液滴サイズ",
+                  "value": "直径20-40 [µm]\n直径60-120 [µm]"
+                },
+                {
+                  "label": "作製数",
+                  "value": "約 5,000,000個\n(直径 30 μm、5 分、8連使用）\n約 1,000,000個\n(直径 80 μm、5 分)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "01-04",
+          "label": "ドロップレット選別分注装置（On-chip Droplet Selector）",
+          "products": [
+            {
+              "product_number": "362DS001",
+              "product_name": "On-chip\nDroplet Selector HS",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 3,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n638 nm & 405 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm,607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "362DS001G",
+              "product_name": "On-chip\nDroplet Selector HSG",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 3,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n561 nm & 405 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "362DS001GR",
+              "product_name": "On-chip\nDroplet Selector HSGR",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 3,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm &\n561 nm & 638 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "262DS001V",
+              "product_name": "On-chip\nDroplet Selector MSV",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 2,\nFS, SS, FL (6 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm & 405 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "445/20 nm, 543/22 nm, 607/36 nm,\n676/37 nm, 716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "262DS001R",
+              "product_name": "On-chip\nDroplet Selector MSR",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 2,\nFS, SS, FL (5 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm & 638 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "543/22 nm, 607/36 nm,676/37 nm,\n716/40 nm, 775/46 nm"
+                }
+              ]
+            },
+            {
+              "product_number": "262DS001G",
+              "product_name": "On-chip\nDroplet Selector MSG",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Laser 2,\nFS, SS, FL (5 colors)"
+                },
+                {
+                  "label": "レーザー",
+                  "value": "Laser 488 nm & 561 nm"
+                },
+                {
+                  "label": "検出器",
+                  "value": "543/22 nm, 607/36 nm,676/37 nm,\n716/40 nm, 775/46 nm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "01-05",
+          "label": "W/Oドロップレット融合システム（On-chip Droplet Work Station）",
+          "products": [
+            {
+              "product_number": "88001",
+              "product_name": "On-chip\nDroplet Work Station",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "On-chip Microdispenser本体\nOn-chip Merge本体\n制御用PC（2台）"
+                },
+                {
+                  "label": "制御ソフト",
+                  "value": "専用制御ソフト"
+                },
+                {
+                  "label": "使用用途",
+                  "value": "ブランクドロップレットの分注\n培地の分注\nドロップレットの破壊"
+                }
+              ]
+            },
+            {
+              "product_number": "88002",
+              "product_name": "On-chip Microdispenser",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、制御用PC"
+                },
+                {
+                  "label": "制御ソフト",
+                  "value": "専用制御ソフト"
+                },
+                {
+                  "label": "使用用途",
+                  "value": "ブランクドロップレットの分注\n培地の分注"
+                }
+              ]
+            },
+            {
+              "product_number": "OM-S-01",
+              "product_name": "On-chip Merge",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、制御用PC"
+                },
+                {
+                  "label": "制御ソフト",
+                  "value": "専用制御ソフト"
+                },
+                {
+                  "label": "使用用途",
+                  "value": "ドロップレットの破壊"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "01-06",
+          "label": "ドロップレット・ミリオンスクリーニング用アダプター（On-chip Continuous Flow Adapter）",
+          "products": [
+            {
+              "product_number": "CF-01",
+              "product_name": "On-chip\nContinuous Flow Adapter",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "本体、バルブユニット"
+                },
+                {
+                  "label": "接続対象",
+                  "value": "On-chip Sort専用"
+                },
+                {
+                  "label": "使用用途",
+                  "value": "外部接続送液装置"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "category",
+      "label": "オプション",
+      "categories": [
+        {
+          "category_id": "02-01",
+          "label": "装置部品",
+          "products": [
+            {
+              "product_number": "40007",
+              "product_name": "Silicon Gasket for Chip Holder\n(SmallCapacity)",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "小容量用チップホルダーガスケット"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 枚/袋"
+                }
+              ]
+            },
+            {
+              "product_number": "40008",
+              "product_name": "Silicon Gasket for Chip Holder\n(LargeCapacity)",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "大容量用チップホルダーガスケット"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 枚/袋"
+                }
+              ]
+            },
+            {
+              "product_number": "40026",
+              "product_name": "Gasket for Pressure Control Unit\n(5parts)",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "圧力制御ユニット用ウレタンガスケット"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "5 個/袋"
+                }
+              ]
+            },
+            {
+              "product_number": "43001",
+              "product_name": "Chip Holder(small Capacity)",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "小容量チップ用ホルダー"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 set/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "43002",
+              "product_name": "Chip Holder (Large Capacity)",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "大容量チップホルダー"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 set/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "61001",
+              "product_name": "Droplet Generator temperature control unit",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "4℃～＋70℃の温度調整機能付き観察ユニット"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "１式"
+                }
+              ]
+            },
+            {
+              "product_number": "63005",
+              "product_name": "DG8 Chip Holder",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "20-40um エマルジョン作製用,\n8 連チップホルダー"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 set/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "63005CO",
+              "product_name": "Custom chip holder",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "100um エマルジョン作製用特注チップホルダー"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 set/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "63006",
+              "product_name": "DG1 Chip Holder",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "60-120um エマルジョン作製用,\nチップホルダー,チューブ立て、試薬供給バイアル"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 set/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "80030",
+              "product_name": "Silicon Gasket for Droplet Selector",
+              "attributes": [
+                {
+                  "label": "用途・内容",
+                  "value": "Droplet Selector チップ用パッキン"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DS"
+                },
+                {
+                  "label": "梱包単位",
+                  "value": "1 個/箱"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "02-02",
+          "label": "装置アップグレード（主なもの）",
+          "products": [
+            {
+              "product_number": "45405",
+              "product_name": "405 Laser Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "405 nm Laser"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "45638",
+              "product_name": "638 Laser Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "638 nm Laser"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "45561",
+              "product_name": "561 Laser Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "561 nm Laser"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "46001",
+              "product_name": "FL1 Detector Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Detector"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "46002",
+              "product_name": "FL2 Detector Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Detector"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "46003",
+              "product_name": "FL3 Detector Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Detector"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "46004",
+              "product_name": "FL4 Detector Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Detector"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "46005",
+              "product_name": "FL5 Detector Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Detector"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            },
+            {
+              "product_number": "46006",
+              "product_name": "FL6 Detector Up Grade",
+              "attributes": [
+                {
+                  "label": "仕様概要",
+                  "value": "Detector"
+                },
+                {
+                  "label": "内容",
+                  "value": "作業料含む"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS, DS"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "category",
+      "label": "試薬・消耗品",
+      "categories": [
+        {
+          "category_id": "03-01",
+          "label": "マイクロ流路チップ",
+          "products": [
+            {
+              "product_number": "1002002",
+              "product_name": "2D Chip-Z101",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "PMMA"
+                },
+                {
+                  "label": "用途",
+                  "value": "分取用"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "80 x 80 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1002004",
+              "product_name": "2D Chip-Z1001",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "大容量分取用"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "80 x 80 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1002005",
+              "product_name": "2D Chip-Z1000-w150",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "細胞集塊・巨細胞分取用"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "150 x 150 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "OS"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1003002",
+              "product_name": "2D Chip-800DG",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "ドロップレット作製用チップ (20-40 [μm])\n8 連タイプ DG８ Chip Holder 対応"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "30 x 30 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1003003",
+              "product_name": "2D Chip-1060DG",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "ドロップレット作製用チップ (60-120 [μm])\nシングルタイプ DG1 Chip Holder 対応"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "60 x 60 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1003004",
+              "product_name": "2D Chip-1100DG",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "ドロップレット作製用チップ (100ー [ μm])\nシングルタイプ DG1 Chip Holder 対応"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "100 x 100 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DG"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1004001",
+              "product_name": "2D Chip-SD1000",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "ドロップレット分取用 Chip (20-40 [μm])\n(Droplet Selector 用チップ)"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "80 x 80 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DS"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            },
+            {
+              "product_number": "1004002",
+              "product_name": "2D Chip-SD1000-w150",
+              "attributes": [
+                {
+                  "label": "材質",
+                  "value": "COP"
+                },
+                {
+                  "label": "用途",
+                  "value": "ドロップレット分取用 Chip (60-120 [μm])\n(Droplet Selector 用チップ)"
+                },
+                {
+                  "label": "マイクロ流路寸法",
+                  "value": "150 x 150 [μm]"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DS"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "10 chips/箱"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "03-02",
+          "label": "試薬類",
+          "products": [
+            {
+              "product_number": "2001004",
+              "product_name": "Through Path Plus 40x",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "解析＆ソーティング用"
+                },
+                {
+                  "label": "容量",
+                  "value": "10 mL"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "1 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2001014",
+              "product_name": "On-chip T Buffer",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "解析＆ソーティング用"
+                },
+                {
+                  "label": "容量",
+                  "value": "500 mL"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2001015",
+              "product_name": "Sample Buffer 2x (PBS base)",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "解析＆ソーティング用"
+                },
+                {
+                  "label": "容量",
+                  "value": "50 mL"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2003001",
+              "product_name": "008-FluoroSurfactant-5wtH-10mL",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "エマルジョン作製用\nフッ素系オイル"
+                },
+                {
+                  "label": "容量",
+                  "value": "10 mL"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2003002",
+              "product_name": "008-FluoroSurfactant-0.1wtH-100mL",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "界面活性剤希釈用\nフッ素系オイル"
+                },
+                {
+                  "label": "容量",
+                  "value": "100 mL"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2004001",
+              "product_name": "On-chip FNAP-sort (6-FAM)",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "ドロップレット内培養検出用"
+                },
+                {
+                  "label": "容量",
+                  "value": "100 回分 (乾燥品)"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2004002",
+              "product_name": "On-chip FNAP-sort (Cy5)",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "ドロップレット内培養検出用"
+                },
+                {
+                  "label": "容量",
+                  "value": "50 回分 (乾燥品)"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2004010",
+              "product_name": "On-chip MiMe-Stain Green",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "ドロップレット内細胞増殖　蛍光検出試薬（膜染色）"
+                },
+                {
+                  "label": "容量",
+                  "value": "100回分"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            },
+            {
+              "product_number": "2004011",
+              "product_name": "On-chip MiMe-Stain Red",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "ドロップレット内細胞増殖　蛍光検出試薬（膜染色）"
+                },
+                {
+                  "label": "容量",
+                  "value": "100回分"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "１ 本"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category_id": "03-03",
+          "label": "消耗品類",
+          "products": [
+            {
+              "product_number": "1007001S",
+              "product_name": "SPiS Dispensing Tip 384S",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "On-chip SPiS分注用"
+                },
+                {
+                  "label": "容量",
+                  "value": "384 tips"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "1 rack"
+                }
+              ]
+            },
+            {
+              "product_number": "1007011S",
+              "product_name": "Droplet Series Dispensing Tip 96S",
+              "attributes": [
+                {
+                  "label": "用途",
+                  "value": "Dropletシリーズ分注用"
+                },
+                {
+                  "label": "容量",
+                  "value": "96 tips"
+                },
+                {
+                  "label": "包装単位",
+                  "value": "4 rack"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

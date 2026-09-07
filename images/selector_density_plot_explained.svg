@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="デンシティープロットの読み方">
+<style>
+  .title{font:700 32px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#173d66}
+  .subtitle{font:700 24px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#0b5fa5}
+  .body{font:500 22px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#23364a}
+  .small{font:500 19px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#52677b}
+  .axis{stroke:#263746;stroke-width:4;fill:none;stroke-linecap:round}
+  .grid{stroke:#e7edf3;stroke-width:2}
+  .panel{fill:#ffffff;stroke:#c9d9e8;stroke-width:2}
+  .callout{fill:#eef7ff;stroke:#9fc6e8;stroke-width:2}
+</style>
+<defs>
+  <radialGradient id="hot1"><stop offset="0" stop-color="#d94343" stop-opacity=".96"/><stop offset=".38" stop-color="#f5a623" stop-opacity=".8"/><stop offset=".7" stop-color="#ffe66b" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="hot2"><stop offset="0" stop-color="#0b5fa5" stop-opacity=".92"/><stop offset=".5" stop-color="#42a5f5" stop-opacity=".58"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="1" y="1" width="1198" height="558" rx="20" class="panel"/>
+<text x="50" y="58" class="title">デンシティープロットの読み方</text>
+<rect x="55" y="88" width="1090" height="410" rx="16" fill="#fbfdff" stroke="#d8e1eb" stroke-width="2"/>
+<line x1="135" y1="430" x2="1070" y2="430" class="axis"/>
+<polygon points="1070,430 1048,418 1048,442" fill="#263746"/>
+<line x1="135" y1="430" x2="135" y2="145" class="axis"/>
+<polygon points="135,145 123,167 147,167" fill="#263746"/>
+<line x1="135" y1="360" x2="1070" y2="360" class="grid"/>
+<line x1="135" y1="290" x2="1070" y2="290" class="grid"/>
+<line x1="135" y1="220" x2="1070" y2="220" class="grid"/>
+<line x1="360" y1="145" x2="360" y2="430" class="grid"/>
+<line x1="585" y1="145" x2="585" y2="430" class="grid"/>
+<line x1="810" y1="145" x2="810" y2="430" class="grid"/>
+<ellipse cx="365" cy="335" rx="150" ry="95" fill="url(#hot2)"/>
+<ellipse cx="735" cy="225" rx="185" ry="118" fill="url(#hot1)"/>
+<g fill="#23364a" opacity=".45">
+  <circle cx="310" cy="345" r="4"/><circle cx="345" cy="325" r="4"/><circle cx="390" cy="345" r="4"/><circle cx="420" cy="310" r="4"/>
+  <circle cx="665" cy="250" r="4"/><circle cx="705" cy="220" r="4"/><circle cx="745" cy="205" r="4"/><circle cx="795" cy="230" r="4"/><circle cx="825" cy="195" r="4"/>
+</g>
+<rect x="690" y="105" width="385" height="78" rx="14" class="callout"/>
+<text x="715" y="138" class="subtitle">色が濃い場所</text>
+<text x="715" y="168" class="body">イベントが多く集まっている</text>
+<path d="M810 183 L780 210" stroke="#0b5fa5" stroke-width="4" fill="none"/>
+<polygon points="780,210 786,191 798,204" fill="#0b5fa5"/>
+<text x="250" y="470" class="small">弱い</text>
+<text x="970" y="470" class="small">強い</text>
+<text x="490" y="482" class="subtitle">横軸：1つ目の測定値</text>
+<text x="56" y="330" class="subtitle" transform="rotate(-90 56 330)">縦軸：2つ目の測定値</text>
+<text x="285" y="535" class="body">点が重なるデータを、密度の色で見やすくします</text>
+</svg>

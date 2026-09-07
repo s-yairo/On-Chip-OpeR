@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="ヒストグラムの読み方">
+<style>
+  .title{font:700 32px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#173d66}
+  .subtitle{font:700 24px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#0b5fa5}
+  .body{font:500 22px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#23364a}
+  .small{font:500 19px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#52677b}
+  .axis{stroke:#263746;stroke-width:4;fill:none;stroke-linecap:round}
+  .curve{stroke:#1677c8;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .curve2{stroke:#d94343;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .panel{fill:#ffffff;stroke:#c9d9e8;stroke-width:2}
+  .grid{stroke:#e7edf3;stroke-width:2}
+  .callout{fill:#eef7ff;stroke:#9fc6e8;stroke-width:2}
+  .good{fill:#effaf3;stroke:#77c795;stroke-width:2}
+  .warn{fill:#fff9df;stroke:#e0a800;stroke-width:2}
+</style>
+<rect x="1" y="1" width="1198" height="558" rx="20" class="panel"/>
+<text x="50" y="58" class="title">ヒストグラムの読み方</text>
+<rect x="55" y="88" width="1090" height="410" rx="16" fill="#fbfdff" stroke="#d8e1eb" stroke-width="2"/>
+<line x1="135" y1="430" x2="1070" y2="430" class="axis"/>
+<polygon points="1070,430 1048,418 1048,442" fill="#263746"/>
+<line x1="135" y1="430" x2="135" y2="145" class="axis"/>
+<polygon points="135,145 123,167 147,167" fill="#263746"/>
+<line x1="135" y1="360" x2="1070" y2="360" class="grid"/>
+<line x1="135" y1="290" x2="1070" y2="290" class="grid"/>
+<line x1="135" y1="220" x2="1070" y2="220" class="grid"/>
+<path d="M150 430 C190 428,210 390,230 270 C250 155,290 170,315 285 C338 390,365 425,420 430" fill="#dfe5eb" stroke="#6e7f90" stroke-width="6"/>
+<path d="M520 430 C600 425,645 390,690 285 C735 180,805 190,850 280 C890 360,935 420,1015 430" fill="#ffdede" stroke="#d94343" stroke-width="6"/>
+<rect x="172" y="105" width="290" height="75" rx="14" class="callout"/>
+<text x="196" y="137" class="subtitle">山が高い</text>
+<text x="196" y="166" class="body">その強度のイベントが多い</text>
+<path d="M315 180 L280 230" stroke="#0b5fa5" stroke-width="4" fill="none"/>
+<polygon points="280,230 282,211 297,222" fill="#0b5fa5"/>
+<rect x="710" y="105" width="370" height="75" rx="14" class="warn"/>
+<text x="735" y="137" class="subtitle">山が右にある</text>
+<text x="735" y="166" class="body">測定値・蛍光が強い</text>
+<path d="M825 180 L815 225" stroke="#b17c00" stroke-width="4" fill="none"/>
+<polygon points="815,225 808,207 825,211" fill="#b17c00"/>
+<text x="205" y="470" class="small">弱い</text>
+<text x="970" y="470" class="small">強い</text>
+<text x="510" y="482" class="subtitle">横軸：測定値（例：蛍光強度）</text>
+<text x="56" y="310" class="subtitle" transform="rotate(-90 56 310)">縦方向：イベント数</text>
+<text x="350" y="535" class="body">左の山＝弱いイベント　　右の山＝強いイベント</text>
+</svg>

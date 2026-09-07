@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Gainが弱すぎる、適切、強すぎる場合">
+<style>
+  .title{font:700 32px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#173d66}
+  .subtitle{font:700 24px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#0b5fa5}
+  .body{font:500 22px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#23364a}
+  .small{font:500 19px "Noto Sans CJK JP","Yu Gothic",Meiryo,sans-serif;fill:#52677b}
+  .axis{stroke:#263746;stroke-width:4;fill:none;stroke-linecap:round}
+  .curve{stroke:#1677c8;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .curve2{stroke:#d94343;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .panel{fill:#ffffff;stroke:#c9d9e8;stroke-width:2}
+  .grid{stroke:#e7edf3;stroke-width:2}
+  .callout{fill:#eef7ff;stroke:#9fc6e8;stroke-width:2}
+  .good{fill:#effaf3;stroke:#77c795;stroke-width:2}
+  .warn{fill:#fff9df;stroke:#e0a800;stroke-width:2}
+</style>
+<rect x="1" y="1" width="1198" height="518" rx="20" class="panel"/>
+<text x="50" y="58" class="title">Gain調整の目安：分布が表示範囲の端に張り付いていないか</text>
+<!-- panels -->
+<rect x="45" y="90" width="340" height="360" rx="16" fill="#fff9df" stroke="#e0a800" stroke-width="2"/>
+<rect x="430" y="90" width="340" height="360" rx="16" fill="#effaf3" stroke="#77c795" stroke-width="2"/>
+<rect x="815" y="90" width="340" height="360" rx="16" fill="#fff0f0" stroke="#e58b8b" stroke-width="2"/>
+<text x="135" y="130" class="subtitle">Gainが弱すぎる</text>
+<text x="545" y="130" class="subtitle">適切な範囲</text>
+<text x="910" y="130" class="subtitle">Gainが強すぎる</text>
+<!-- axes 1 -->
+<line x1="90" y1="345" x2="345" y2="345" class="axis"/><line x1="90" y1="345" x2="90" y2="170" class="axis"/>
+<path d="M94 345 C100 330,102 220,116 190 C135 160,160 225,170 290 C180 330,205 342,340 345" fill="none" stroke="#b17c00" stroke-width="6"/>
+<line x1="102" y1="170" x2="102" y2="350" stroke="#d94343" stroke-width="5" stroke-dasharray="8 7"/>
+<text x="112" y="385" class="small">左端に張り付く</text>
+<rect x="92" y="398" width="245" height="38" rx="10" class="callout"/>
+<text x="132" y="425" class="small">→ Gainを上げる</text>
+<!-- axes 2 -->
+<line x1="475" y1="345" x2="730" y2="345" class="axis"/><line x1="475" y1="345" x2="475" y2="170" class="axis"/>
+<path d="M482 345 C520 342,540 310,565 245 C590 178,635 180,660 245 C685 310,700 340,724 345" fill="none" stroke="#1f9d55" stroke-width="6"/>
+<text x="506" y="385" class="small">分布全体が見える</text>
+<rect x="490" y="398" width="225" height="38" rx="10" class="good"/>
+<text x="542" y="425" class="small">→ 条件を維持</text>
+<!-- axes 3 -->
+<line x1="860" y1="345" x2="1115" y2="345" class="axis"/><line x1="860" y1="345" x2="860" y2="170" class="axis"/>
+<path d="M866 345 C980 342,1010 330,1030 280 C1050 225,1070 175,1105 185 C1114 190,1115 250,1115 345" fill="none" stroke="#d94343" stroke-width="6"/>
+<line x1="1110" y1="170" x2="1110" y2="350" stroke="#d94343" stroke-width="5" stroke-dasharray="8 7"/>
+<text x="905" y="385" class="small">右端に張り付く</text>
+<rect x="875" y="398" width="225" height="38" rx="10" class="warn"/>
+<text x="927" y="425" class="small">→ Gainを下げる</text>
+<text x="250" y="492" class="body">測定途中でGainを変えた場合は、一旦停止して再測定します。</text>
+</svg>

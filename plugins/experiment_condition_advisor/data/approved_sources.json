@@ -1,0 +1,56 @@
+{
+  "source_set_version": "2026-08-02-prototype-1",
+  "policy": "Primary research metadata approved for offline reference. These papers do not define On-chip product operating conditions.",
+  "sources": [
+    {
+      "source_id": "anna2003-flow-focusing",
+      "title": "Formation of dispersions using flow focusing in microchannels",
+      "authors": "S. L. Anna, N. Bontoux, H. A. Stone",
+      "journal": "Applied Physics Letters 82, 364-366 (2003)",
+      "doi": "10.1063/1.1537519",
+      "url": "https://doi.org/10.1063/1.1537519",
+      "applies_to": ["flow_focusing", "flow_rate_ratio", "droplet_size_regime"],
+      "approved_summary": "Flow-focusing droplet size and generation regime depend on the two liquid flow rates and their ratio; monodisperse and polydisperse regimes can occur."
+    },
+    {
+      "source_id": "edd2008-single-cell",
+      "title": "Controlled encapsulation of single-cells into monodisperse picolitre drops",
+      "authors": "J. F. Edd et al.",
+      "journal": "Lab on a Chip 8, 1262-1264 (2008)",
+      "doi": "10.1039/B805456H",
+      "url": "https://doi.org/10.1039/B805456H",
+      "applies_to": ["single_cell_encapsulation", "stochastic_loading", "cell_ordering"],
+      "approved_summary": "Stochastic cell loading creates variability in cells per droplet; controlled cell ordering can improve single-cell encapsulation."
+    },
+    {
+      "source_id": "abate2009-poisson",
+      "title": "Beating Poisson encapsulation statistics using close-packed ordering",
+      "authors": "A. R. Abate, C. H. Chen, J. J. Agresti, D. A. Weitz",
+      "journal": "Lab on a Chip 9, 2628-2631 (2009)",
+      "doi": "10.1039/B909386A",
+      "url": "https://doi.org/10.1039/B909386A",
+      "applies_to": ["poisson_loading", "single_object_encapsulation"],
+      "approved_summary": "Random loading produces many empty droplets; close-packed ordering can depart from Poisson loading for suitable particles."
+    },
+    {
+      "source_id": "holtze2008-surfactant",
+      "title": "Biocompatible surfactants for water-in-fluorocarbon emulsions",
+      "authors": "C. Holtze et al.",
+      "journal": "Lab on a Chip 8, 1632-1639 (2008)",
+      "doi": "10.1039/B806706F",
+      "url": "https://doi.org/10.1039/B806706F",
+      "applies_to": ["surfactant", "droplet_stability", "cell_incubation"],
+      "approved_summary": "Surfactant chemistry affects water-in-fluorocarbon droplet stability and biological compatibility during formation, incubation, and reinjection."
+    },
+    {
+      "source_id": "baret2009-fads",
+      "title": "Fluorescence-activated droplet sorting (FADS): efficient microfluidic cell sorting based on enzymatic activity",
+      "authors": "J.-C. Baret et al.",
+      "journal": "Lab on a Chip 9, 1850-1858 (2009)",
+      "doi": "10.1039/B902504A",
+      "url": "https://doi.org/10.1039/B902504A",
+      "applies_to": ["fluorescence_sorting", "poisson_loading", "screening"],
+      "approved_summary": "Fluorescence-activated droplet sorting can screen encapsulated reactions; co-encapsulation and loading density can limit enrichment independently of sorter error."
+    }
+  ]
+}

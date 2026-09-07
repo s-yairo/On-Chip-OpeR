@@ -1,0 +1,16 @@
+{
+  "features": {
+    "experiment_condition_advisor": {
+      "enabled": true,
+      "mode": "development_preview",
+      "distribution": "paid_optional",
+      "comment": "Set enabled=false, mode=disabled, or remove the plugin directory for a core-only release."
+    },
+    "joint_ai": {
+      "enabled": true,
+      "mode": "dummy",
+      "provider": "dummy",
+      "comment": "No.298 step 1-2: all AI calls use AIConnector; the built-in dummy provider performs no network access."
+    }
+  }
+}

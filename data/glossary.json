@@ -1,0 +1,2120 @@
+{
+  "app_version": "v34-no354",
+  "audience": "専門教育を受けていない文系学生または普通高校3年生",
+  "exclusion_policy": "product_catalog.jsonに掲載された製品名・製品番号は用語集から除外し、製品一覧で確認する。",
+  "categories": [
+    "測定・解析",
+    "蛍光・色素",
+    "ゲート・ソート・分注",
+    "ドロップレット・試料調製",
+    "装置・画面操作",
+    "実験条件・品質管理",
+    "安全・実験管理",
+    "単位・ファイル"
+  ],
+  "entry_count": 319,
+  "entries": [
+    {
+      "term": "A（Area）",
+      "aliases": [
+        "Area",
+        "FSC-A",
+        "SSC-A"
+      ],
+      "category": "測定・解析",
+      "description": "パルス全体の面積を表す値です。信号の高さと幅の両方の影響を受けます。"
+    },
+    {
+      "term": "Bi Exponential",
+      "aliases": [
+        "Biexponential",
+        "Bi-Exponential"
+      ],
+      "category": "測定・解析",
+      "description": "0付近や負の補正値も見やすくしつつ、広い範囲の蛍光値を表示する軸の方法です。"
+    },
+    {
+      "term": "FACS",
+      "aliases": [
+        "Fluorescence-Activated Cell Sorting"
+      ],
+      "category": "測定・解析",
+      "description": "蛍光を使って細胞や粒子を測定し、必要に応じて選別する技術の呼び名です。装置全体を指して使われることもあります。"
+    },
+    {
+      "term": "FL（蛍光検出チャンネル）",
+      "aliases": [
+        "FL1",
+        "FL2",
+        "FL3",
+        "FL4",
+        "FL5",
+        "FL6"
+      ],
+      "category": "測定・解析",
+      "description": "FLは、蛍光の強さを色や波長の範囲ごとに測るための検出チャンネルです。この装置にはFL1～FL6の6つがあり、数字は明るさの順位ではなく、受け取る光の範囲を区別する番号です。"
+    },
+    {
+      "term": "FSC（前方散乱光）",
+      "aliases": [
+        "Forward Scatter"
+      ],
+      "category": "測定・解析",
+      "description": "FSCは「Forward Scatter（フォワード・スキャッター）」の略で、日本語では前方散乱光と呼びます。レーザーが細胞や粒子に当たり、前方向へ散った光です。大きさを考える手がかりになりますが、液滴の直径そのものではありません。"
+    },
+    {
+      "term": "Gain（ゲイン）",
+      "aliases": [
+        "Gain"
+      ],
+      "category": "測定・解析",
+      "description": "検出器から得る信号の大きさに関わる感度設定です。高すぎると上限に張り付き、低すぎると弱い信号を見分けにくくなります。"
+    },
+    {
+      "term": "H / W / A",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "1つのパルスを、高さ（H）、幅（W）、面積（A）の3通りで数値化した呼び方です。"
+    },
+    {
+      "term": "H（Height）",
+      "aliases": [
+        "Height",
+        "FSC-H"
+      ],
+      "category": "測定・解析",
+      "description": "パルスの最も高い部分を表す値です。"
+    },
+    {
+      "term": "Linear（リニア）",
+      "aliases": [
+        "Linear"
+      ],
+      "category": "測定・解析",
+      "description": "数値の差をそのまま等間隔で示す軸の表示方法です。値が2倍なら表示上の距離もおおむね2倍になります。"
+    },
+    {
+      "term": "Logarithmic（対数表示）",
+      "aliases": [
+        "Logarithmic",
+        "Log"
+      ],
+      "category": "測定・解析",
+      "description": "広い範囲の値を1枚のグラフに収めるため、桁の違いを基準にして縮めて表示する方法です。"
+    },
+    {
+      "term": "Numerical Factor",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "測定後の数値へ倍率を掛け、グラフ上の表示位置を動かす設定です。検出器の感度そのものは変えません。"
+    },
+    {
+      "term": "SSC（側方散乱光）",
+      "aliases": [
+        "Side Scatter"
+      ],
+      "category": "測定・解析",
+      "description": "SSCは「Side Scatter（サイド・スキャッター）」の略で、日本語では側方散乱光と呼びます。レーザーが細胞や粒子に当たり、横方向へ散った光です。内部の粒状性や複雑さを考える手がかりになりますが、それだけで内容物は決められません。"
+    },
+    {
+      "term": "Threshold（閾値）",
+      "aliases": [
+        "Threshold"
+      ],
+      "category": "測定・解析",
+      "description": "これより弱い信号はイベントとして記録しない、と決める最低ラインです。高すぎると目的の弱い信号を見落とします。"
+    },
+    {
+      "term": "W（Width）",
+      "aliases": [
+        "Width",
+        "FSC-W"
+      ],
+      "category": "測定・解析",
+      "description": "パルスが続いた時間の長さ、つまり波形の幅を表す値です。"
+    },
+    {
+      "term": "イベント",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "装置が細胞、粒子、ドロップレットなどを1回検出した記録です。プロット上では通常1点として表されます。"
+    },
+    {
+      "term": "イベント率",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "1秒間など一定時間に検出されたイベント数です。高すぎると複数の対象を同時に数える可能性が増えます。"
+    },
+    {
+      "term": "カラードットプロット",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "点が多い場所ほど色を変えて表示するドットプロットです。密集した集団を見つけやすくします。"
+    },
+    {
+      "term": "デンシティープロット",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "イベントが密集している場所を、色や等高線のような表現で示すグラフです。"
+    },
+    {
+      "term": "ドットプロット",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "イベントを1個ずつ点で表示するグラフです。横軸と縦軸の2つの特徴を同時に見られます。"
+    },
+    {
+      "term": "ノイズ",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "目的の細胞や粒子とは関係なく生じる小さな信号やばらつきです。"
+    },
+    {
+      "term": "パラメーター",
+      "aliases": [
+        "Parameter"
+      ],
+      "category": "測定・解析",
+      "description": "グラフの軸や測定条件として選ぶ項目です。FSC、SSC、各FL、H・W・Aなどが該当します。"
+    },
+    {
+      "term": "パルス",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "細胞や粒子がレーザーを通過したときに一時的に生じる、山形の信号波形です。"
+    },
+    {
+      "term": "ヒストグラム",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "1つの測定値について、どの範囲にイベントが何個あるかを棒や曲線で示すグラフです。"
+    },
+    {
+      "term": "フローサイトメーター",
+      "aliases": [
+        "FACS"
+      ],
+      "category": "測定・解析",
+      "description": "細胞や粒子を細い流れに乗せ、レーザー光を当てて、散乱光や蛍光を1個ずつ測る装置の総称です。"
+    },
+    {
+      "term": "プロット",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "測定したイベントを、選んだ軸に従って点や分布として表示したグラフです。"
+    },
+    {
+      "term": "信号",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "装置の検出器が受け取った光を、比較できる数値に変えたものです。"
+    },
+    {
+      "term": "分布",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "イベントがグラフ上のどこに、どの程度広がっているかを表す形です。"
+    },
+    {
+      "term": "単染色対照",
+      "aliases": [
+        "単染色コントロール"
+      ],
+      "category": "測定・解析",
+      "description": "1種類の蛍光色素だけで染めた対照試料です。主に蛍光補正の計算や確認に使います。"
+    },
+    {
+      "term": "外れ値",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "大部分のイベントから大きく離れた値です。異常とは限りませんが、気泡、ゴミ、測定条件などを確認する手がかりになります。"
+    },
+    {
+      "term": "散乱光",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "レーザー光が細胞や粒子に当たり、進む向きが変わった光です。FSCとSSCは散乱光を別の方向から測った信号です。"
+    },
+    {
+      "term": "未染色対照",
+      "aliases": [
+        "未染色コントロール"
+      ],
+      "category": "測定・解析",
+      "description": "蛍光色素を加えていない試料です。試料そのものの光や背景信号を確認するために使います。"
+    },
+    {
+      "term": "検出チャンネル",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "特定の波長範囲の光を受け取る測定の窓口です。このソフトでは主にFL1～FL6を使います。"
+    },
+    {
+      "term": "検出器",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "光を受け取り、測定できる電気信号へ変える部品です。"
+    },
+    {
+      "term": "測定条件",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "レーザー、感度、閾値、圧力、試料濃度など、測定時に決める設定や環境のまとまりです。"
+    },
+    {
+      "term": "漏れ込み",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "ある蛍光の光が、本来見るチャンネルだけでなく隣のチャンネルにも検出されることです。"
+    },
+    {
+      "term": "自家蛍光",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "色素を加えていなくても、細胞や培地などが元から発する蛍光です。"
+    },
+    {
+      "term": "蛍光補正",
+      "aliases": [
+        "Compensation"
+      ],
+      "category": "測定・解析",
+      "description": "1つの蛍光色が別の検出チャンネルにも少し入るため、その混ざり分を計算して差し引く処理です。"
+    },
+    {
+      "term": "軸",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "グラフで値の種類と範囲を示す線です。横軸と縦軸に何が選ばれているかを先に確認します。"
+    },
+    {
+      "term": "陰性対照",
+      "aliases": [
+        "ネガティブコントロール"
+      ],
+      "category": "測定・解析",
+      "description": "目的の反応が起きない条件の試料です。どこまでを陰性と見るかの基準にします。"
+    },
+    {
+      "term": "陽性対照",
+      "aliases": [
+        "ポジティブコントロール"
+      ],
+      "category": "測定・解析",
+      "description": "目的の反応が起きることが分かっている試料です。測定や染色が働いているかの確認に使います。"
+    },
+    {
+      "term": "非特異染色",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "目的ではない場所にも色素や抗体が結びつき、背景として光ってしまうことです。"
+    },
+    {
+      "term": "飽和",
+      "aliases": [],
+      "category": "測定・解析",
+      "description": "信号が装置や表示の上限を超え、実際の違いを区別できなくなった状態です。"
+    },
+    {
+      "term": "7-AAD",
+      "aliases": [
+        "7-Aminoactinomycin D"
+      ],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞へ入りやすく、DNAに結びついて赤色寄りに光る死細胞染色用の色素です。"
+    },
+    {
+      "term": "AF405",
+      "aliases": [
+        "Alexa Fluor 405"
+      ],
+      "category": "蛍光・色素",
+      "description": "Alexa Fluor 405という青～紫色系の蛍光色素の略称です。405 nmレーザーで励起しやすい色素です。"
+    },
+    {
+      "term": "AF488",
+      "aliases": [
+        "Alexa Fluor 488"
+      ],
+      "category": "蛍光・色素",
+      "description": "Alexa Fluor 488の略称で、488 nmレーザーで励起しやすい緑色系の蛍光色素です。"
+    },
+    {
+      "term": "AF647",
+      "aliases": [
+        "Alexa Fluor 647"
+      ],
+      "category": "蛍光・色素",
+      "description": "Alexa Fluor 647の略称で、赤色レーザーで励起しやすい遠赤色系の蛍光色素です。"
+    },
+    {
+      "term": "AF700",
+      "aliases": [
+        "Alexa Fluor 700"
+      ],
+      "category": "蛍光・色素",
+      "description": "Alexa Fluor 700の略称で、赤色レーザーで励起しやすい遠赤色系の蛍光色素です。"
+    },
+    {
+      "term": "APC",
+      "aliases": [
+        "Allophycocyanin"
+      ],
+      "category": "蛍光・色素",
+      "description": "アロフィコシアニンの略称で、赤色レーザーで励起しやすく、遠赤色の蛍光を出す色素です。"
+    },
+    {
+      "term": "APC-Cy7",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "APCとCy7を組み合わせたタンデム色素で、近赤外に近い波長で検出されます。"
+    },
+    {
+      "term": "APC-H7",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "APCを基にしたタンデム色素で、近赤外に近い波長で検出されます。"
+    },
+    {
+      "term": "BV421",
+      "aliases": [
+        "Brilliant Violet 421"
+      ],
+      "category": "蛍光・色素",
+      "description": "Brilliant Violet 421の略称で、405 nmレーザーで励起しやすい青紫色系の蛍光色素です。"
+    },
+    {
+      "term": "BV510",
+      "aliases": [
+        "Brilliant Violet 510"
+      ],
+      "category": "蛍光・色素",
+      "description": "Brilliant Violet 510の略称で、405 nmレーザーで励起しやすい青緑色系の蛍光色素です。"
+    },
+    {
+      "term": "BV605",
+      "aliases": [
+        "Brilliant Violet 605"
+      ],
+      "category": "蛍光・色素",
+      "description": "Brilliant Violet 605の略称で、405 nmレーザーで励起しやすく、橙～赤色寄りで検出する蛍光色素です。"
+    },
+    {
+      "term": "BV650",
+      "aliases": [
+        "Brilliant Violet 650"
+      ],
+      "category": "蛍光・色素",
+      "description": "Brilliant Violet 650の略称で、405 nmレーザーで励起しやすく、赤色寄りで検出する蛍光色素です。"
+    },
+    {
+      "term": "BV711",
+      "aliases": [
+        "Brilliant Violet 711"
+      ],
+      "category": "蛍光・色素",
+      "description": "Brilliant Violet 711の略称で、405 nmレーザーで励起しやすく、遠赤色寄りで検出する蛍光色素です。"
+    },
+    {
+      "term": "BV786",
+      "aliases": [
+        "Brilliant Violet 786"
+      ],
+      "category": "蛍光・色素",
+      "description": "Brilliant Violet 786の略称で、405 nmレーザーで励起しやすく、近赤外に近い波長で検出する蛍光色素です。"
+    },
+    {
+      "term": "Calcein AM",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "生きた細胞へ入り、細胞内で変化して緑色に光る試薬です。生細胞の確認に使われます。"
+    },
+    {
+      "term": "Calcofluor White",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "真菌などの細胞壁にある成分へ結びつき、青白い蛍光を出す染色試薬です。"
+    },
+    {
+      "term": "CFP",
+      "aliases": [
+        "Cyan Fluorescent Protein"
+      ],
+      "category": "蛍光・色素",
+      "description": "シアン色蛍光タンパク質の略称です。青緑色に近い蛍光を出します。"
+    },
+    {
+      "term": "CTC",
+      "aliases": [
+        "5-Cyano-2,3-ditolyl Tetrazolium Chloride"
+      ],
+      "category": "蛍光・色素",
+      "description": "細胞の呼吸活動によって還元されると赤橙色に光る試薬です。微生物などの代謝活性を見る目安に使われます。"
+    },
+    {
+      "term": "DAPI",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "DNAに結びつき、主に青色の蛍光を出す核染色用の色素です。一般に405 nm付近の励起光で確認します。"
+    },
+    {
+      "term": "DNA",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "生物の遺伝情報を保存する物質です。多くの核染色色素が結びつく対象です。"
+    },
+    {
+      "term": "DRAQ5",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "生きた細胞にも入りやすく、DNAに結びついて遠赤色に光る核染色色素です。"
+    },
+    {
+      "term": "DRAQ7",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞へ入りやすく、DNAに結びついて遠赤色に光る死細胞染色用の色素です。"
+    },
+    {
+      "term": "DsRed",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "赤色蛍光タンパク質の一種です。細胞内で作らせ、赤色の目印として使います。"
+    },
+    {
+      "term": "FITC",
+      "aliases": [
+        "Fluorescein Isothiocyanate"
+      ],
+      "category": "蛍光・色素",
+      "description": "488 nmレーザーで励起しやすく、緑色の蛍光を出す代表的な色素です。抗体などへ付けて使われます。"
+    },
+    {
+      "term": "FUN-1",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "酵母などの代謝状態を見るための色素です。細胞の状態により、緑色系と橙赤色系の見え方が変わります。"
+    },
+    {
+      "term": "GFP",
+      "aliases": [
+        "Green Fluorescent Protein"
+      ],
+      "category": "蛍光・色素",
+      "description": "緑色蛍光タンパク質の略称です。青色レーザーなどで励起すると緑色に光ります。"
+    },
+    {
+      "term": "Hoechst 33342",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "DNAに結びついて青色に光る核染色色素です。細胞膜を通りやすく、生きた細胞の核観察にも使われます。"
+    },
+    {
+      "term": "mCherry",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "赤色蛍光タンパク質の一種です。細胞内で作らせ、遺伝子発現や細胞の位置を見る目印にします。"
+    },
+    {
+      "term": "Pacific Blue",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "405 nmレーザーで励起しやすく、青色の蛍光を出す色素です。"
+    },
+    {
+      "term": "Pacific Orange",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "405 nmレーザーで励起しやすく、橙色寄りの蛍光を出す色素です。"
+    },
+    {
+      "term": "PE",
+      "aliases": [
+        "Phycoerythrin"
+      ],
+      "category": "蛍光・色素",
+      "description": "フィコエリスリンの略称で、488 nmレーザーなどで励起しやすく、明るい橙色の蛍光を出す色素です。"
+    },
+    {
+      "term": "PE-Cy5",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "PEとCy5を組み合わせたタンデム色素で、赤色寄りに検出されます。"
+    },
+    {
+      "term": "PE-Cy7",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "PEとCy7を組み合わせたタンデム色素で、遠赤色～近赤外寄りに検出されます。"
+    },
+    {
+      "term": "PerCP",
+      "aliases": [
+        "Peridinin-Chlorophyll-Protein"
+      ],
+      "category": "蛍光・色素",
+      "description": "488 nmレーザーで励起しやすく、赤色寄りの蛍光を出す色素です。"
+    },
+    {
+      "term": "PerCP-Cy5.5",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "PerCPとCy5.5を組み合わせたタンデム色素で、赤～遠赤色寄りに検出されます。"
+    },
+    {
+      "term": "PI",
+      "aliases": [
+        "Propidium Iodide"
+      ],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞へ入りやすく、DNAなどに結びついて赤色に光る死細胞染色用の色素です。"
+    },
+    {
+      "term": "RNA",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "DNAの情報を使ってタンパク質を作る過程などで働く物質です。"
+    },
+    {
+      "term": "SYTO 9",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞内の核酸に結びついて緑色に光る色素です。細菌などの染色に使われます。"
+    },
+    {
+      "term": "SYTOX Green",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞へ入りやすく、核酸に結びついて緑色に光る死細胞染色用の色素です。"
+    },
+    {
+      "term": "SYTOX Orange",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞へ入りやすく、核酸に結びついて橙色に光る死細胞染色用の色素です。"
+    },
+    {
+      "term": "SYTOX Red",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞へ入りやすく、核酸に結びついて赤～遠赤色に光る死細胞染色用の色素です。"
+    },
+    {
+      "term": "TagRFP",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "赤色蛍光タンパク質の一種です。細胞内で作らせ、赤色の目印として使います。"
+    },
+    {
+      "term": "tdTomato",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "明るい赤橙色の蛍光タンパク質です。細胞や組織の目印として使われます。"
+    },
+    {
+      "term": "TMRE",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "ミトコンドリアの膜電位に応じて集まり、橙赤色に光る色素です。TMRMと似た目的で使われます。"
+    },
+    {
+      "term": "TMRM",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "ミトコンドリアの膜電位に応じて集まり、橙赤色に光る色素です。細胞のエネルギー状態を見る目安に使われます。"
+    },
+    {
+      "term": "V450",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "405 nmレーザーで励起しやすく、青色付近で検出する蛍光色素です。"
+    },
+    {
+      "term": "V500",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "405 nmレーザーで励起しやすく、青緑色付近で検出する蛍光色素です。"
+    },
+    {
+      "term": "YFP",
+      "aliases": [
+        "Yellow Fluorescent Protein"
+      ],
+      "category": "蛍光・色素",
+      "description": "黄色蛍光タンパク質の略称です。緑～黄色寄りの蛍光を出します。"
+    },
+    {
+      "term": "YOYO-1",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "DNAに強く結びついて緑色に光る色素です。通常は細胞膜を通りにくいため、膜が傷んだ細胞や遊離DNAの確認に使われます。"
+    },
+    {
+      "term": "タンデム色素",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "2種類の蛍光色素をつなぎ、片方が受けた光のエネルギーをもう片方へ渡して長い波長で光らせる色素です。"
+    },
+    {
+      "term": "ミトコンドリア",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞の中でエネルギー産生に関わる小さな構造です。膜電位を利用した色素で状態を見ることがあります。"
+    },
+    {
+      "term": "光学フィルター",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "必要な波長の光を通し、不要な波長を減らす部品です。"
+    },
+    {
+      "term": "励起",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "蛍光物質が光のエネルギーを受け取り、蛍光を出せる状態になることです。"
+    },
+    {
+      "term": "励起光",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "蛍光物質を光らせるために当てるレーザーなどの光です。"
+    },
+    {
+      "term": "核染色",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞の核や、その中のDNAを光らせて見えるようにする染色です。"
+    },
+    {
+      "term": "死細胞染色",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞膜が傷んだ細胞などを選んで光らせ、死細胞の目安にする染色です。"
+    },
+    {
+      "term": "波長",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "光の色を表す尺度です。通常はnmで示し、値が違うと見える色や検出される場所が変わります。"
+    },
+    {
+      "term": "生細胞染色",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "生きている細胞に使い、細胞を壊さずに状態を観察することを目的とした染色です。"
+    },
+    {
+      "term": "発光スペクトル",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "物質から出る光を波長ごとに示した分布です。蛍光の場合は蛍光スペクトルとほぼ同じ意味で使われます。"
+    },
+    {
+      "term": "細胞膜",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞の内側と外側を分ける薄い膜です。傷むと、本来入らない色素が細胞内へ入ることがあります。"
+    },
+    {
+      "term": "膜電位",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "細胞膜やミトコンドリア膜の内外にある電気的な差です。細胞の状態を見る指標の1つです。"
+    },
+    {
+      "term": "蛍光",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "物質が光を受け取ったあと、別の波長の光を出す現象です。"
+    },
+    {
+      "term": "蛍光スペクトル",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "蛍光物質が、どの波長の光をどの程度出すかを示した分布です。"
+    },
+    {
+      "term": "蛍光タンパク質",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "光を当てると蛍光を出すタンパク質です。細胞の中で作らせ、遺伝子の働きや細胞の位置を追うために使われます。"
+    },
+    {
+      "term": "蛍光色素",
+      "aliases": [],
+      "category": "蛍光・色素",
+      "description": "特定の光を当てると蛍光を出す試薬です。細胞の状態や特定の物質を見分ける目印にします。"
+    },
+    {
+      "term": "BOX",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "長方形のボックスゲートを選ぶ画面上の表示です。"
+    },
+    {
+      "term": "Column-first",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "プレートの同じ列を縦方向へ進み、その後に次の列へ移る順番です。"
+    },
+    {
+      "term": "Dispensing Number",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "1つのウェルへ何回分注するかを表す設定です。"
+    },
+    {
+      "term": "Plate Select",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "分注に使用するプレート形式を選ぶ操作です。"
+    },
+    {
+      "term": "Population Management",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "作成したポピュレーションやゲートの関係を管理する画面です。"
+    },
+    {
+      "term": "Population space",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "作成したポピュレーションやゲート階層を確認する領域です。"
+    },
+    {
+      "term": "Row-first",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "プレートの同じ行を横方向へ進み、その後に次の行へ移る順番です。"
+    },
+    {
+      "term": "Select population",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "ソーティングや分注の対象にするポピュレーションを選ぶ操作です。"
+    },
+    {
+      "term": "Simultaneous Actuation",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "複数の動作を同時に実行する設定です。分注動作の確認時に使われます。"
+    },
+    {
+      "term": "Terminate by Dispensing End",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "設定した分注が終わった時点で処理を終了する設定です。"
+    },
+    {
+      "term": "Termination",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "分注や測定を終了する条件、または終了操作を示す設定です。"
+    },
+    {
+      "term": "Work space",
+      "aliases": [
+        "Workspace"
+      ],
+      "category": "ゲート・ソート・分注",
+      "description": "解析に使うプロットや設定を置く作業領域です。"
+    },
+    {
+      "term": "ウェル",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "プレートに並ぶ小さな容器の1区画です。"
+    },
+    {
+      "term": "ウェルシート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "分注先のウェルや分注回数を設定する画面または表です。"
+    },
+    {
+      "term": "ウェルプレート",
+      "aliases": [
+        "well plate"
+      ],
+      "category": "ゲート・ソート・分注",
+      "description": "小さなくぼみ（ウェル）が行と列に並んだ板状の容器です。96ウェルプレートは8行×12列で96個、384ウェルプレートは16行×24列で384個のウェルがあります。384ウェルプレートは、96ウェルプレートより少ない液量で多くの試料や反応を一度に扱うときに使います。"
+    },
+    {
+      "term": "ウェルマップ",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "プレートのどのウェルへ何を入れるかを示した配置図です。"
+    },
+    {
+      "term": "クロスゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "縦線と横線でプロットを4つの領域に分けるゲートです。"
+    },
+    {
+      "term": "ゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "プロット上で、解析または回収したいイベントを選ぶために囲む範囲や条件です。"
+    },
+    {
+      "term": "ゲート階層",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "親ゲートと子ゲートが、どの順番でつながっているかを表す構造です。"
+    },
+    {
+      "term": "サンドイッチゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "2本の線の間にあるイベントを選ぶゲートです。"
+    },
+    {
+      "term": "スプリッターゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "境界線を使ってイベントを複数の領域へ分けるゲートです。"
+    },
+    {
+      "term": "ソーティング",
+      "aliases": [
+        "Sort",
+        "ソート"
+      ],
+      "category": "ゲート・ソート・分注",
+      "description": "測定した細胞、粒子、ドロップレットの中から、条件に合うものだけを選び分ける操作です。"
+    },
+    {
+      "term": "ソーティングゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "ソーティングの対象として使うゲートです。"
+    },
+    {
+      "term": "バルクソーティング",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "選んだイベントを1個ずつウェルへ分けず、まとめて同じ回収先へ集めるソーティングです。"
+    },
+    {
+      "term": "プレートマップ",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "ウェルプレート上の試料や条件の配置を示した図です。ウェルマップとほぼ同じ意味で使われます。"
+    },
+    {
+      "term": "ボックスゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "長方形の範囲でイベントを選ぶゲートです。"
+    },
+    {
+      "term": "ポピュレーション",
+      "aliases": [
+        "Population"
+      ],
+      "category": "ゲート・ソート・分注",
+      "description": "ゲートなどの条件に入ったイベントの集まりです。"
+    },
+    {
+      "term": "ポリゴンゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "複数の点を結んだ多角形で、集団の形に合わせて囲むゲートです。"
+    },
+    {
+      "term": "分注",
+      "aliases": [
+        "Dispensing",
+        "Dispense"
+      ],
+      "category": "ゲート・ソート・分注",
+      "description": "ソーティングしたドロップレット・物質を、ウェルプレートの穴へ一個ずつ入れる操作です。"
+    },
+    {
+      "term": "子ゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "親ゲートで選ばれたイベントを、さらに絞り込むための下位のゲートです。"
+    },
+    {
+      "term": "親ゲート",
+      "aliases": [],
+      "category": "ゲート・ソート・分注",
+      "description": "次のゲートを作る土台となる、上位のゲートです。"
+    },
+    {
+      "term": "GMD",
+      "aliases": [
+        "Gel Microdroplet",
+        "ゲルマイクロドロップ"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "Gel Microdropletの略で、ゲル材料で液滴を作り、その後に固めた小さなゲル粒です。\n網目構造となっておりW/Oドロップレットと違い、微細物質は中と外の行き来が可能です。"
+    },
+    {
+      "term": "HFE7500",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "ドロップレット作製で油相として使われることがあるフッ素系オイルの名称です。"
+    },
+    {
+      "term": "Oil",
+      "aliases": [
+        "オイル"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "ドロップレットの外側を構成する液体（油）です。このソフトの場合、008-FluoroSurfactant-5wtH-10mL か 008-FluoroSurfactant-0.1wtH-100mL、または両者を混ぜたものを指します。"
+    },
+    {
+      "term": "PFO",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "1H, 1H, 2H, 2H-パーフルオロ-1-オクタノール のこと。\nW/Oエマルションを壊し、水相やゲル粒を回収するために使われることがあるフッ素系の試薬です。"
+    },
+    {
+      "term": "Sample",
+      "aliases": [
+        "サンプル"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "実験の対象となる細胞・微生物・物質など、またはそれを含む液体（培地）のことを指します。"
+    },
+    {
+      "term": "W/Oドロップレット",
+      "aliases": [
+        "W/O",
+        "Water in Oil"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "Water in Oilの略で、オイルの中に水系試料の小さな液滴が分散した状態です。"
+    },
+    {
+      "term": "せん断",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液体の流れの速さが場所によって違うため、細胞や液滴が横方向に引きずられる力です。"
+    },
+    {
+      "term": "アガロース",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "海藻由来の成分から作られるゲル材料です。温度を下げると固まる性質を利用します。"
+    },
+    {
+      "term": "アガロースサンプル",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "溶かしたアガロースと、細胞や試薬などの水系試料を混ぜた液体です。GMD作製に使います。"
+    },
+    {
+      "term": "アガロースストック",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "あらかじめ決めた濃度で調製して保存しておくアガロース溶液です。"
+    },
+    {
+      "term": "エマルション",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "本来混ざりにくい2種類の液体の一方が、もう一方の中に細かな滴として分散した状態です。\nここではドロップレットと同義です。"
+    },
+    {
+      "term": "ゲルボール",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "GMDをゲル化し、オイルから水相へ回収した小さな球状のゲル粒です。"
+    },
+    {
+      "term": "ゲル化",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液体状の材料が、網目構造を作って柔らかい固体状になることです。"
+    },
+    {
+      "term": "ダスト",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "試料や流路に混じった小さなゴミや粒子です。不要なイベントや詰まりの原因になります。"
+    },
+    {
+      "term": "ドロップレット",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "このソフトでは主に、オイルの中に作る非常に小さな水滴を指します。細胞や試薬を1滴ずつ分けて扱うために使います。"
+    },
+    {
+      "term": "ピペッティング",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "ピペットで液体を吸って吐く操作です。混合や移し替えに使います。"
+    },
+    {
+      "term": "フッ素オイル",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "フッ素を含む、化学的に安定なオイルです。W/Oドロップレットの外側の液体として使われます。"
+    },
+    {
+      "term": "フローフォーカシング",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "両側などから流す液体で中央の流れを細く絞り、液滴を作る方式です。"
+    },
+    {
+      "term": "ポアソン分布",
+      "aliases": [
+        "ポアソンモデル"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "粒子が偶然に液滴へ入るとき、空、1個、複数個になる割合を見積もるための確率の考え方です。"
+    },
+    {
+      "term": "マイクロ流路",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "幅や高さが非常に小さい流路です。少量の液体を細かく制御するために使います。"
+    },
+    {
+      "term": "ミネラルオイル",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "石油由来の透明なオイルの一種です。用途によりフッ素オイルとは性質が異なります。"
+    },
+    {
+      "term": "ランダム封入",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "細胞や粒子が偶然の確率に従って液滴へ入る状態です。"
+    },
+    {
+      "term": "上清",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "沈殿や重い粒子が下へ集まったあと、その上に残る液体部分です。"
+    },
+    {
+      "term": "低融点アガロース",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "通常のアガロースより低い温度で溶け、比較的低温で扱えるようにしたアガロースです。"
+    },
+    {
+      "term": "共封入",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "2種類以上の細胞、粒子、試薬などを同じ液滴へ入れることです。"
+    },
+    {
+      "term": "再注入",
+      "aliases": [
+        "reinjection"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "作製済みの液滴などを、別の流路や装置へもう一度入れて処理することです。"
+    },
+    {
+      "term": "凝集",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "細胞や粒子が互いにくっつき、かたまりになることです。"
+    },
+    {
+      "term": "分散相",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "連続相の中へ小さな滴として分かれている液体です。W/Oドロップレットでは通常水系試料が分散相です。"
+    },
+    {
+      "term": "単一封入",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "1個の液滴に目的の細胞や粒子が1個だけ入った状態です。"
+    },
+    {
+      "term": "単分散",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液滴の大きさがよくそろっている状態です。"
+    },
+    {
+      "term": "多分散",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液滴の大きさに広いばらつきがある状態です。"
+    },
+    {
+      "term": "多重封入",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "1個の液滴に目的の細胞や粒子が複数入った状態です。"
+    },
+    {
+      "term": "密充填配列",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "粒子同士が近く並び、ほぼ一定の間隔で流れる状態です。ランダム封入から外れることがあります。"
+    },
+    {
+      "term": "封入",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "細胞、粒子、試薬などを液滴の中へ入れることです。"
+    },
+    {
+      "term": "平均封入数 λ",
+      "aliases": [
+        "λ",
+        "ラムダ"
+      ],
+      "category": "ドロップレット・試料調製",
+      "description": "1個の液滴に平均して何個の細胞や粒子が入るかを表す値です。λは「ラムダ」と読みます。"
+    },
+    {
+      "term": "気泡",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液体の中に入った空気の泡です。流れや測定信号を乱したり、流路をふさいだりすることがあります。"
+    },
+    {
+      "term": "水相",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "水を主成分とする液体の部分です。細胞、培地、試薬などを含むことがあります。"
+    },
+    {
+      "term": "油相",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "オイルを主成分とし、水滴の外側を取り囲む液体の部分です。"
+    },
+    {
+      "term": "流路",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "チップや装置の中で液体や空気が通る細い道です。"
+    },
+    {
+      "term": "流路合流部",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "複数の液体の流れが出会う場所です。ドロップレットが作られる位置になることがあります。"
+    },
+    {
+      "term": "液滴体積",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "1個の液滴が占める体積です。小さな液滴ではpLなどで表します。"
+    },
+    {
+      "term": "液滴径",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液滴の直径です。通常はµmで表します。"
+    },
+    {
+      "term": "界面",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "水相と油相など、異なる2つの物質が接している境目です。"
+    },
+    {
+      "term": "界面活性剤",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "水と油の境界に集まり、液滴が合体しにくいよう安定させる物質です。"
+    },
+    {
+      "term": "破乳",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "エマルションを壊し、水相と油相を分ける操作です。"
+    },
+    {
+      "term": "空ドロップレット",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "目的の細胞や粒子が入っていない液滴です。"
+    },
+    {
+      "term": "転倒混和",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "容器を上下にゆっくり反転させて液体を混ぜる方法です。"
+    },
+    {
+      "term": "連続相",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "液滴の外側で途切れずに流れている液体です。W/Oドロップレットでは通常オイルが連続相です。"
+    },
+    {
+      "term": "閉塞",
+      "aliases": [],
+      "category": "ドロップレット・試料調製",
+      "description": "流路やチューブが細胞、粒子、気泡などで詰まり、流れにくくなることです。"
+    },
+    {
+      "term": "Antigen",
+      "aliases": [
+        "抗原"
+      ],
+      "category": "装置・画面操作",
+      "description": "抗体などが認識する測定対象の分子名を記録する欄です。"
+    },
+    {
+      "term": "Apply Sample",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "試料を測定流路へ送り始める操作です。"
+    },
+    {
+      "term": "Auto Alignment",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "レーザー位置などの調整を装置が自動で行う機能です。"
+    },
+    {
+      "term": "COP",
+      "aliases": [
+        "シクロオレフィンポリマー",
+        "Cyclo Olefin Polymer"
+      ],
+      "category": "装置・画面操作",
+      "description": "シクロオレフィンポリマー（Cyclo Olefin Polymer）の略です。透明な樹脂材料で、流路チップの材質として用いられます。"
+    },
+    {
+      "term": "Camera View",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップ内の流路やレーザー位置をカメラ画像で確認する画面です。"
+    },
+    {
+      "term": "CCD2 View",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "分注時の液滴や動作を確認するカメラです。Droplet Selectorでは、インターフェース画面の内側下部にモニターが配置してあります。"
+    },
+    {
+      "term": "DinoCapture 2.0",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "USB顕微鏡などのカメラ映像を表示・保存するためのソフトウェア名です。"
+    },
+    {
+      "term": "Droplet Tester",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "装置へ接続する前に、サンプル側とオイル側の空気漏れなどが無いかを確認するためのソフトです。Droplet Generator制御用PCにインストールされており、デスクトップにアイコンがあります。"
+    },
+    {
+      "term": "Duplicate without data",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "過去の測定条件だけを複製し、測定データはコピーしない操作です。"
+    },
+    {
+      "term": "Dye",
+      "aliases": [
+        "ダイ"
+      ],
+      "category": "装置・画面操作",
+      "description": "使用する蛍光色素の名前を入力または選ぶ欄です。"
+    },
+    {
+      "term": "Export",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定結果などを別のファイル形式で書き出す操作です。"
+    },
+    {
+      "term": "FCS log",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "FCS形式で保存する信号を対数スケールとして扱うための設定です。"
+    },
+    {
+      "term": "Flush",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "強めの流れで流路内の気泡、ゴミ、詰まりなどを洗い流す操作です。"
+    },
+    {
+      "term": "Gate",
+      "aliases": [
+        "ゲート表示"
+      ],
+      "category": "装置・画面操作",
+      "description": "ゲートを示す英語の画面表示です。"
+    },
+    {
+      "term": "Install Chip",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップを装置へ取り付ける操作を示す画面表示です。"
+    },
+    {
+      "term": "Laser / Pressure",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "レーザー位置と、チップ内へ液体を流す圧力を確認・設定する画面です。"
+    },
+    {
+      "term": "Leak Check",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チューブや接続部から空気が漏れていないかを確認する操作です。"
+    },
+    {
+      "term": "LED1 / LED2",
+      "aliases": [
+        "LED1",
+        "LED2"
+      ],
+      "category": "装置・画面操作",
+      "description": "観察用照明の選択名です。LED1は白色照明、LED2は青色照明として案内されています。"
+    },
+    {
+      "term": "Level sensor detect",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "液面センサーが液体の高さや有無を検知したことを知らせる表示です。"
+    },
+    {
+      "term": "MainPush1 / MainPush2",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップ内へ液体を送るための主な圧力設定です。"
+    },
+    {
+      "term": "OnChipFlow",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定、解析、ソーティング、分注などを操作するための装置用ソフトウェア名です。"
+    },
+    {
+      "term": "Oリング",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "輪の形をしたゴム製などの密封部品です。接続部からの漏れを防ぎます。"
+    },
+    {
+      "term": "PMMA",
+      "aliases": [
+        "ポリメチルメタクリレート",
+        "Polymethyl Methacrylate",
+        "アクリル樹脂"
+      ],
+      "category": "装置・画面操作",
+      "description": "ポリメチルメタクリレート（Polymethyl Methacrylate）の略です。透明な樹脂材料で、流路チップの材質として用いられます。"
+    },
+    {
+      "term": "Packing Ok",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "接続部やパッキン周辺に異常がない正常例を示す、マニュアル画像上の見出しです。"
+    },
+    {
+      "term": "Parameter Settings",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定する信号やH・W・A、閾値、表示倍率などを設定する画面です。"
+    },
+    {
+      "term": "Pressure Setting",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "サンプルやオイルを流す圧力を設定する画面です。"
+    },
+    {
+      "term": "Prime",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "シース液などを流路へ流し、流路を液体で満たして気泡を追い出す操作です。"
+    },
+    {
+      "term": "Processing Zone",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定、解析、ゲート作成などの作業を行う画面領域です。"
+    },
+    {
+      "term": "PV",
+      "aliases": [
+        "Process Value"
+      ],
+      "category": "装置・画面操作",
+      "description": "現在装置で測定されている圧力などの値を示す表示です。一般にProcess Valueの略です。"
+    },
+    {
+      "term": "Reagent",
+      "aliases": [
+        "Regent"
+      ],
+      "category": "装置・画面操作",
+      "description": "試薬を意味する英語です。装置画面では試薬用のラインや欄を示します。"
+    },
+    {
+      "term": "Running",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "装置が確認や運転を実行中であることを示す画面表示です。"
+    },
+    {
+      "term": "Sample management",
+      "aliases": [
+        "Sample Management"
+      ],
+      "category": "装置・画面操作",
+      "description": "測定する試料の名前やファイルを作成・管理する画面です。"
+    },
+    {
+      "term": "Save",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "現在の設定や測定結果をファイルへ保存する操作です。"
+    },
+    {
+      "term": "Specimen",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "試料と、その試料に使う測定条件やテンプレートをまとめる画面上の階層です。"
+    },
+    {
+      "term": "Stop",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定や作製動作を停止する操作です。"
+    },
+    {
+      "term": "SV",
+      "aliases": [
+        "Set Value"
+      ],
+      "category": "装置・画面操作",
+      "description": "装置へ指示した目標の圧力などを示す設定値です。一般にSet Valueの略です。"
+    },
+    {
+      "term": "Tip",
+      "aliases": [
+        "チップ先端"
+      ],
+      "category": "装置・画面操作",
+      "description": "液体を吸引・吐出する先端部品の一般名です。製品ごとの仕様は製品一覧で確認します。"
+    },
+    {
+      "term": "Valve calibration",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "バルブが正しい位置とタイミングで動くよう、基準を合わせる調整です。"
+    },
+    {
+      "term": "YUY2 640×480",
+      "aliases": [
+        "YUY2 640x480"
+      ],
+      "category": "装置・画面操作",
+      "description": "カメラ映像の形式と画像サイズを表す設定です。640×480は横と縦の画素数です。"
+    },
+    {
+      "term": "エラーメッセージ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "ソフトや装置が問題を検出したときに表示する説明や番号です。"
+    },
+    {
+      "term": "エンジン",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "入力内容を計算やルールに従って処理し、結果を作るプログラム部分の呼び名です。"
+    },
+    {
+      "term": "オイルリザーバー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "ドロップレット作製に使うオイルを入れておく容器です。"
+    },
+    {
+      "term": "ゲートツール",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "ボックス、ポリゴンなど、ゲートの形を選んで作るための画面上の道具です。"
+    },
+    {
+      "term": "コアアプリ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "追加機能を外しても動作する、実験ナビの中心部分です。"
+    },
+    {
+      "term": "サンプルリザーバー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定またはドロップレット作製に使う試料を入れておく容器です。"
+    },
+    {
+      "term": "シース液",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "細胞や粒子を安定して流し、測定位置へ導くために装置内を流す液体です。"
+    },
+    {
+      "term": "スケール",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "グラフの値をどの間隔や変換方法で表示するかという設定です。"
+    },
+    {
+      "term": "センサー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "光、液面、圧力などの状態を検知して、電気信号へ変える部品です。"
+    },
+    {
+      "term": "ソーティングチップ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "選別や分注の流路が作られたチップを指す一般的な呼び方です。製品ごとの仕様は製品一覧で確認します。"
+    },
+    {
+      "term": "ソーティングリザーバー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "ソーティングした対象をまとめて回収するための容器です。"
+    },
+    {
+      "term": "チップ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "細い流路が作られた小さな部品です。液体を流し、液滴作製や測定を行います。"
+    },
+    {
+      "term": "チップステージ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップホルダーを置き、観察位置やレーザー位置へ合わせる台です。"
+    },
+    {
+      "term": "チップホルダー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップを決められた位置に固定する部品です。"
+    },
+    {
+      "term": "チューブ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップや装置をつなぐ管を指す場合もあるし、サンプルを入れる小さい容器を指すこともある。\n文脈で判断しましょう。"
+    },
+    {
+      "term": "データシート",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "試薬や部品の仕様、使用条件、注意事項などをまとめた資料です。"
+    },
+    {
+      "term": "ドロップレットリザーバー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "作製または回収したドロップレットを一時的にためる容器です。"
+    },
+    {
+      "term": "バルブ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "液体や空気の流れを開閉したり、流れる方向を切り替えたりする部品です。"
+    },
+    {
+      "term": "パッキン",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "接続部のすき間をふさぎ、液体や空気の漏れを防ぐ部品です。"
+    },
+    {
+      "term": "ビーズ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "大きさや蛍光がそろった小さな粒子です。装置の確認や測定条件の調整に使われます。"
+    },
+    {
+      "term": "ピペット",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "少量の液体を吸い取り、別の容器へ移すための器具です。"
+    },
+    {
+      "term": "ファイルマネージメントボタン",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "測定ファイルの作成、複製、保存などを行う画面上のボタンです。"
+    },
+    {
+      "term": "フリーズ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "ソフトの画面が動かず、操作に反応しなくなった状態です。"
+    },
+    {
+      "term": "フレームレート",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "カメラが1秒間に何枚の画像を表示するかを表す値です。"
+    },
+    {
+      "term": "プラグ",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "電源や信号ケーブルの先端にある、差し込んで接続する部品です。"
+    },
+    {
+      "term": "プラズマボール",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "高電圧で発生する放電を目で確認するガ球体状・ガラス製器具です。このソフトでは界面活性剤を不安定にさせドロップレットを壊すことにつかわれます。"
+    },
+    {
+      "term": "プロトコル",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "実験を行う順番、条件、量、時間などをまとめた手順書です。"
+    },
+    {
+      "term": "マイクロピペット",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "µL程度の少量の液体を、設定した量だけ量り取るピペットです。"
+    },
+    {
+      "term": "ライセンス",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "ソフトや機能を使用する権利が有効であることを示す情報です。"
+    },
+    {
+      "term": "リザーバー",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "サンプル、オイル、シース液などを一時的に入れておく容器です。"
+    },
+    {
+      "term": "レーザーアライメント",
+      "aliases": [
+        "Alignment"
+      ],
+      "category": "装置・画面操作",
+      "description": "レーザー光をチップ内の正しい測定位置へ合わせる作業です。"
+    },
+    {
+      "term": "レーン",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "チップ内に複数ある、独立した流路の1本を指します。"
+    },
+    {
+      "term": "加圧",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "液体や空気へ圧力をかけ、流路内を流すことです。"
+    },
+    {
+      "term": "液体補給ユニット",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "サンプルやオイルなどの液体を装置へ供給するための装置部分です。"
+    },
+    {
+      "term": "液面検知",
+      "aliases": [],
+      "category": "装置・画面操作",
+      "description": "容器内の液体の有無や高さをセンサーで確認することです。"
+    },
+    {
+      "term": "FADS",
+      "aliases": [
+        "Fluorescence-Activated Droplet Sorting"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "蛍光を目印にしてドロップレットを選別する技術の略称です。"
+    },
+    {
+      "term": "PCR",
+      "aliases": [
+        "Polymerase Chain Reaction"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "PCRは「Polymerase Chain Reaction（ポリメラーゼ連鎖反応）」の略です。調べたいDNAの一部分を何度もコピーして増やす方法で、もとのDNAがごく少ない場合でも検出や比較をしやすくできます。"
+    },
+    {
+      "term": "pH",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体が酸性かアルカリ性かを表す値です。7付近が中性で、値が低いほど酸性、高いほどアルカリ性です。"
+    },
+    {
+      "term": "QC",
+      "aliases": [
+        "Quality Control",
+        "品質管理"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "測定や作業が決めた品質を保っているか確認することです。Quality Controlの略です。"
+    },
+    {
+      "term": "YGビーズ",
+      "aliases": [
+        "YG"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "黄色から緑色の蛍光を出す、装置確認用の小さな標準粒子です。分注状態などの確認に使われます。"
+    },
+    {
+      "term": "ゲル化物質",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "条件が整うと液体をゲル状に固める物質です。"
+    },
+    {
+      "term": "シアシックニング",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "強く流したり混ぜたりするほど、見かけ上どろどろになりやすい性質です。"
+    },
+    {
+      "term": "シアシニング",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "強く流したり混ぜたりするほど、見かけ上さらさらになりやすい性質です。"
+    },
+    {
+      "term": "シーケンス",
+      "aliases": [
+        "sequencing"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "DNAやRNAを構成する文字の並びを読み取る検査です。"
+    },
+    {
+      "term": "スクリーニング",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "多数の候補から、目的の条件に合うものを効率よく探すことです。"
+    },
+    {
+      "term": "スフェロイド",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "細胞が立体的に集まり、球に近いかたまりになったものです。"
+    },
+    {
+      "term": "データ充足度",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "判断に必要な情報が、どの程度入力・確認されているかを示す目安です。"
+    },
+    {
+      "term": "ナレッジベース",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "判断や説明に使う知識を、検索・参照しやすい形でまとめたものです。"
+    },
+    {
+      "term": "ニュートン流体",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "流す力が変わっても、粘度がほぼ一定の液体です。水などが近い例です。"
+    },
+    {
+      "term": "バッファー",
+      "aliases": [
+        "緩衝液"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "酸性・アルカリ性の変化を小さくし、試料を安定した状態に保つための液体です。"
+    },
+    {
+      "term": "ヒューリスティック",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "厳密な正解を保証する計算ではなく、経験則から実用的な候補や注意点を出す方法です。"
+    },
+    {
+      "term": "ルールベース",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "人が決めた条件分岐や計算規則に従って結果を出す方式です。"
+    },
+    {
+      "term": "レオメーター",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体やゲルへ力を加え、流れ方や変形の仕方を詳しく測る装置です。"
+    },
+    {
+      "term": "培地",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "細胞や微生物が生きたり増えたりするために必要な栄養分を含む液体です。"
+    },
+    {
+      "term": "培養",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "細胞や微生物を、温度や栄養などを整えた環境で生かしたり増やしたりすることです。"
+    },
+    {
+      "term": "増粘剤",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体を流れにくくし、粘度を高くするために加える物質です。"
+    },
+    {
+      "term": "活性",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "細胞、微生物、酵素などが本来の働きをしている程度です。"
+    },
+    {
+      "term": "流動特性",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体が力を受けたとき、どのように流れやすさが変化するかという性質です。"
+    },
+    {
+      "term": "添加物",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "主な成分へ追加して、性質や働きを調整する物質です。"
+    },
+    {
+      "term": "物性",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "粘度、密度、弾性など、材料や液体が持つ物理的な性質です。"
+    },
+    {
+      "term": "球形液滴",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "完全またはほぼ球の形をした液滴です。体積計算では球形と仮定することがあります。"
+    },
+    {
+      "term": "生存性",
+      "aliases": [
+        "viability"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "処理後に細胞や微生物が生きている程度です。"
+    },
+    {
+      "term": "生物適合性",
+      "aliases": [
+        "biocompatibility"
+      ],
+      "category": "実験条件・品質管理",
+      "description": "材料や試薬が、細胞などへ大きな悪影響を与えず使える性質です。"
+    },
+    {
+      "term": "粘度",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体の流れにくさ、つまり「どろどろ」「さらさら」の程度を表す性質です。"
+    },
+    {
+      "term": "粘度計",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体の粘度を測る装置です。"
+    },
+    {
+      "term": "細胞株",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "1つの細胞または同じ組織の細胞をもとに増やし、実験で繰り返し使えるよう保存・管理している細胞の集まりです。"
+    },
+    {
+      "term": "組成",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "液体や試料に、どの成分がどの程度含まれているかという内容です。"
+    },
+    {
+      "term": "菌株",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "1つの菌をもとに増やし、同じ特徴を持つものとして保存・管理している微生物の集まりです。"
+    },
+    {
+      "term": "適合情報",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "試料、材料、装置などの組み合わせが問題なく使えるかを示す確認情報です。"
+    },
+    {
+      "term": "酵素活性",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "酵素が化学反応を進める働きの強さです。"
+    },
+    {
+      "term": "閉域",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "外部ネットワークへデータを送らず、管理された環境の中だけで処理することです。"
+    },
+    {
+      "term": "非ニュートン流体",
+      "aliases": [],
+      "category": "実験条件・品質管理",
+      "description": "流す力や速さによって、見かけの粘度が変わる液体です。"
+    },
+    {
+      "term": "バイオハザード",
+      "aliases": [],
+      "category": "安全・実験管理",
+      "description": "細菌、ウイルス、細胞など、生物由来の試料による感染や環境への危険を示す考え方や表示です。"
+    },
+    {
+      "term": "廃液",
+      "aliases": [],
+      "category": "安全・実験管理",
+      "description": "実験や洗浄のあとに不要となった液体です。内容に応じた方法で回収・処分します。"
+    },
+    {
+      "term": "生物由来試料",
+      "aliases": [],
+      "category": "安全・実験管理",
+      "description": "細胞、微生物、血液、組織など、生物から得た、または生物を含む試料です。"
+    },
+    {
+      "term": "防護具",
+      "aliases": [],
+      "category": "安全・実験管理",
+      "description": "手袋、保護メガネ、白衣など、試料や薬品から体を守るために身に着けるものです。"
+    },
+    {
+      "term": "除染",
+      "aliases": [],
+      "category": "安全・実験管理",
+      "description": "装置や作業場所に残った微生物や生物由来物質を、安全なレベルまで取り除く処理です。"
+    },
+    {
+      "term": "cells/mL",
+      "aliases": [],
+      "category": "単位・ファイル",
+      "description": "液体1 mLの中に細胞が何個あるかを示す濃度の単位です。"
+    },
+    {
+      "term": "CFU",
+      "aliases": [
+        "Colony Forming Unit"
+      ],
+      "category": "単位・ファイル",
+      "description": "培養したときに増えて集落を作れる微生物の数を見積もる単位です。"
+    },
+    {
+      "term": "CV",
+      "aliases": [
+        "変動係数",
+        "Coefficient of Variation"
+      ],
+      "category": "単位・ファイル",
+      "description": "値のばらつきを平均値に対する割合で表したものです。小さいほど大きさなどがそろっている目安になります。"
+    },
+    {
+      "term": "DOI",
+      "aliases": [
+        "Digital Object Identifier"
+      ],
+      "category": "単位・ファイル",
+      "description": "研究論文などをインターネット上で一意に見つけるための識別番号です。"
+    },
+    {
+      "term": "JSON",
+      "aliases": [
+        "JavaScript Object Notation"
+      ],
+      "category": "単位・ファイル",
+      "description": "項目名と値を組にして保存する文字ファイル形式です。このソフトでは進行状況や入力内容の保存に使います。"
+    },
+    {
+      "term": "kPa",
+      "aliases": [
+        "キロパスカル"
+      ],
+      "category": "単位・ファイル",
+      "description": "キロパスカル。圧力を表す単位です。装置では液体を流す圧力の設定に使います。"
+    },
+    {
+      "term": "mL",
+      "aliases": [
+        "ミリリットル"
+      ],
+      "category": "単位・ファイル",
+      "description": "ミリリットル。1000分の1リットルです。"
+    },
+    {
+      "term": "mPa·s",
+      "aliases": [],
+      "category": "単位・ファイル",
+      "description": "粘度を表す単位です。常温の水はおおよそ1 mPa·sに近い値です。"
+    },
+    {
+      "term": "nm",
+      "aliases": [
+        "ナノメートル"
+      ],
+      "category": "単位・ファイル",
+      "description": "ナノメートル。10億分の1メートルです。光の波長を表すときによく使います。"
+    },
+    {
+      "term": "particles/mL",
+      "aliases": [],
+      "category": "単位・ファイル",
+      "description": "液体1 mLの中に粒子が何個あるかを示す濃度の単位です。"
+    },
+    {
+      "term": "pL",
+      "aliases": [
+        "ピコリットル"
+      ],
+      "category": "単位・ファイル",
+      "description": "ピコリットル。1兆分の1リットルです。非常に小さな液滴の体積を表します。"
+    },
+    {
+      "term": "SVG",
+      "aliases": [],
+      "category": "単位・ファイル",
+      "description": "図形や線を数値で保存する画像形式です。拡大しても輪郭が荒れにくい特徴があります。"
+    },
+    {
+      "term": "w/v%",
+      "aliases": [],
+      "category": "単位・ファイル",
+      "description": "液体の体積に対する物質の重さを示す百分率です。通常、100 mL中に何g含まれるかを表します。"
+    },
+    {
+      "term": "wt%",
+      "aliases": [],
+      "category": "単位・ファイル",
+      "description": "重さを基準にした百分率です。溶液全体100 g中に何g含まれるかを表します。"
+    },
+    {
+      "term": "µL",
+      "aliases": [
+        "μL",
+        "マイクロリットル"
+      ],
+      "category": "単位・ファイル",
+      "description": "マイクロリットル。100万分の1リットルです。少量の液体量を表します。"
+    },
+    {
+      "term": "µm",
+      "aliases": [
+        "μm",
+        "マイクロメートル"
+      ],
+      "category": "単位・ファイル",
+      "description": "マイクロメートル。100万分の1メートルです。細胞や液滴の大きさを表すときに使います。"
+    }
+  ]
+}

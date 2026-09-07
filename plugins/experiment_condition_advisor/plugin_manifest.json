@@ -1,0 +1,18 @@
+{
+  "plugin_id": "experiment_condition_advisor",
+  "display_name": "実験条件検討",
+  "plugin_type": "paid_optional",
+  "version": "0.1.0-prototype",
+  "navigation_version": "v34-no354",
+  "entrypoint": "plugins.experiment_condition_advisor.routes:render",
+  "enabled_by_default": false,
+  "requires_license": true,
+  "requires_ai_backend": false,
+  "ai_mode": "closed_local_rule_prototype",
+  "requires_pdf_backend": true,
+  "pdf_dependency": "reportlab",
+  "network_access": "none",
+  "data_classification": "confidential_experiment_data",
+  "plugin_data_schema_version": 1,
+  "removal_contract": "The core application must start and all six workflows must remain usable after this plugin directory is removed."
+}

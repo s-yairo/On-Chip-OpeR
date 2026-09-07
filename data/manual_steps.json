@@ -1,0 +1,4495 @@
+{
+  "manual_basis": {
+    "manual_version": "1.0.4",
+    "software_version": "3.3.0.3",
+    "note": "Uploaded On-chip Droplet Selector user manual",
+    "dg_800_manual_version": "1.3.0S",
+    "dg_1060_1100_manual_version": "2.0.0S",
+    "gmd_protocol": "GMD作製プロトコル（アガロース）",
+    "dg_1060_1100_assumption": "ユーザー指定により、DG1060とDG1100を区別せず、同じ操作手順の共通工程として扱う。"
+  },
+  "safety_check": [
+    "本装置は研究目的にのみ使用する",
+    "装置カバーを外したり改造したりしない",
+    "適切な防護服・保護メガネ・手袋を着用する",
+    "装置・ケーブル・チップに異常がある場合は操作を開始しない"
+  ],
+  "workflows": {
+    "analysis": {
+      "label": "ソーティングを行う",
+      "description": "装置の起動から測定、保存、終了までを、初めて操作する人向けに1工程ずつ案内します。",
+      "steps": [
+        {
+          "id": "p00",
+          "title": "事前に準備するもの",
+          "instruction": "施設SOPと実験計画を確認し、操作開始前に必要な物品を手元へ準備してください。",
+          "why": "装置操作の途中で不足品に気づくことを防ぎ、安全に一連の操作を進めるためです。",
+          "warning": "不足品や破損がある場合は装置操作を開始せず、必要な物品を準備または交換してください。",
+          "decision_support": [
+            "使用する物品、液量、廃棄方法は施設SOPと実験計画を優先してください。",
+            "生物由来試料を扱う場合は、適切な防護服、保護メガネ、手袋を着用してください。",
+            "チップとパッキンまたはホルダーは、使用する装置・チップに適合するものを選んでください。"
+          ],
+          "reference": "ユーザーマニュアル「安全性および制限事項 0-3」「1-1 装置概要」「1-2 流路系」「2-3-10 Valve calibration」",
+          "current_status": "装置の操作を始める前に、今回の実験に必要な物品をそろえる段階です。",
+          "task": "施設SOPと実験計画を確認し、以下の物品を手元に準備してください。",
+          "notice": "使用する物品や液量は、施設SOPと実験計画を優先してください。不足品や破損がある場合は、装置の操作を開始せず、必要な物品を準備してください。",
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "checks": [
+            "実験に適した保護具（白衣、保護メガネ、手袋）がある",
+            "今回使用するサンプルが準備されている",
+            "施設SOPで指定されたシース液またはバッファーがある",
+            "実験条件に合うソーティングチップがある",
+            "使用する装置とチップに適合するパッキンまたはチップホルダーがある",
+            "使用するチップ、パッキン、容器に破損や汚れがない",
+            "実験条件、使用する蛍光色、測定対象を確認できる資料がある",
+            "試料区分に応じた廃棄・除染用品が準備されている",
+            "必要な場合、回収液と回収先が準備されている",
+            "施設SOPまたは装置画面の指示で使用する場合、使用チップに対応する穴塞ぎチップがある"
+          ]
+        },
+        {
+          "id": "a01",
+          "title": "使用環境と外観を確認",
+          "instruction": "装置周辺、電源、ケーブル、液体漏れ、設置環境を目視確認してください。",
+          "why": "電気・レーザー・液漏れ・通信不良のリスクを操作前に除外するためです。",
+          "checks": [
+            "装置の上や周囲に、操作を妨げる物がない",
+            "装置・チップ・チューブ・接続部・装置の下に液漏れがない",
+            "電源ケーブルや通信ケーブルに、抜け・折れ・傷がない",
+            "装置の位置が前回使用時から変わっていない"
+          ],
+          "warning": "異常がある場合は電源を入れず、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "decision_support": [
+            "設置温度の目安は23±5℃、湿度40〜80%、結露なし",
+            "電源は指定された電源を使用"
+          ],
+          "reference": "安全性および制限事項 0-2〜0-8",
+          "check_help": {
+            "装置・チップ・チューブ・接続部・装置の下に液漏れがない": "液が見つかった場合は電源を入れず、触れる前に適切な保護具を着用してください。装置担当者および保守（tech@on-chip.co.jp）へ連絡します。"
+          },
+          "normal_state": [
+            "装置周辺が乾いており、ケーブルが確実につながっている",
+            "装置に警告表示や目立つ損傷がない"
+          ],
+          "current_status": "「使用環境と外観を確認」を始める前の状態です。",
+          "task": "装置周辺、電源、ケーブル、液体漏れ、設置環境を目視確認してください。",
+          "screen_images": [
+            {
+              "filename": "leak.png",
+              "title": "Leak"
+            },
+            {
+              "filename": "packing_ok.png",
+              "title": "Packing Ok"
+            }
+          ],
+          "ok_state": [
+            "装置周辺が乾いており、ケーブルが確実につながっている",
+            "装置に警告表示や目立つ損傷がない"
+          ],
+          "ng_state": [
+            "異常がある場合は電源を入れず、保守（tech@on-chip.co.jp）へご連絡ください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "packing_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "packing_ng.png",
+              "title": "NG例"
+            }
+          ]
+        },
+        {
+          "id": "a02",
+          "title": "電源を入れる",
+          "instruction": "電源BOXのスイッチをONにし、その後に制御ノートPCを起動してください。",
+          "why": "装置と制御PCを所定の順序で立ち上げるためです。",
+          "checks": [
+            "電源BOXのスイッチがONになっている",
+            "制御ノートPCが起動している",
+            "電源BOXの三極プラグを、アース付き三極コンセントへ直接接続している"
+          ],
+          "decision_support": [],
+          "reference": "4-2 装置とソフトウェアの立ち上げ / 1-5 制御PC",
+          "current_status": "「電源を入れる」を始める前の状態です。",
+          "task": "電源BOXのスイッチをONにし、その後に制御ノートPCを起動してください。",
+          "screen_images": [
+            {
+              "filename": "mainpush.png",
+              "title": "MainPush"
+            }
+          ],
+          "ok_state": [
+            "電源BOXのスイッチがONになっている",
+            "制御ノートPCが起動している",
+            "電源BOXの三極プラグを、アース付き三極コンセントへ直接接続している"
+          ],
+          "ng_state": [
+            "エラー表示、液漏れ、異音、想定外の画面がある"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a03",
+          "title": "OnChipFlowを起動してログイン",
+          "instruction": "OnChipFlowを起動し、目的に合うアカウントでOnlineログインしてください。",
+          "why": "データの保存先、閲覧範囲、ユーザー権限を正しく分けるためです。",
+          "checks": [
+            "装置のシャッターが閉まっていることを確認した",
+            "デスクトップのアイコンからOnChipFlowを起動",
+            "Guest Loginにチェックを入れて「OnLine」ボタンをクリックする",
+            "OnChipFlowのメイン画面が表示された"
+          ],
+          "decision_support": [],
+          "reference": "4-3 ログイン",
+          "normal_state": [
+            "画面左側に、自分のユーザー名または「Guest」が表示される",
+            "画面の操作ができ、エラーやログイン失敗の表示がない"
+          ],
+          "current_status": "「OnChipFlowを起動してログイン」を始める前の状態です。",
+          "task": "OnChipFlowを起動し、目的に合うアカウントでOnlineログインしてください。",
+          "screen_images": [
+            {
+              "filename": "selector_main_screen.png",
+              "title": "メイン画面"
+            }
+          ],
+          "ok_state": [
+            "画面左側に、自分のユーザー名または「Guest」が表示される",
+            "画面の操作ができ、エラーやログイン失敗の表示がない"
+          ],
+          "ng_state": [
+            "装置のシャッターが開いた状態では、OnChipFlowのメインメニューは開きません。シャッターを閉じてからログインしてください。",
+            "エラー表示、液漏れ、異音、想定外の画面がある"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a04",
+          "title": "サンプルファイルを作成",
+          "instruction": "Sample Managementの4階層を確認し、既存の設定をコピーするか、新しく作成するかを選択してください。",
+          "why": "元の測定結果を守りながら、使用するSAMPLEを正しい階層と手順で準備するためです。",
+          "checks": [
+            "Sample Management内に、使用するSAMPLEが作成された",
+            "作成したSAMPLEを選択した",
+            "SAMPLEに過去の測定データが入っていないことを確認した"
+          ],
+          "warning": "測定データ入りのSAMPLEを誤って上書きしないでください。",
+          "decision_support": [
+            "同じ測定条件やゲート設定を再利用する場合は、既存のSAMPLEをコピーします",
+            "初めて使用する場合や、新しい分類で管理する場合は、Mini-Groupから新しく作成します"
+          ],
+          "reference": "簡易マニュアル P6「サンプルファイルの作成」 / 4-4 サンプルファイルの作成と選択 / 2-2 Sample management",
+          "branches": [
+            {
+              "value": "duplicate",
+              "label": "既存のファイルをコピーして、設定を引き継いで作成する",
+              "instruction": "同じ測定条件やゲート設定を再利用する場合は、既存のSAMPLEから測定データを含まない複製を作成します。",
+              "task": "既存のSAMPLEを右クリックし、「Duplicate without data」で空のSAMPLEを作成してください。",
+              "operation_steps": [
+                "Sample Managementから、設定を引き継ぎたいSAMPLEを探します。",
+                "対象のSAMPLEを右クリックします。",
+                "「Duplicate without data」をクリックします。",
+                "元のSAMPLEの下に、データが入っていない新しいSAMPLEが作成されたことを確認します。",
+                "作成された新しいSAMPLEを選択します。"
+              ],
+              "checks": [
+                "Sample Management内に、使用するSAMPLEが作成された",
+                "作成したSAMPLEを選択した",
+                "SAMPLEに過去の測定データが入っていないことを確認した"
+              ],
+              "show_checks_after_operations": true,
+              "warning": "測定データが入ったSAMPLEには、新しい測定データを上書きできません。必ずデータの入っていないSAMPLEを作成してください。",
+              "notice": "測定データが入ったSAMPLEには、新しい測定データを上書きできません。必ずデータの入っていないSAMPLEを作成してください。",
+              "show_screen_section": false,
+              "ok_state": [
+                "データが入っていない新しいSAMPLEが作成されている",
+                "作成したSAMPLEが選択されている"
+              ],
+              "ng_state": [
+                "測定データが入った元のSAMPLEを直接編集または上書きしようとしている",
+                "作成したSAMPLEに過去の測定データが残っている"
+              ]
+            },
+            {
+              "value": "new",
+              "label": "新しいサンプルファイルを作成する",
+              "instruction": "初めて使用する場合や、新しい分類で管理する場合は、Mini-Group、SPECIMEN、SAMPLEの順に作成します。",
+              "task": "Mini-Group、SPECIMEN、SAMPLEを、下の手順どおり上から順に作成してください。",
+              "operation_groups": [
+                {
+                  "title": "① Mini-Groupを作成",
+                  "steps": [
+                    "画面左上の「Guest」を右クリックします。",
+                    "「Create a new mini-Group」をクリックします。",
+                    "使用者名や実験名など、管理しやすい名前を入力します。"
+                  ]
+                },
+                {
+                  "title": "② SPECIMENを作成",
+                  "steps": [
+                    "作成したMini-Groupを右クリックします。",
+                    "「Create a new Specimen」をクリックします。",
+                    "サンプルの種類を選択します。",
+                    "SPECIMENを新規作成する場合は、「Empty」→「New」をクリックします。"
+                  ]
+                },
+                {
+                  "title": "③ SAMPLEを作成",
+                  "steps": [
+                    "作成したSPECIMENを右クリックします。",
+                    "「Create a new Sample」をクリックします。",
+                    "使用するチップ、ドロップレットサイズ、用途に合ったテンプレートを選択します。",
+                    "作成されたSAMPLEを選択します。"
+                  ]
+                }
+              ],
+              "checks": [
+                "Sample Management内に、使用するSAMPLEが作成された",
+                "作成したSAMPLEを選択した",
+                "SAMPLEに過去の測定データが入っていないことを確認した"
+              ],
+              "show_checks_after_operations": true,
+              "warning": "すでに測定データが入っているSAMPLEを選んだ場合は、設定を変更しないでください。",
+              "notice": "名前に使用できる文字は、アルファベット、数字、半角ハイフン（-）のみです。",
+              "show_screen_section": true,
+              "screen_images": [
+                {
+                  "filename": "selector_create_minigroup.png",
+                  "title": "Mini-Groupの作成"
+                },
+                {
+                  "filename": "selector_create_specimen.png",
+                  "title": "SPECIMENの作成"
+                },
+                {
+                  "filename": "selector_create_sample.png",
+                  "title": "SAMPLEの作成"
+                }
+              ],
+              "ok_state": [
+                "Sample Management内に、使用するSAMPLEが作成されている",
+                "作成したSAMPLEが選択されている",
+                "SAMPLEに過去の測定データが入っていない"
+              ],
+              "ng_state": [
+                "Mini-Group、SPECIMEN、SAMPLEのいずれかが作成されていない",
+                "測定データが入ったSAMPLEを選択している"
+              ]
+            }
+          ],
+          "section_heading": "現在の状況",
+          "current_status": "OnChipFlowへのログインが完了し、画面左側にSample Managementが表示されている状態です。",
+          "task": "使用するSAMPLEの準備方法を選択してください。選択後、表示された操作を上から順に実施します。",
+          "ok_state": [
+            "Sample Management内に、使用するSAMPLEが作成された",
+            "作成したSAMPLEを選択した",
+            "SAMPLEに過去の測定データが入っていないことを確認した"
+          ],
+          "ng_state": [
+            "測定データ入りのSAMPLEを誤って上書きしようとしている"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": [],
+          "branch_guidance": "同じ測定条件やゲート設定を再利用する場合は、既存のSAMPLEをコピーします。\n\n初めて使用する場合や、新しい分類で管理する場合は、Mini-Groupから新しく作成します。",
+          "show_screen_section": false
+        },
+        {
+          "id": "a08",
+          "title": "チップとバッファーを準備・設置",
+          "instruction": "使用する試料、液滴サイズ、チップを選択し、表示された液体と量を各リザーバーへ入れてから、チップ内の液体がこぼれないようにゆっくりチップホルダーへ配置してください。",
+          "why": "気密性、流路の健全性、液こぼれ防止を確保するためです。",
+          "checks": [
+            "パッキンが確実にはまっている",
+            "圧力ユニットを正しくロックした"
+          ],
+          "decision_support": [
+            "80 µmと150 µmチップを取り違えない",
+            "手や指を挟まないよう注意"
+          ],
+          "reference": "1-2 マイクロ流路チップ / 1-3-2 チップステージ / 4-10 Install Chip",
+          "current_status": "「チップとバッファーを準備・設置」を始める前の状態です。",
+          "task": "使用する試料、液滴サイズ、チップを選択してください。選択後、表示されたチェック項目に従って各リザーバーを準備し、チップを設置してください。",
+          "screen_images": [
+            {
+              "filename": "chip_install.png",
+              "title": "Chip Install"
+            },
+            {
+              "filename": "packing_ok.png",
+              "title": "Packing Ok"
+            }
+          ],
+          "ok_state": [
+            "選択した条件の各リザーバーに、指定された液体と量が入っている",
+            "パッキンが確実にはまっている",
+            "圧力ユニットを正しくロックした"
+          ],
+          "ng_state": [],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "packing_ok.png",
+              "title": "OK例"
+            },
+            {
+              "filename": "bubble_ok.png",
+              "title": "OK例"
+            },
+            {
+              "filename": "leak_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "packing_ng.png",
+              "title": "NG例"
+            },
+            {
+              "filename": "bubble_ng.png",
+              "title": "NG例"
+            },
+            {
+              "filename": "leak_ng.png",
+              "title": "NG例"
+            }
+          ],
+          "branches": [
+            {
+              "value": "emulsion_20_50",
+              "label": "Emulsion：20～50 µm／2D Chip-SD1000",
+              "instruction": "Emulsion（20～50 µm）用の2D Chip-SD1000を準備し、各リザーバーへ指定された液体と量を入れます。",
+              "checks": [
+                "シースリザーバーにフッ素オイルを9 mL入れた",
+                "ソーティングリザーバーにフッ素オイルを1.5 mL入れた",
+                "回収リザーバーにフッ素オイルを1 mL入れた",
+                "サンプルリザーバーへ逆流したオイルを除去した",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            },
+            {
+              "value": "emulsion_50_125",
+              "label": "Emulsion：50～125 µm／2D Chip-SD1000v150",
+              "instruction": "Emulsion（50～125 µm）用の2D Chip-SD1000v150を準備し、各リザーバーへ指定された液体と量を入れます。",
+              "checks": [
+                "シースリザーバーにフッ素オイルを9 mL入れた",
+                "ソーティングリザーバーにフッ素オイルを1.5 mL入れた",
+                "回収リザーバーにフッ素オイルを0.5 mL入れた",
+                "サンプルリザーバーへ逆流したオイルを除去した",
+                "サンプルリザーバーにドロップレットを100 µL以上入れた",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            },
+            {
+              "value": "gmd_20_50",
+              "label": "GMD：20～50 µm／2D Chip-SD1000",
+              "instruction": "GMD（20～50 µm）用の2D Chip-SD1000を準備し、各リザーバーへ指定されたOn-chip T Bufferの量を入れます。",
+              "checks": [
+                "サンプルリザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "シースリザーバーにOn-chip T Bufferを9 mL入れた",
+                "ソーティングリザーバーにOn-chip T Bufferを1.5 mL入れた",
+                "回収リザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            },
+            {
+              "value": "gmd_50_125",
+              "label": "GMD：50～125 µm／2D Chip-SD1000v150",
+              "instruction": "GMD（50～125 µm）用の2D Chip-SD1000v150を準備し、各リザーバーへ指定されたOn-chip T Bufferの量を入れます。",
+              "checks": [
+                "サンプルリザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "シースリザーバーにOn-chip T Bufferを9 mL入れた",
+                "ソーティングリザーバーにOn-chip T Bufferを1.5 mL入れた",
+                "回収リザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            }
+          ],
+          "branch_guidance": "使用する試料と、液滴サイズに対応するチップ条件を選択してください。"
+        },
+        {
+          "id": "a09",
+          "title": "Prime / Flush / Check Line",
+          "instruction": "SOPとProcessing Zoneに従い、Prime、必要時のFlush、Check Lineを行い、異常がないかを確認してください。",
+          "why": "測定前に流路を液で満たし、気泡や詰まり、流路異常を減らすためです。",
+          "checks": [
+            "流路に大きな気泡がない",
+            "チップ周辺や接続部に、液体のにじみや滴下がない",
+            "Check Lineを実行し、完了メッセージが表示されたことを確認しました",
+            "異常メッセージがない"
+          ],
+          "warning": "流路に大きな気泡が残る、チップ周辺や接続部に液体のにじみ・滴下がある、またはCheck Lineでエラーメッセージが繰り返し表示される場合は異常です。Check Lineのエラーは2〜3回再実行し、それでも再び表示される場合は故障の可能性があります。",
+          "decision_support": [
+            "注釈：FlushはPrimeよりも強い流れを発生させ、流路内の気泡や小さなダスト、詰まりを取り除く操作です。実行中はCamera Viewで流路の状態を確認してください。",
+            "小さな気泡・ダスト・詰まりにFlushが有効な場合があります",
+            "改善しない場合は操作を停止"
+          ],
+          "reference": "2-3 Processing zone / 2-3-7〜2-3-9",
+          "current_status": "「Prime / Flush / Check Line」を始める前の状態です。",
+          "task": "SOPとProcessing Zoneに従い、Prime、必要時のFlush、Check Lineを行い、異常がないかを確認してください。",
+          "screen_images": [
+            {
+              "filename": "prime.png",
+              "title": "Prime"
+            },
+            {
+              "filename": "prime_ok.png",
+              "title": "Prime Ok"
+            }
+          ],
+          "ok_state": [
+            "流路に大きな気泡がない",
+            "チップ周辺や接続部に、液体のにじみや滴下がない",
+            "Check Lineを実行し、完了メッセージが表示されたことを確認しました",
+            "異常メッセージがない"
+          ],
+          "ng_state": [
+            "流路に大きな気泡が残っている",
+            "チップ周辺や接続部に、液体のにじみや滴下がある",
+            "Check Lineを2〜3回再実行しても、エラーメッセージが再び表示される"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "prime_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "prime_ng.png",
+              "title": "NG例"
+            }
+          ],
+          "glossary": {
+            "Prime": "チップの流路に圧力をかけてシース液を流し、流路を液で満たして気泡を追い出す操作です。",
+            "Flush": "Primeよりも強い流れを上流側から廃液側へ発生させ、流路内の気泡や小さなダスト、詰まりを取り除く操作です。"
+          },
+          "check_help": {
+            "流路に大きな気泡がない": "PC画面右下の「Camera View」に表示される流路の映像を見て、流路内に大きな気泡がないことを確認します。"
+          }
+        },
+        {
+          "id": "a10",
+          "title": "レーザーアライメントを確認",
+          "instruction": "Camera Viewと測定信号を確認し、レーザーが測定位置に合っていることを確認します。アライメント操作後は、完了表示と信号の両方を確認してください。",
+          "why": "チップ交換ごとの差異を補正し、安定した検出を行うためです。",
+          "checks": [
+            "レーザー光が測定用流路から大きく外れていない",
+            "アライメントの正常終了を示す表示が出た",
+            "信号が画面内にまとまりとして表示されている"
+          ],
+          "warning": "判断基準が不明な場合は、support@on-chip.co.jpまでお問い合わせください。",
+          "decision_support": [
+            "チップ交換で光学位置が変わり得ます",
+            "Camera Viewだけでなく信号も確認"
+          ],
+          "reference": "4-12 レーザーのアライメント / 1-4-3 チップ内光学系",
+          "operation_steps": [
+            "Camera Viewを開き、流路とレーザー光の位置を確認します。",
+            "テンプレートまたはSOPに従ってアライメント操作を実行します。",
+            "画面に「完了」「Success」などの正常終了表示が出たことを確認します。",
+            "測定画面に表示された信号が、画面端に張り付いたり、左下に押しつぶされたような状態になっていないことを確認します。"
+          ],
+          "check_help": {
+            "アライメントの正常終了を示す表示が出た": "エラーや警告が表示された場合は先に進みません。表示名はソフトウェアの版により異なることがあります。",
+            "信号が画面内にまとまりとして表示されている": "信号が出ない、画面端に張り付く、左下に押しつぶされる場合は正常とは判断しません。過去の正常データと比較します。"
+          },
+          "normal_state": [
+            "Camera Viewでレーザー光が測定用流路の位置に重なっている",
+            "アライメント完了を示す表示が出ている",
+            "信号が画面内に収まり、点のまとまりとして見える"
+          ],
+          "current_status": "「レーザーアライメントを確認」を始める前の状態です。",
+          "task": "Camera Viewと測定信号を確認し、レーザーが測定位置に合っていることを確認します。アライメント操作後は、完了表示と信号の両方を確認してください。",
+          "screen_images": [
+            {
+              "filename": "alignment.png",
+              "title": "Alignment"
+            },
+            {
+              "filename": "laser_alignment_ok.png",
+              "title": "Laser Alignment Ok"
+            }
+          ],
+          "ok_state": [
+            "Camera Viewでレーザー光が測定用流路の位置に重なっている",
+            "アライメント完了を示す表示が出ている",
+            "信号が画面内に収まり、点のまとまりとして見える"
+          ],
+          "ng_state": [
+            "判断基準が不明な場合は、support@on-chip.co.jpまでお問い合わせください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "laser_alignment_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "laser_alignment_ng.png",
+              "title": "NG例"
+            }
+          ]
+        },
+        {
+          "id": "a11",
+          "title": "Apply SampleしてRun",
+          "instruction": "流路チップ内のサンプルを確認してからApply Sampleを行い、Runを開始します。開始後は、測定信号が継続していることを確認します。",
+          "why": "測定中は、イベントの取得状況を確認し、異常がないことを確認してください。",
+          "checks": [
+            "サンプルリザーバーにドロップレットを20 µL以上入れた",
+            "測定画面に信号が表示されている",
+            "イベント数が増え、グラフが継続して更新されている",
+            "測定信号が継続し、気泡や液漏れなどの異常がない",
+            "異常音や停止・警告メッセージがない"
+          ],
+          "warning": "イベント数が増えない、液漏れ、大きな気泡、異常音、警告がある場合は測定を停止し、装置担当者へ確認してください。",
+          "decision_support": [
+            "イベントが出ない場合は流路、Threshold、Gain、レーザーを順に確認",
+            "液面検知時は保存確認後、原因を除去"
+          ],
+          "reference": "4-9 Apply Sample / 4-13 Run",
+          "operation_steps": [
+            "サンプル容器が接続され、必要な液量があることを確認します。",
+            "Apply Sampleを実行します。",
+            "Runを開始し、イベント数とグラフが更新されることを確認します。",
+            "測定中は、測定信号、気泡、液漏れ、異常音や警告の有無を確認します。"
+          ],
+          "check_help": {
+            "測定画面に信号が表示されている": "信号が出ない場合は、Camera Viewで大きな気泡の有無を確認します。",
+            "イベント数が増え、グラフが継続して更新されている": "イベントとは、装置が1個の粒子や細胞として検出した信号です。数が増えない、または一瞬で止まる場合は正常ではありません。",
+            "測定信号が継続し、気泡や液漏れなどの異常がない": "測定開始直後と測定中に、Camera View、接続部、装置周辺を確認します。"
+          },
+          "normal_state": [
+            "イベント数が少しずつ増え、グラフ上に信号が継続して表示される",
+            "大きな気泡や液漏れがない"
+          ],
+          "current_status": "「Apply SampleしてRun」を始める前の状態です。",
+          "task": "流路チップ内のサンプルを確認してからApply Sampleを行い、Runを開始します。開始後は、測定信号が継続していることを確認します。",
+          "screen_images": [
+            {
+              "filename": "run_screen.png",
+              "title": "Run Screen"
+            },
+            {
+              "filename": "signal.png",
+              "title": "Signal"
+            }
+          ],
+          "ok_state": [
+            "イベント数が少しずつ増え、グラフ上に信号が継続して表示される",
+            "大きな気泡や液漏れがない"
+          ],
+          "ng_state": [
+            "イベント数が増えない、液漏れ、大きな気泡、異常音、警告がある場合は測定を停止し、装置担当者へ確認してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a12",
+          "title": "ゲート・Gain・Thresholdを調整",
+          "instruction": "対照サンプルを基準に、目的の集団が見える位置とゲート範囲を確認します。信号が画面端に張り付く、集団が分離しない、目的集団がゲートから外れる場合は、測定を進めず設定を確認してください。",
+          "why": "対象集団の識別と解析精度を確保するためです。",
+          "checks": [
+            "目的集団が画面内にまとまりとして表示されている",
+            "信号が上端・右端に張り付かず、左下にも押しつぶされていない",
+            "目的集団を囲み、不要な点をできるだけ含まないゲートになっている",
+            "ゲートを決めた根拠を記録した",
+            "Compensationが必要か、単染色対照で確認した"
+          ],
+          "warning": "見た目だけで恣意的にゲートを設定せず、陰性・単染色・既知対照を優先してください。",
+          "decision_support": [
+            "Gainは検出器ごとの感度に影響",
+            "Numerical Factorは表示上の定数倍",
+            "補正は適切なコントロールが必要"
+          ],
+          "reference": "4-13-1〜4-13-8",
+          "operation_steps": [
+            "陰性対照と陽性対照（必要に応じて単染色対照）を表示します。",
+            "目的の点の集まりがどこにあるか確認します。",
+            "目的集団を囲み、関係のない点をできるだけ入れないようにゲートを置きます。",
+            "信号が画面端に張り付く場合はGainが高すぎないか、左下に押しつぶされる場合は低すぎないか確認します。",
+            "Thresholdを変更した場合は、目的集団が消えていないか、ノイズだけが急増していないか確認します。",
+            "複数の蛍光色素を使う場合は、単染色対照を使ってCompensationの必要性を確認します。"
+          ],
+          "check_help": {
+            "目的集団が画面内にまとまりとして表示されている": "陰性対照と陽性対照の位置関係が、過去の正常データと大きく違わないことも確認します。",
+            "信号が上端・右端に張り付かず、左下にも押しつぶされていない": "上端・右端に点が密集すると強すぎる可能性があります。左下に点が固まって集団を区別できない場合は弱すぎる可能性があります。",
+            "ゲートを決めた根拠を記録した": "使用した対照サンプル、参照した過去データ、ゲート変更理由を実験記録に残します。",
+            "Compensationが必要か、単染色対照で確認した": "複数色を使用し、単染色対照の信号が使っていない別チャンネルへ斜めに広がる場合は補正を検討します。単染色対照がない、または判断できない場合は数値を変更しません。"
+          },
+          "normal_state": [
+            "目的集団が画面内に収まり、点のまとまりとして見える",
+            "陰性対照と陽性対照を区別できる",
+            "目的集団がゲート内に入り、不要な集団が過度に含まれていない",
+            "単染色対照が不要な方向へ大きく斜めに広がっていない"
+          ],
+          "show_signal_figure": true,
+          "show_compensation_figure": true,
+          "glossary": {
+            "ゲート": "グラフ上で、解析または回収したい点の集まりを囲む範囲です。",
+            "Gain（ゲイン）": "信号の表示位置や大きさに関わる感度設定です。高すぎると上限に張り付き、低すぎると左下に押しつぶされます。",
+            "Threshold（閾値）": "どの強さ以上の信号をイベントとして記録するかを決める境界です。",
+            "Compensation（蛍光補正）": "ある蛍光色素の信号が別の検出チャンネルに入り込む影響を、単染色対照を使って補正する設定です。"
+          },
+          "current_status": "「ゲート・Gain・Thresholdを調整」を始める前の状態です。",
+          "task": "対照サンプルを基準に、目的の集団が見える位置とゲート範囲を確認します。信号が画面端に張り付く、集団が分離しない、目的集団がゲートから外れる場合は、測定を進めず設定を確認してください。",
+          "screen_images": [
+            {
+              "filename": "gate.png",
+              "title": "Gate"
+            },
+            {
+              "filename": "gate_ok.png",
+              "title": "Gate Ok"
+            }
+          ],
+          "ok_state": [
+            "目的集団が画面内に収まり、点のまとまりとして見える",
+            "陰性対照と陽性対照を区別できる",
+            "目的集団がゲート内に入り、不要な集団が過度に含まれていない",
+            "単染色対照が不要な方向へ大きく斜めに広がっていない"
+          ],
+          "ng_state": [
+            "見た目だけで恣意的にゲートを設定せず、陰性・単染色・既知対照を優先してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "gate_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "gate_ng.png",
+              "title": "NG例"
+            }
+          ]
+        },
+        {
+          "id": "a13",
+          "title": "測定を終了して保存",
+          "instruction": "測定を停止し、必要なゲート・数値・条件を確認してSaveしてください。必要に応じてFCS/CSV/PDFをExportしてください。",
+          "why": "測定データと解析条件を失わず、再解析や共有に備えるためです。",
+          "checks": [
+            "Sampleファイルを保存した",
+            "必要な形式（FCS・CSV・PDFなど）で出力した",
+            "必要に応じて利用者メモを記録した"
+          ],
+          "warning": "別ファイルを開く前にSaveしないと、ゲートや数値変更が保存されない場合があります。",
+          "decision_support": [
+            "FCSは外部解析向け",
+            "CSVは表計算向け",
+            "PDF Reportは結果共有向け"
+          ],
+          "reference": "2-2-5 ファイルマネージメントボタン",
+          "user_note": true,
+          "normal_state": [
+            "保存操作後にエラーがなく、対象Sampleに変更内容が残っている",
+            "必要な出力ファイルを保存先で確認できる"
+          ],
+          "current_status": "測定を終了して保存します。",
+          "task": "測定を停止し、必要なゲート・数値・条件を確認してSaveしてください。必要に応じてFCS/CSV/PDFをExportしてください。",
+          "screen_images": [
+            {
+              "filename": "export.png",
+              "title": "Export"
+            }
+          ],
+          "ok_state": [
+            "保存操作後にエラーがなく、対象Sampleに変更内容が残っている",
+            "必要な出力ファイルを保存先で確認できる"
+          ],
+          "ng_state": [
+            "別ファイルを開く前にSaveしないと、ゲートや数値変更が保存されない場合があります。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a14",
+          "title": "チップ取り外し・廃棄・終了処理",
+          "instruction": "圧力と動作が停止していることを確認し、チップをゆっくり取り外し、試料区分に応じて適切に廃棄・除染してください。",
+          "why": "液漏れ、バイオハザード、装置汚染を防ぐためです。",
+          "checks": [
+            "チップをゆっくり取り外した",
+            "試料区分に応じた廃棄・除染を行った",
+            "チップ周辺・接続部・装置の下に液漏れがない"
+          ],
+          "warning": "液漏れや装置内部への液の侵入が疑われる場合は、使用を再開せず、保守（tech@on-chip.co.jp）へ連絡してください。",
+          "decision_support": [
+            "漏洩時はチップホルダーごとの封じ込めを検討",
+            "装置内部へ液体が触れた場合は保守担当へ連絡"
+          ],
+          "reference": "0-3 バイオハザード対策 / 4-18 メンテナンス",
+          "check_help": {
+            "チップ周辺・接続部・装置の下に液漏れがない": "液漏れがある場合は作業を中断し、不用意に触れず、装置担当者および保守（tech@on-chip.co.jp）へ連絡してください。"
+          },
+          "current_status": "「チップ取り外し・廃棄・終了処理」を始める前の状態です。",
+          "task": "圧力と動作が停止していることを確認し、チップをゆっくり取り外し、試料区分に応じて適切に廃棄・除染してください。",
+          "screen_images": [
+            {
+              "filename": "termination.png",
+              "title": "Termination"
+            }
+          ],
+          "ok_state": [
+            "チップをゆっくり取り外した",
+            "試料区分に応じた廃棄・除染を行った",
+            "チップ周辺・接続部・装置の下に液漏れがない"
+          ],
+          "ng_state": [
+            "液漏れや装置内部への液の侵入が疑われる場合は、使用を再開せず、保守（tech@on-chip.co.jp）へ連絡してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        }
+      ]
+    },
+    "sorting": {
+      "label": "ソーティング・プレート分注を行う",
+      "description": "既に整備された装置操作の手順に、分注前の調整、分注条件設定、分注動作確認を加えたフローです。",
+      "steps": [
+        {
+          "id": "p00",
+          "title": "事前に準備するもの",
+          "instruction": "施設SOPと実験計画を確認し、操作開始前に必要な物品を手元へ準備してください。",
+          "why": "装置操作の途中で不足品に気づくことを防ぎ、安全に一連の操作を進めるためです。",
+          "warning": "不足品や破損がある場合は装置操作を開始せず、必要な物品を準備または交換してください。",
+          "decision_support": [
+            "使用する物品、液量、廃棄方法は施設SOPと実験計画を優先してください。",
+            "生物由来試料を扱う場合は、適切な防護服、保護メガネ、手袋を着用してください。",
+            "チップとパッキンまたはホルダーは、使用する装置・チップに適合するものを選んでください。"
+          ],
+          "reference": "ユーザーマニュアル「安全性および制限事項 0-3」「1-1 装置概要」「1-2 流路系」「2-3-10 Valve calibration」",
+          "current_status": "装置の操作を始める前に、今回の実験に必要な物品をそろえる段階です。",
+          "task": "施設SOPと実験計画を確認し、以下の物品を手元に準備してください。",
+          "notice": "使用する物品や液量は、施設SOPと実験計画を優先してください。不足品や破損がある場合は、装置の操作を開始せず、必要な物品を準備してください。",
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "checks": [
+            "実験に適した保護具（白衣、保護メガネ、手袋）がある",
+            "今回使用するサンプル（ドロップレット）が準備されている",
+            "オイルの準備がある",
+            "実験条件に合うソーティングチップがある",
+            "使用する装置とチップに適合するパッキンまたはチップホルダーがある",
+            "使用するチップ、パッキン、容器に破損や汚れがない",
+            "穴塞ぎチップがある",
+            "分注先の96穴プレートがある",
+            "分注ピペット用Tipが十分にある"
+          ],
+          "check_help": {
+            "実験条件に合うソーティングチップがある": "※ 2D Chip-SD1000 or 2D Chip-SD1000-w150",
+            "分注ピペット用Tipが十分にある": "※ Droplet Series Dispensing Tip 96S",
+            "オイルの準備がある": "※ 008-FluoroSurfactant-0.1wtH-100mL"
+          }
+        },
+        {
+          "id": "a01",
+          "title": "使用環境と外観を確認",
+          "instruction": "装置周辺、電源、ケーブル、液体漏れ、設置環境を目視確認してください。",
+          "why": "電気・レーザー・液漏れ・通信不良のリスクを操作前に除外するためです。",
+          "checks": [
+            "装置の上や周囲に、操作を妨げる物がない",
+            "装置・チップ・チューブ・接続部・装置の下に液漏れがない",
+            "電源ケーブルや通信ケーブルに、抜け・折れ・傷がない",
+            "装置の位置が前回使用時から変わっていない"
+          ],
+          "warning": "異常がある場合は電源を入れず、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "decision_support": [
+            "設置温度の目安は23±5℃、湿度40〜80%、結露なし",
+            "電源は指定された電源を使用"
+          ],
+          "reference": "安全性および制限事項 0-2〜0-8",
+          "check_help": {
+            "装置・チップ・チューブ・接続部・装置の下に液漏れがない": "液が見つかった場合は電源を入れず、触れる前に適切な保護具を着用してください。装置担当者および保守（tech@on-chip.co.jp）へ連絡します。"
+          },
+          "normal_state": [
+            "装置周辺が乾いており、ケーブルが確実につながっている",
+            "装置に警告表示や目立つ損傷がない"
+          ],
+          "current_status": "「使用環境と外観を確認」を始める前の状態です。",
+          "task": "装置周辺、電源、ケーブル、液体漏れ、設置環境を目視確認してください。",
+          "screen_images": [
+            {
+              "filename": "leak.png",
+              "title": "Leak"
+            },
+            {
+              "filename": "packing_ok.png",
+              "title": "Packing Ok"
+            }
+          ],
+          "ok_state": [
+            "装置周辺が乾いており、ケーブルが確実につながっている",
+            "装置に警告表示や目立つ損傷がない"
+          ],
+          "ng_state": [
+            "異常がある場合は電源を入れず、保守（tech@on-chip.co.jp）へご連絡ください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "packing_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "packing_ng.png",
+              "title": "NG例"
+            }
+          ]
+        },
+        {
+          "id": "a02",
+          "title": "電源を入れる",
+          "instruction": "電源BOXのスイッチをONにし、その後に制御ノートPCを起動してください。",
+          "why": "装置と制御PCを所定の順序で立ち上げるためです。",
+          "checks": [
+            "電源BOXのスイッチがONになっている",
+            "制御ノートPCが起動している",
+            "電源BOXの三極プラグを、アース付き三極コンセントへ直接接続している"
+          ],
+          "decision_support": [],
+          "reference": "4-2 装置とソフトウェアの立ち上げ / 1-5 制御PC",
+          "current_status": "「電源を入れる」を始める前の状態です。",
+          "task": "電源BOXのスイッチをONにし、その後に制御ノートPCを起動してください。",
+          "screen_images": [
+            {
+              "filename": "mainpush.png",
+              "title": "MainPush"
+            }
+          ],
+          "ok_state": [
+            "電源BOXのスイッチがONになっている",
+            "制御ノートPCが起動している",
+            "電源BOXの三極プラグを、アース付き三極コンセントへ直接接続している"
+          ],
+          "ng_state": [
+            "エラー表示、液漏れ、異音、想定外の画面がある"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a03",
+          "title": "OnChipFlowを起動してログイン",
+          "instruction": "OnChipFlowを起動し、目的に合うアカウントでOnlineログインしてください。",
+          "why": "データの保存先、閲覧範囲、ユーザー権限を正しく分けるためです。",
+          "checks": [
+            "装置のシャッターが閉まっていることを確認した",
+            "デスクトップのアイコンからOnChipFlowを起動",
+            "Guest Loginにチェックを入れて「OnLine」ボタンをクリックする",
+            "OnChipFlowのメイン画面が表示された"
+          ],
+          "decision_support": [],
+          "reference": "4-3 ログイン",
+          "normal_state": [
+            "画面左側に、自分のユーザー名または「Guest」が表示される",
+            "画面の操作ができ、エラーやログイン失敗の表示がない"
+          ],
+          "current_status": "「OnChipFlowを起動してログイン」を始める前の状態です。",
+          "task": "OnChipFlowを起動し、目的に合うアカウントでOnlineログインしてください。",
+          "screen_images": [
+            {
+              "filename": "selector_main_screen.png",
+              "title": "メイン画面"
+            }
+          ],
+          "ok_state": [
+            "画面左側に、自分のユーザー名または「Guest」が表示される",
+            "画面の操作ができ、エラーやログイン失敗の表示がない"
+          ],
+          "ng_state": [
+            "装置のシャッターが開いた状態では、OnChipFlowのメインメニューは開きません。シャッターを閉じてからログインしてください。",
+            "エラー表示、液漏れ、異音、想定外の画面がある"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a04",
+          "title": "サンプルファイルを作成",
+          "instruction": "Sample Managementの4階層を確認し、既存の設定をコピーするか、新しく作成するかを選択してください。",
+          "why": "元の測定結果を守りながら、使用するSAMPLEを正しい階層と手順で準備するためです。",
+          "checks": [
+            "Sample Management内に、使用するSAMPLEが作成された",
+            "作成したSAMPLEを選択した",
+            "SAMPLEに過去の測定データが入っていないことを確認した"
+          ],
+          "warning": "測定データ入りのSAMPLEを誤って上書きしないでください。",
+          "decision_support": [
+            "同じ測定条件やゲート設定を再利用する場合は、既存のSAMPLEをコピーします",
+            "初めて使用する場合や、新しい分類で管理する場合は、Mini-Groupから新しく作成します"
+          ],
+          "reference": "簡易マニュアル P6「サンプルファイルの作成」 / 4-4 サンプルファイルの作成と選択 / 2-2 Sample management",
+          "branches": [
+            {
+              "value": "duplicate",
+              "label": "既存のファイルをコピーして、設定を引き継いで作成する",
+              "instruction": "同じ測定条件やゲート設定を再利用する場合は、既存のSAMPLEから測定データを含まない複製を作成します。",
+              "task": "既存のSAMPLEを右クリックし、「Duplicate without data」で空のSAMPLEを作成してください。",
+              "operation_steps": [
+                "Sample Managementから、設定を引き継ぎたいSAMPLEを探します。",
+                "対象のSAMPLEを右クリックします。",
+                "「Duplicate without data」をクリックします。",
+                "元のSAMPLEの下に、データが入っていない新しいSAMPLEが作成されたことを確認します。",
+                "作成された新しいSAMPLEを選択します。"
+              ],
+              "checks": [
+                "Sample Management内に、使用するSAMPLEが作成された",
+                "作成したSAMPLEを選択した",
+                "SAMPLEに過去の測定データが入っていないことを確認した"
+              ],
+              "show_checks_after_operations": true,
+              "warning": "測定データが入ったSAMPLEには、新しい測定データを上書きできません。必ずデータの入っていないSAMPLEを作成してください。",
+              "notice": "測定データが入ったSAMPLEには、新しい測定データを上書きできません。必ずデータの入っていないSAMPLEを作成してください。",
+              "show_screen_section": false,
+              "ok_state": [
+                "データが入っていない新しいSAMPLEが作成されている",
+                "作成したSAMPLEが選択されている"
+              ],
+              "ng_state": [
+                "測定データが入った元のSAMPLEを直接編集または上書きしようとしている",
+                "作成したSAMPLEに過去の測定データが残っている"
+              ]
+            },
+            {
+              "value": "new",
+              "label": "新しいサンプルファイルを作成する",
+              "instruction": "初めて使用する場合や、新しい分類で管理する場合は、Mini-Group、SPECIMEN、SAMPLEの順に作成します。",
+              "task": "Mini-Group、SPECIMEN、SAMPLEを、下の手順どおり上から順に作成してください。",
+              "operation_groups": [
+                {
+                  "title": "① Mini-Groupを作成",
+                  "steps": [
+                    "画面左上の「Guest」を右クリックします。",
+                    "「Create a new mini-Group」をクリックします。",
+                    "使用者名や実験名など、管理しやすい名前を入力します。"
+                  ]
+                },
+                {
+                  "title": "② SPECIMENを作成",
+                  "steps": [
+                    "作成したMini-Groupを右クリックします。",
+                    "「Create a new Specimen」をクリックします。",
+                    "サンプルの種類を選択します。",
+                    "SPECIMENを新規作成する場合は、「Empty」→「New」をクリックします。"
+                  ]
+                },
+                {
+                  "title": "③ SAMPLEを作成",
+                  "steps": [
+                    "作成したSPECIMENを右クリックします。",
+                    "「Create a new Sample」をクリックします。",
+                    "使用するチップ、ドロップレットサイズ、用途に合ったテンプレートを選択します。",
+                    "作成されたSAMPLEを選択します。"
+                  ]
+                }
+              ],
+              "checks": [
+                "Sample Management内に、使用するSAMPLEが作成された",
+                "作成したSAMPLEを選択した",
+                "SAMPLEに過去の測定データが入っていないことを確認した"
+              ],
+              "show_checks_after_operations": true,
+              "warning": "すでに測定データが入っているSAMPLEを選んだ場合は、設定を変更しないでください。",
+              "notice": "名前に使用できる文字は、アルファベット、数字、半角ハイフン（-）のみです。",
+              "show_screen_section": true,
+              "screen_images": [
+                {
+                  "filename": "selector_create_minigroup.png",
+                  "title": "Mini-Groupの作成"
+                },
+                {
+                  "filename": "selector_create_specimen.png",
+                  "title": "SPECIMENの作成"
+                },
+                {
+                  "filename": "selector_create_sample.png",
+                  "title": "SAMPLEの作成"
+                }
+              ],
+              "ok_state": [
+                "Sample Management内に、使用するSAMPLEが作成されている",
+                "作成したSAMPLEが選択されている",
+                "SAMPLEに過去の測定データが入っていない"
+              ],
+              "ng_state": [
+                "Mini-Group、SPECIMEN、SAMPLEのいずれかが作成されていない",
+                "測定データが入ったSAMPLEを選択している"
+              ]
+            }
+          ],
+          "section_heading": "現在の状況",
+          "current_status": "OnChipFlowへのログインが完了し、画面左側にSample Managementが表示されている状態です。",
+          "task": "使用するSAMPLEの準備方法を選択してください。選択後、表示された操作を上から順に実施します。",
+          "ok_state": [
+            "Sample Management内に、使用するSAMPLEが作成された",
+            "作成したSAMPLEを選択した",
+            "SAMPLEに過去の測定データが入っていないことを確認した"
+          ],
+          "ng_state": [
+            "測定データ入りのSAMPLEを誤って上書きしようとしている"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": [],
+          "branch_guidance": "同じ測定条件やゲート設定を再利用する場合は、既存のSAMPLEをコピーします。\n\n初めて使用する場合や、新しい分類で管理する場合は、Mini-Groupから新しく作成します。",
+          "show_screen_section": false
+        },
+        {
+          "id": "s04",
+          "title": "Leak Check をおこなう",
+          "instruction": "Leak Checkを実施し、流路・圧力に異常がないことを確認してください。",
+          "warning": "漏れが疑われる場合は分注を開始しないでください。",
+          "decision_support": [
+            "圧力異常や液面変化を確認",
+            "改善しない場合はチップ・パッキン・流路を確認"
+          ],
+          "reference": "4-14 Leak check / 4-13-11 分注準備",
+          "current_status": "「Leak Check をおこなう」を始める前の状態です。",
+          "task": "Leak Checkを実施し、流路・圧力に異常がないことを確認してください。",
+          "screen_images": [
+            {
+              "filename": "leak.png",
+              "title": "Leak"
+            },
+            {
+              "filename": "leak_ok.png",
+              "title": "Leak Ok"
+            }
+          ],
+          "ok_state": [
+            "Leak Check完了",
+            "液漏れなし",
+            "液面に余裕",
+            "回収先準備完了"
+          ],
+          "ng_state": [
+            "漏れが疑われる場合は分注を開始しないでください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "leak_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "leak_ng.png",
+              "title": "NG例"
+            }
+          ],
+          "operation_steps": [
+            "装置のシャッターを開ける",
+            "装置左側の、チップホルダーが格納されているローダーを引き出す",
+            "チップホルダーを開け、パッキンを取り付けたチップをセットする",
+            "チップホルダーを閉じ、ローダーを装置内へ戻す",
+            "装置のシャッターを閉じる",
+            "「Leak Check」ボタンを押す",
+            "動作終了画面が表示されたことを確認する"
+          ]
+        },
+        {
+          "id": "p01",
+          "title": "Valve calibrationの表示を確認",
+          "instruction": "OnChipFlowの起動後、「Please calibrate the valves for proper operation」と表示されているか確認してください。表示がない場合はこの操作を行わず、次へ進みます。表示がある場合のみ、穴塞ぎチップを装置にセットして「Valve calibration」を実行してください。",
+          "why": "長期間の休眠後などにバルブが正常に動作しない可能性があるため、ソフトウェアから指示された場合だけ準備動作を行います。",
+          "warning": "メッセージが表示されていない場合は、この操作を行わず次へ進んでください。装置を起動したまま無操作で3時間経過し、再度メッセージが表示された場合は改めて実行します。",
+          "decision_support": [
+            "表示がある場合だけ実施します",
+            "完了メッセージが出るまで待ちます",
+            "完了後はOKを押し、ボタンの点滅停止を確認します"
+          ],
+          "reference": "2-3-10 Valve calibration（マニュアル 2-17〜2-18）",
+          "current_status": "OnChipFlowの起動とログインが完了した状態です。",
+          "task": "Valve calibrationのメッセージ表示の有無を確認し、表示がある場合だけ準備動作を実行してください。",
+          "ok_state": [
+            "メッセージがないため、この操作をスキップできる",
+            "または、完了メッセージを確認し、ボタンの点滅が停止している"
+          ],
+          "ng_state": [
+            "完了メッセージが表示されない",
+            "Valve calibrationボタンの点滅が停止しない",
+            "エラーが表示される"
+          ],
+          "abnormal_action": "完了しない場合は操作を続けず、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "screen_images": [],
+          "ok_images": [],
+          "ng_images": [],
+          "operation_steps": [
+            "「Valve calibration」ボタンを押す",
+            "しばらく待ち、「Valve Calibration is complete.」と表示されたことを確認する",
+            "装置のシャッターを開ける",
+            "装置左側のローダーを引き出す",
+            "チップホルダーからチップを取り出す",
+            "穴塞ぎ用チップからパッキンを取り外してチップを保管し、ローダーは引き出した状態のままにする"
+          ]
+        },
+        {
+          "id": "a08",
+          "title": "チップとバッファーを準備・設置",
+          "instruction": "使用する試料、液滴サイズ、チップを選択し、表示された液体と量を各リザーバーへ入れてから、チップ内の液体がこぼれないようにゆっくりチップホルダーへ配置してください。",
+          "why": "気密性、流路の健全性、液こぼれ防止を確保するためです。",
+          "checks": [
+            "パッキンが確実にはまっている",
+            "圧力ユニットを正しくロックした"
+          ],
+          "decision_support": [
+            "80 µmと150 µmチップを取り違えない",
+            "手や指を挟まないよう注意"
+          ],
+          "reference": "1-2 マイクロ流路チップ / 1-3-2 チップステージ / 4-10 Install Chip",
+          "current_status": "「チップとバッファーを準備・設置」を始める前の状態です。",
+          "task": "使用する試料、液滴サイズ、チップを選択してください。選択後、表示されたチェック項目に従って各リザーバーを準備し、チップを設置してください。",
+          "screen_images": [
+            {
+              "filename": "chip_install.png",
+              "title": "Chip Install"
+            },
+            {
+              "filename": "packing_ok.png",
+              "title": "Packing Ok"
+            }
+          ],
+          "ok_state": [
+            "選択した条件の各リザーバーに、指定された液体と量が入っている",
+            "パッキンが確実にはまっている",
+            "圧力ユニットを正しくロックした"
+          ],
+          "ng_state": [],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "packing_ok.png",
+              "title": "OK例"
+            },
+            {
+              "filename": "bubble_ok.png",
+              "title": "OK例"
+            },
+            {
+              "filename": "leak_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "packing_ng.png",
+              "title": "NG例"
+            },
+            {
+              "filename": "bubble_ng.png",
+              "title": "NG例"
+            },
+            {
+              "filename": "leak_ng.png",
+              "title": "NG例"
+            }
+          ],
+          "branches": [
+            {
+              "value": "emulsion_20_50",
+              "label": "Emulsion：20～50 µm／2D Chip-SD1000",
+              "instruction": "Emulsion（20～50 µm）用の2D Chip-SD1000を準備し、各リザーバーへ指定された液体と量を入れます。",
+              "checks": [
+                "シースリザーバーにフッ素オイルを9 mL入れた",
+                "ソーティングリザーバーにフッ素オイルを1.5 mL入れた",
+                "回収リザーバーにフッ素オイルを1 mL入れた",
+                "サンプルリザーバーへ逆流したオイルを除去した",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            },
+            {
+              "value": "emulsion_50_125",
+              "label": "Emulsion：50～125 µm／2D Chip-SD1000v150",
+              "instruction": "Emulsion（50～125 µm）用の2D Chip-SD1000v150を準備し、各リザーバーへ指定された液体と量を入れます。",
+              "checks": [
+                "シースリザーバーにフッ素オイルを9 mL入れた",
+                "ソーティングリザーバーにフッ素オイルを1.5 mL入れた",
+                "回収リザーバーにフッ素オイルを0.5 mL入れた",
+                "サンプルリザーバーへ逆流したオイルを除去した",
+                "サンプルリザーバーにドロップレットを100 µL以上入れた",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            },
+            {
+              "value": "gmd_20_50",
+              "label": "GMD：20～50 µm／2D Chip-SD1000",
+              "instruction": "GMD（20～50 µm）用の2D Chip-SD1000を準備し、各リザーバーへ指定されたOn-chip T Bufferの量を入れます。",
+              "checks": [
+                "サンプルリザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "シースリザーバーにOn-chip T Bufferを9 mL入れた",
+                "ソーティングリザーバーにOn-chip T Bufferを1.5 mL入れた",
+                "回収リザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            },
+            {
+              "value": "gmd_50_125",
+              "label": "GMD：50～125 µm／2D Chip-SD1000v150",
+              "instruction": "GMD（50～125 µm）用の2D Chip-SD1000v150を準備し、各リザーバーへ指定されたOn-chip T Bufferの量を入れます。",
+              "checks": [
+                "サンプルリザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "シースリザーバーにOn-chip T Bufferを9 mL入れた",
+                "ソーティングリザーバーにOn-chip T Bufferを1.5 mL入れた",
+                "回収リザーバーにOn-chip T Bufferを0.5 mL入れた",
+                "廃液リザーバーが空である",
+                "パッキンが確実にはまっている",
+                "圧力ユニットを正しくロックした"
+              ]
+            }
+          ],
+          "branch_guidance": "使用する試料と、液滴サイズに対応するチップ条件を選択してください。"
+        },
+        {
+          "id": "a09",
+          "title": "Prime / Flush / Check Line",
+          "instruction": "SOPとProcessing Zoneに従い、Prime、必要時のFlush、Check Lineを行い、異常がないかを確認してください。",
+          "why": "測定前に流路を液で満たし、気泡や詰まり、流路異常を減らすためです。",
+          "checks": [
+            "流路に大きな気泡がない",
+            "チップ周辺や接続部に、液体のにじみや滴下がない",
+            "Check Lineを実行し、完了メッセージが表示されたことを確認しました",
+            "異常メッセージがない"
+          ],
+          "warning": "流路に大きな気泡が残る、チップ周辺や接続部に液体のにじみ・滴下がある、またはCheck Lineでエラーメッセージが繰り返し表示される場合は異常です。Check Lineのエラーは2〜3回再実行し、それでも再び表示される場合は故障の可能性があります。",
+          "decision_support": [
+            "注釈：FlushはPrimeよりも強い流れを発生させ、流路内の気泡や小さなダスト、詰まりを取り除く操作です。実行中はCamera Viewで流路の状態を確認してください。",
+            "小さな気泡・ダスト・詰まりにFlushが有効な場合があります",
+            "改善しない場合は操作を停止"
+          ],
+          "reference": "2-3 Processing zone / 2-3-7〜2-3-9",
+          "current_status": "「Prime / Flush / Check Line」を始める前の状態です。",
+          "task": "SOPとProcessing Zoneに従い、Prime、必要時のFlush、Check Lineを行い、異常がないかを確認してください。",
+          "screen_images": [
+            {
+              "filename": "prime.png",
+              "title": "Prime"
+            },
+            {
+              "filename": "prime_ok.png",
+              "title": "Prime Ok"
+            }
+          ],
+          "ok_state": [
+            "流路に大きな気泡がない",
+            "チップ周辺や接続部に、液体のにじみや滴下がない",
+            "Check Lineを実行し、完了メッセージが表示されたことを確認しました",
+            "異常メッセージがない"
+          ],
+          "ng_state": [
+            "流路に大きな気泡が残っている",
+            "チップ周辺や接続部に、液体のにじみや滴下がある",
+            "Check Lineを2〜3回再実行しても、エラーメッセージが再び表示される"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "prime_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "prime_ng.png",
+              "title": "NG例"
+            }
+          ],
+          "glossary": {
+            "Prime": "チップの流路に圧力をかけてシース液を流し、流路を液で満たして気泡を追い出す操作です。",
+            "Flush": "Primeよりも強い流れを上流側から廃液側へ発生させ、流路内の気泡や小さなダスト、詰まりを取り除く操作です。"
+          },
+          "check_help": {
+            "流路に大きな気泡がない": "PC画面右下の「Camera View」に表示される流路の映像を見て、流路内に大きな気泡がないことを確認します。"
+          }
+        },
+        {
+          "id": "a10",
+          "title": "レーザーアライメントを確認",
+          "instruction": "Camera Viewと測定信号を確認し、レーザーが測定位置に合っていることを確認します。アライメント操作後は、完了表示と信号の両方を確認してください。",
+          "why": "チップ交換ごとの差異を補正し、安定した検出を行うためです。",
+          "checks": [
+            "レーザー光が測定用流路から大きく外れていない",
+            "アライメントの正常終了を示す表示が出た",
+            "信号が画面内にまとまりとして表示されている"
+          ],
+          "warning": "判断基準が不明な場合は、support@on-chip.co.jpまでお問い合わせください。",
+          "decision_support": [
+            "チップ交換で光学位置が変わり得ます",
+            "Camera Viewだけでなく信号も確認"
+          ],
+          "reference": "4-12 レーザーのアライメント / 1-4-3 チップ内光学系",
+          "operation_steps": [
+            "Camera Viewを開き、流路とレーザー光の位置を確認します。",
+            "テンプレートまたはSOPに従ってアライメント操作を実行します。",
+            "画面に「完了」「Success」などの正常終了表示が出たことを確認します。",
+            "測定画面に表示された信号が、画面端に張り付いたり、左下に押しつぶされたような状態になっていないことを確認します。"
+          ],
+          "check_help": {
+            "アライメントの正常終了を示す表示が出た": "エラーや警告が表示された場合は先に進みません。表示名はソフトウェアの版により異なることがあります。",
+            "信号が画面内にまとまりとして表示されている": "信号が出ない、画面端に張り付く、左下に押しつぶされる場合は正常とは判断しません。過去の正常データと比較します。"
+          },
+          "normal_state": [
+            "Camera Viewでレーザー光が測定用流路の位置に重なっている",
+            "アライメント完了を示す表示が出ている",
+            "信号が画面内に収まり、点のまとまりとして見える"
+          ],
+          "current_status": "「レーザーアライメントを確認」を始める前の状態です。",
+          "task": "Camera Viewと測定信号を確認し、レーザーが測定位置に合っていることを確認します。アライメント操作後は、完了表示と信号の両方を確認してください。",
+          "screen_images": [
+            {
+              "filename": "alignment.png",
+              "title": "Alignment"
+            },
+            {
+              "filename": "laser_alignment_ok.png",
+              "title": "Laser Alignment Ok"
+            }
+          ],
+          "ok_state": [
+            "Camera Viewでレーザー光が測定用流路の位置に重なっている",
+            "アライメント完了を示す表示が出ている",
+            "信号が画面内に収まり、点のまとまりとして見える"
+          ],
+          "ng_state": [
+            "判断基準が不明な場合は、support@on-chip.co.jpまでお問い合わせください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "laser_alignment_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "laser_alignment_ng.png",
+              "title": "NG例"
+            }
+          ]
+        },
+        {
+          "id": "s01",
+          "title": "解析条件とターゲットPopulationを確認",
+          "instruction": "測定・ゲート・補正が妥当で、分注対象Populationが明確であることを確認してください。",
+          "checks": [
+            "対象Populationが一意",
+            "対照に基づくゲート",
+            "予想イベント率を把握"
+          ],
+          "warning": "不確かなゲートのまま分注を開始しないでください。",
+          "decision_support": [
+            "希少イベントでは誤ゲートの影響が大きい",
+            "分注前に解析データを保存"
+          ],
+          "reference": "4-13 ゲート設定 / 4-13-9 Dispense",
+          "current_status": "「解析条件とターゲットPopulationを確認」を始める前の状態です。",
+          "task": "測定・ゲート・補正が妥当で、分注対象Populationが明確であることを確認してください。",
+          "screen_images": [
+            {
+              "filename": "gate.png",
+              "title": "Gate"
+            },
+            {
+              "filename": "gate_ok.png",
+              "title": "Gate Ok"
+            }
+          ],
+          "ok_state": [
+            "対象Populationが一意",
+            "対照に基づくゲート",
+            "予想イベント率を把握"
+          ],
+          "ng_state": [
+            "不確かなゲートのまま分注を開始しないでください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "gate_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "gate_ng.png",
+              "title": "NG例"
+            }
+          ],
+          "why": "FACSでは、細胞や粒子を散乱光・蛍光の信号に基づいて分類し、ゲートで区切ったPopulationの中から目的の集団を選択します。測定条件、ゲート、蛍光補正が適切でない場合、目的外の細胞が対象に含まれたり、目的細胞が除外されたりする可能性があります。そのため、ソーティングや分注を開始する前に、解析条件と対象Populationが実験目的に合っていることを確認します。",
+          "glossary": {
+            "Population": "測定データ上で、ゲートによって分類された細胞や粒子の集団を指します。ここでは、ソーティング・分注の対象として選択する集団のことです。"
+          }
+        },
+        {
+          "id": "p03",
+          "title": "分注条件を設定",
+          "instruction": "VIII. Dispensing settingで分注動作をONにし、分注先プレート、分注方向、分注対象ウェル、1回に分注するウェル数を設定してください。",
+          "why": "正しいプレートとウェルへ、指定した順序で分注するためです。",
+          "checks": [
+            "「Dispensing」をONにした",
+            "Plate Selectで分注先を選択した",
+            "Dispensing Numberが「1」であることを確認した",
+            "Row-firstまたはColumn-firstを選択した",
+            "分注するウェルを選択した",
+            "Termination well number of dispensesに1回で分注するウェル数を入力した",
+            "必要な場合のみ「Terminate by Dispensing End」を設定した"
+          ],
+          "warning": "Dispensing Numberは必ず「1」であることを確認してください。1.5 ml容器はオプションです。ウェル指定と実物プレートの向きを開始前に照合してください。",
+          "decision_support": [
+            "Plate Selectでは96 well plateまたは384 well plateを選択します",
+            "Row-firstは行方向、Column-firstは列方向へ順次分注します",
+            "ウェルはクリック、行・列選択、ドラッグ範囲選択、Edit欄のコマンドで指定できます",
+            "Terminate by Dispensing EndをONにすると、分注動作終了時に装置動作も終了します"
+          ],
+          "reference": "2-9 VIII. Dispensing setting / 2-9-1 分注ウェルの指定（マニュアル 2-36〜2-40）",
+          "current_status": "解析条件とソーティング対象が決まり、分注開始前の状態です。",
+          "task": "分注先プレート、方向、ウェル、1回に分注するウェル数を設定してください。",
+          "ok_state": [
+            "分注動作がONになっている",
+            "プレート、方向、ウェルが実験計画と一致している",
+            "Dispensing Numberが「1」である",
+            "1回に分注するウェル数が正しい"
+          ],
+          "ng_state": [
+            "プレートまたはウェルの指定が実物と一致しない",
+            "Dispensing Numberが「1」ではない"
+          ],
+          "abnormal_action": "設定に不明点がある場合は分注を開始せず、施設SOPまたは経験者へ確認してください。",
+          "screen_images": [],
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "s02",
+          "title": "分注設定を行う",
+          "instruction": "分注先プレート、ウェル、分注数、終了条件をSOPに従って設定してください。",
+          "checks": [
+            "正しいプレート",
+            "ウェル配置を確認",
+            "分注数・終了条件を確認"
+          ],
+          "warning": "ウェル指定ミスは回収不能につながるため、開始前にダブルチェックしてください。",
+          "decision_support": [
+            "プレートマップと実物の向きを照合",
+            "空ウェル・培地量を確認"
+          ],
+          "reference": "2-9 Dispensing setting / 4-13-10 分注設定",
+          "current_status": "「分注設定を行う」を始める前の状態です。",
+          "task": "分注先プレート、ウェル、分注数、終了条件をSOPに従って設定してください。",
+          "screen_images": [
+            {
+              "filename": "sample_management.png",
+              "title": "Sample Management"
+            }
+          ],
+          "ok_state": [
+            "正しいプレート",
+            "ウェル配置を確認",
+            "分注数・終了条件を確認"
+          ],
+          "ng_state": [
+            "ウェル指定ミスは回収不能につながるため、開始前にダブルチェックしてください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "s03",
+          "title": "分注チップと動作を確認",
+          "instruction": "分注ピペット用チップ、ラック、廃棄ラック、使用開始位置を確認し、必要な分注QCまたは動作確認を行ってください。",
+          "checks": [
+            "チップラック装着",
+            "廃棄ラック準備",
+            "開始位置確認",
+            "分注動作確認"
+          ],
+          "warning": "チップ不足や位置ずれを放置すると、誤分注や装置停止の原因になります。",
+          "decision_support": [
+            "分注チップ交換後は開始位置を再確認",
+            "定期QC結果を確認"
+          ],
+          "reference": "3-1-2 分注QC / 4-15 分注チップ交換",
+          "current_status": "「分注チップと動作を確認」を始める前の状態です。",
+          "task": "分注ピペット用チップ、ラック、廃棄ラック、使用開始位置を確認し、必要な分注QCまたは動作確認を行ってください。",
+          "screen_images": [
+            {
+              "filename": "chip_install.png",
+              "title": "Chip Install"
+            }
+          ],
+          "ok_state": [
+            "チップラック装着",
+            "廃棄ラック準備",
+            "開始位置確認",
+            "分注動作確認"
+          ],
+          "ng_state": [
+            "チップ不足や位置ずれを放置すると、誤分注や装置停止の原因になります。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a11",
+          "title": "Apply SampleしてRun",
+          "instruction": "流路チップ内のサンプルを確認してからApply Sampleを行い、Runを開始します。開始後は、測定信号が継続していることを確認します。",
+          "why": "測定中は、イベントの取得状況を確認し、異常がないことを確認してください。",
+          "checks": [
+            "サンプルリザーバーにドロップレットを20 µL以上入れた",
+            "測定画面に信号が表示されている",
+            "イベント数が増え、グラフが継続して更新されている",
+            "測定信号が継続し、気泡や液漏れなどの異常がない",
+            "異常音や停止・警告メッセージがない"
+          ],
+          "warning": "イベント数が増えない、液漏れ、大きな気泡、異常音、警告がある場合は測定を停止し、装置担当者へ確認してください。",
+          "decision_support": [
+            "イベントが出ない場合は流路、Threshold、Gain、レーザーを順に確認",
+            "液面検知時は保存確認後、原因を除去"
+          ],
+          "reference": "4-9 Apply Sample / 4-13 Run",
+          "operation_steps": [
+            "サンプル容器が接続され、必要な液量があることを確認します。",
+            "Apply Sampleを実行します。",
+            "Runを開始し、イベント数とグラフが更新されることを確認します。",
+            "測定中は、測定信号、気泡、液漏れ、異常音や警告の有無を確認します。"
+          ],
+          "check_help": {
+            "測定画面に信号が表示されている": "信号が出ない場合は、Camera Viewで大きな気泡の有無を確認します。",
+            "イベント数が増え、グラフが継続して更新されている": "イベントとは、装置が1個の粒子や細胞として検出した信号です。数が増えない、または一瞬で止まる場合は正常ではありません。",
+            "測定信号が継続し、気泡や液漏れなどの異常がない": "測定開始直後と測定中に、Camera View、接続部、装置周辺を確認します。"
+          },
+          "normal_state": [
+            "イベント数が少しずつ増え、グラフ上に信号が継続して表示される",
+            "大きな気泡や液漏れがない"
+          ],
+          "current_status": "「Apply SampleしてRun」を始める前の状態です。",
+          "task": "流路チップ内のサンプルを確認してからApply Sampleを行い、Runを開始します。開始後は、測定信号が継続していることを確認します。",
+          "screen_images": [
+            {
+              "filename": "run_screen.png",
+              "title": "Run Screen"
+            },
+            {
+              "filename": "signal.png",
+              "title": "Signal"
+            }
+          ],
+          "ok_state": [
+            "イベント数が少しずつ増え、グラフ上に信号が継続して表示される",
+            "大きな気泡や液漏れがない"
+          ],
+          "ng_state": [
+            "イベント数が増えない、液漏れ、大きな気泡、異常音、警告がある場合は測定を停止し、装置担当者へ確認してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "s05",
+          "title": "分注を開始して監視",
+          "instruction": "設定を最終確認して分注を開始し、イベント数、ウェル進行、流路の状態を継続監視してください。",
+          "checks": [
+            "正しい対象Population",
+            "ウェル進行が正常",
+            "流路の状態を監視",
+            "エラーなし"
+          ],
+          "warning": "分注中は、流路と分注先の状態を継続して確認してください。",
+          "decision_support": [
+            "イベント率が急変したら一時停止",
+            "ウェル移動や分注失敗が疑われたら停止"
+          ],
+          "reference": "4-13-12 分注の開始と終了",
+          "current_status": "「分注を開始して監視」を始める前の状態です。",
+          "task": "設定を最終確認して分注を開始し、イベント数、ウェル進行、流路の状態を継続監視してください。",
+          "screen_images": [
+            {
+              "filename": "run_screen.png",
+              "title": "Run Screen"
+            }
+          ],
+          "ok_state": [
+            "正しい対象Population",
+            "ウェル進行が正常",
+            "流路の状態を監視",
+            "エラーなし"
+          ],
+          "ng_state": [
+            "分注中は、流路と分注先の状態を継続して確認してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "p04",
+          "title": "CCD2 Viewで分注動作を確認",
+          "instruction": "分注を開始した後、画面右下の「CCD2 View」で、ソートされたサンプルが実際に分注されていることを確認してください。",
+          "why": "分注ユニットの動作と、分注先への吐出を画面上で確認するためです。",
+          "checks": [
+            "CCD2 Viewを表示した",
+            "明視野で確認する場合はLED1を選択した",
+            "蛍光ビーズを確認する場合はLED2を選択した",
+            "分注動作が実行されていることを確認した"
+          ],
+          "warning": "LED2は青色LED照明です。サンプルに用いる染色剤や蛍光タンパク質を確認する用途には使用できません。蛍光ビーズを用いた分注精度評価に使用してください。",
+          "decision_support": [
+            "LED1：白色照明による明視野観察",
+            "LED2：青色照明による蛍光ビーズの観察",
+            "OFF：照明を消灯"
+          ],
+          "reference": "2-10 分注動作の確認について（マニュアル 2-42）",
+          "current_status": "分注を開始した直後の状態です。",
+          "task": "CCD2 Viewを使用して、分注動作が実行されていることを確認してください。",
+          "ok_state": [
+            "CCD2 Viewで分注動作を確認できる",
+            "選択した照明が確認目的に合っている"
+          ],
+          "ng_state": [
+            "分注動作を確認できない",
+            "想定したウェルと異なる位置へ動作している"
+          ],
+          "abnormal_action": "分注動作を確認できない、または位置が異なる場合は停止し、設定とプレート設置を確認してください。改善しない場合は保守（tech@on-chip.co.jp）へご連絡ください。",
+          "screen_images": [],
+          "ok_images": [],
+          "ng_images": [],
+          "glossary": {
+            "CCD2 View": "分注時の液滴や動作を確認するカメラです。Droplet Selectorでは、インターフェース画面の内側下部にモニターが配置してあります。"
+          }
+        },
+        {
+          "id": "s06",
+          "title": "分注終了・結果保存",
+          "instruction": "分注を終了し、対象数、ウェル、停止理由、異常の有無を記録してデータを保存してください。",
+          "checks": [
+            "分注停止",
+            "分注数を確認",
+            "ウェルマップを保存",
+            "測定データをSave/Export"
+          ],
+          "warning": "プレート回収前に、対象ウェルとプレート向きを再確認してください。",
+          "decision_support": [
+            "予定数との差を記録",
+            "途中停止時は原因と再開条件を記録"
+          ],
+          "reference": "4-13-12 / 2-2-5 ファイル保存",
+          "current_status": "「分注終了・結果保存」を始める前の状態です。",
+          "task": "分注を終了し、対象数、ウェル、停止理由、異常の有無を記録してデータを保存してください。",
+          "screen_images": [
+            {
+              "filename": "export.png",
+              "title": "Export"
+            }
+          ],
+          "ok_state": [
+            "分注停止",
+            "分注数を確認",
+            "ウェルマップを保存",
+            "測定データをSave/Export"
+          ],
+          "ng_state": [
+            "プレート回収前に、対象ウェルとプレート向きを再確認してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a12",
+          "title": "ゲート・Gain・Thresholdを調整",
+          "instruction": "対照サンプルを基準に、目的の集団が見える位置とゲート範囲を確認します。信号が画面端に張り付く、集団が分離しない、目的集団がゲートから外れる場合は、測定を進めず設定を確認してください。",
+          "why": "対象集団の識別と解析精度を確保するためです。",
+          "checks": [
+            "目的集団が画面内にまとまりとして表示されている",
+            "信号が上端・右端に張り付かず、左下にも押しつぶされていない",
+            "目的集団を囲み、不要な点をできるだけ含まないゲートになっている",
+            "ゲートを決めた根拠を記録した",
+            "Compensationが必要か、単染色対照で確認した"
+          ],
+          "warning": "見た目だけで恣意的にゲートを設定せず、陰性・単染色・既知対照を優先してください。",
+          "decision_support": [
+            "Gainは検出器ごとの感度に影響",
+            "Numerical Factorは表示上の定数倍",
+            "補正は適切なコントロールが必要"
+          ],
+          "reference": "4-13-1〜4-13-8",
+          "operation_steps": [
+            "陰性対照と陽性対照（必要に応じて単染色対照）を表示します。",
+            "目的の点の集まりがどこにあるか確認します。",
+            "目的集団を囲み、関係のない点をできるだけ入れないようにゲートを置きます。",
+            "信号が画面端に張り付く場合はGainが高すぎないか、左下に押しつぶされる場合は低すぎないか確認します。",
+            "Thresholdを変更した場合は、目的集団が消えていないか、ノイズだけが急増していないか確認します。",
+            "複数の蛍光色素を使う場合は、単染色対照を使ってCompensationの必要性を確認します。"
+          ],
+          "check_help": {
+            "目的集団が画面内にまとまりとして表示されている": "陰性対照と陽性対照の位置関係が、過去の正常データと大きく違わないことも確認します。",
+            "信号が上端・右端に張り付かず、左下にも押しつぶされていない": "上端・右端に点が密集すると強すぎる可能性があります。左下に点が固まって集団を区別できない場合は弱すぎる可能性があります。",
+            "ゲートを決めた根拠を記録した": "使用した対照サンプル、参照した過去データ、ゲート変更理由を実験記録に残します。",
+            "Compensationが必要か、単染色対照で確認した": "複数色を使用し、単染色対照の信号が使っていない別チャンネルへ斜めに広がる場合は補正を検討します。単染色対照がない、または判断できない場合は数値を変更しません。"
+          },
+          "normal_state": [
+            "目的集団が画面内に収まり、点のまとまりとして見える",
+            "陰性対照と陽性対照を区別できる",
+            "目的集団がゲート内に入り、不要な集団が過度に含まれていない",
+            "単染色対照が不要な方向へ大きく斜めに広がっていない"
+          ],
+          "show_signal_figure": true,
+          "show_compensation_figure": true,
+          "glossary": {
+            "ゲート": "グラフ上で、解析または回収したい点の集まりを囲む範囲です。",
+            "Gain（ゲイン）": "信号の表示位置や大きさに関わる感度設定です。高すぎると上限に張り付き、低すぎると左下に押しつぶされます。",
+            "Threshold（閾値）": "どの強さ以上の信号をイベントとして記録するかを決める境界です。",
+            "Compensation（蛍光補正）": "ある蛍光色素の信号が別の検出チャンネルに入り込む影響を、単染色対照を使って補正する設定です。"
+          },
+          "current_status": "「ゲート・Gain・Thresholdを調整」を始める前の状態です。",
+          "task": "対照サンプルを基準に、目的の集団が見える位置とゲート範囲を確認します。信号が画面端に張り付く、集団が分離しない、目的集団がゲートから外れる場合は、測定を進めず設定を確認してください。",
+          "screen_images": [
+            {
+              "filename": "gate.png",
+              "title": "Gate"
+            },
+            {
+              "filename": "gate_ok.png",
+              "title": "Gate Ok"
+            }
+          ],
+          "ok_state": [
+            "目的集団が画面内に収まり、点のまとまりとして見える",
+            "陰性対照と陽性対照を区別できる",
+            "目的集団がゲート内に入り、不要な集団が過度に含まれていない",
+            "単染色対照が不要な方向へ大きく斜めに広がっていない"
+          ],
+          "ng_state": [
+            "見た目だけで恣意的にゲートを設定せず、陰性・単染色・既知対照を優先してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [
+            {
+              "filename": "gate_ok.png",
+              "title": "OK例"
+            }
+          ],
+          "ng_images": [
+            {
+              "filename": "gate_ng.png",
+              "title": "NG例"
+            }
+          ]
+        },
+        {
+          "id": "a13",
+          "title": "測定を終了して保存",
+          "instruction": "測定を停止し、必要なゲート・数値・条件を確認してSaveしてください。必要に応じてFCS/CSV/PDFをExportしてください。",
+          "why": "測定データと解析条件を失わず、再解析や共有に備えるためです。",
+          "checks": [
+            "Sampleファイルを保存した",
+            "必要な形式（FCS・CSV・PDFなど）で出力した",
+            "必要に応じて利用者メモを記録した"
+          ],
+          "warning": "別ファイルを開く前にSaveしないと、ゲートや数値変更が保存されない場合があります。",
+          "decision_support": [
+            "FCSは外部解析向け",
+            "CSVは表計算向け",
+            "PDF Reportは結果共有向け"
+          ],
+          "reference": "2-2-5 ファイルマネージメントボタン",
+          "user_note": true,
+          "normal_state": [
+            "保存操作後にエラーがなく、対象Sampleに変更内容が残っている",
+            "必要な出力ファイルを保存先で確認できる"
+          ],
+          "current_status": "測定を終了して保存します。",
+          "task": "測定を停止し、必要なゲート・数値・条件を確認してSaveしてください。必要に応じてFCS/CSV/PDFをExportしてください。",
+          "screen_images": [
+            {
+              "filename": "export.png",
+              "title": "Export"
+            }
+          ],
+          "ok_state": [
+            "保存操作後にエラーがなく、対象Sampleに変更内容が残っている",
+            "必要な出力ファイルを保存先で確認できる"
+          ],
+          "ng_state": [
+            "別ファイルを開く前にSaveしないと、ゲートや数値変更が保存されない場合があります。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        },
+        {
+          "id": "a14",
+          "title": "チップ取り外し・廃棄・終了処理",
+          "instruction": "圧力と動作が停止していることを確認し、チップをゆっくり取り外し、試料区分に応じて適切に廃棄・除染してください。",
+          "why": "液漏れ、バイオハザード、装置汚染を防ぐためです。",
+          "checks": [
+            "チップをゆっくり取り外した",
+            "試料区分に応じた廃棄・除染を行った",
+            "チップ周辺・接続部・装置の下に液漏れがない"
+          ],
+          "warning": "液漏れや装置内部への液の侵入が疑われる場合は、使用を再開せず、保守（tech@on-chip.co.jp）へ連絡してください。",
+          "decision_support": [
+            "漏洩時はチップホルダーごとの封じ込めを検討",
+            "装置内部へ液体が触れた場合は保守担当へ連絡"
+          ],
+          "reference": "0-3 バイオハザード対策 / 4-18 メンテナンス",
+          "check_help": {
+            "チップ周辺・接続部・装置の下に液漏れがない": "液漏れがある場合は作業を中断し、不用意に触れず、装置担当者および保守（tech@on-chip.co.jp）へ連絡してください。"
+          },
+          "current_status": "「チップ取り外し・廃棄・終了処理」を始める前の状態です。",
+          "task": "圧力と動作が停止していることを確認し、チップをゆっくり取り外し、試料区分に応じて適切に廃棄・除染してください。",
+          "screen_images": [
+            {
+              "filename": "termination.png",
+              "title": "Termination"
+            }
+          ],
+          "ok_state": [
+            "チップをゆっくり取り外した",
+            "試料区分に応じた廃棄・除染を行った",
+            "チップ周辺・接続部・装置の下に液漏れがない"
+          ],
+          "ng_state": [
+            "液漏れや装置内部への液の侵入が疑われる場合は、使用を再開せず、保守（tech@on-chip.co.jp）へ連絡してください。"
+          ],
+          "abnormal_action": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+          "ok_images": [],
+          "ng_images": []
+        }
+      ]
+    },
+    "dg800_wo": {
+      "label": "ドロップレットを作る：2D Chip-800DG／W/Oドロップレット",
+      "description": "On-chip Droplet Generatorと2D Chip-800DGを使用し、W/Oドロップレットを作製します。各工程を上から順に確認してください。",
+      "steps": [
+        {
+          "id": "d8w_00",
+          "title": "事前に準備するもの",
+          "instruction": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "task": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "why": "途中で不足品に気づくことを防ぎ、安全に一連の操作を進めるためです。",
+          "checks": [
+            "施設SOPと今回の実験計画を確認した",
+            "白衣、保護メガネ、手袋を準備した",
+            "2D Chip-800DGと対応するチップホルダーを準備した",
+            "使用するチップ、チューブ、容器に破損や汚れがない",
+            "SampleとOilを準備した",
+            "回収用チューブ、ピペット、廃棄用品を準備した"
+          ],
+          "decision_support": [
+            "使用量、廃棄方法、試料の取扱いは施設SOPを優先してください。",
+            "このコースでは「W/Oドロップレット」を作製します。"
+          ],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "notice": "施設または研究室で定められているSOPがある場合は、その内容を優先してください。",
+          "glossary": {
+            "Sample": "ドロップレットの内側に入れる水系の試料です。",
+            "Oil": "ドロップレットの外側を作るフッ素系オイルです。",
+            "W/Oドロップレット": "Water in Oilの略で、オイルの中に水系試料の小さな粒が分散した状態です。",
+            "GMD": "Gel Microdropletの略です。ゲル材料を含むW/Oドロップレットを作り、その後にゲル化して回収します。"
+          }
+        },
+        {
+          "id": "d8w_01",
+          "title": "電源を入れる",
+          "instruction": "PC、Droplet Generator本体の順に電源をONにしてください。",
+          "task": "PC、Droplet Generator本体の順に電源をONにしてください。",
+          "why": "装置と観察系を操作できる状態にするためです。",
+          "checks": [
+            "PCとDroplet Generator本体の電源をONにした"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "異常がある場合は操作を続けず、電源を安全に切ってください。",
+          "screen_images": [
+            {
+              "filename": "dg_power_devices_only.png",
+              "title": "電源を入れる"
+            }
+          ],
+          "ok_state": [
+            "PCと装置が起動し、異音、焦げたにおい、液漏れがない"
+          ],
+          "ng_state": [
+            "電源が入らない、異音、焦げたにおい、液漏れがある"
+          ]
+        },
+        {
+          "id": "d8w_02",
+          "title": "装置本体と8連結バルブを接続する",
+          "instruction": "Oilは青色、Sampleは透明のチューブを使い、装置本体から8連結バルブ、チップホルダーまで接続してください。",
+          "task": "Oilは青色、Sampleは透明のチューブを使い、装置本体から8連結バルブ、チップホルダーまで接続してください。",
+          "why": "SampleとOilを正しい流路へ送るためです。",
+          "checks": [
+            "本体の「Oil」と表記されているコネクタから青色のチューブがホルダー下段のコネクタにしっかり接続されている",
+            "本体の「Sample」と表記されているコネクタから透明のチューブがホルダー上段のコネクタにしっかり接続されている",
+            "チューブに折れ、つぶれ、緩みがない（チューブの接続部を軽くひっぱっても抜けない）"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "SampleとOilのラインを入れ替えないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_connections_clean.png",
+              "title": "装置本体と8連結バルブを接続する"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleのラインが色どおりに接続されている"
+          ],
+          "ng_state": [
+            "色が逆、接続が緩い、チューブが折れている"
+          ]
+        },
+        {
+          "id": "d8w_03",
+          "title": "空気漏れ確認を準備する",
+          "instruction": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "task": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "why": "加圧する前に、配管とチップホルダーが気密に接続されているか確認するためです。",
+          "checks": [
+            "Droplet Testerを起動した",
+            "穴塞ぎチップをチップホルダーにセットした",
+            "上蓋を閉じ、左右のねじを時計回りに回して固定した",
+            "8連結の赤いバルブをすべてONにした（チューブと平行な向きがONです）"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "無理に蓋やねじを締めないでください。",
+          "screen_images": [
+            {
+              "filename": "dg_air_leak_droplet_tester_icon.png",
+              "title": "Droplet Testerを起動するデスクトップアイコン",
+              "caption": "Droplet Testerを起動するデスクトップアイコン",
+              "hide_title": true
+            },
+            {
+              "filename": "dg_air_leak_blocking_chip.png",
+              "title": "穴塞ぎチップ",
+              "caption": "穴塞ぎチップ",
+              "hide_title": true
+            },
+            {
+              "filename": "dg_air_leak_holder_lock.png",
+              "title": "穴塞ぎチップをセットするチップホルダーと固定ねじ",
+              "caption": "穴塞ぎチップをセットするチップホルダーと固定ねじ",
+              "hide_title": true
+            },
+            {
+              "filename": "dg_air_leak_valve_on.png",
+              "title": "8連結バルブのOFF／ON位置",
+              "caption": "8連結バルブのOFF／ON位置",
+              "hide_title": true
+            }
+          ],
+          "ok_state": [
+            "穴塞ぎチップが正しく入り、上蓋が固定されている"
+          ],
+          "ng_state": [
+            "チップが斜め、蓋が浮く、左右のねじが固定できない"
+          ]
+        },
+        {
+          "id": "d8w_04",
+          "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する",
+          "instruction": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "task": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "why": "SampleラインとOilラインを分けて確認し、漏れのある場所を見つけやすくするためです。",
+          "checks": [
+            "Droplet TesterのSample欄のStartを押した",
+            "測定数値が段々と安定していきSample欄にOKが表示された",
+            "Droplet TesterのOil欄のStartを押した",
+            "測定数値が段々と安定していきOil欄にOKが表示された"
+          ],
+          "decision_support": [
+            "Regent欄は使用しません。",
+            "NGの場合は、チューブ接続の緩みとチップホルダーの閉まり具合を確認して再試行します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "複数回確認してもNGのみ表示される場合は、操作を中止してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p3.png",
+              "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する"
+            }
+          ],
+          "ok_state": [
+            "SampleとOilの両方にOKが表示される"
+          ],
+          "ng_state": [
+            "NGが表示される、Runningのまま終了しない、圧力が安定しない"
+          ]
+        },
+        {
+          "id": "d8w_05",
+          "title": "Droplet Testerを終了する",
+          "instruction": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "task": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "why": "通常の作製チップへ安全に交換するためです。",
+          "checks": [
+            "Droplet Testerのウィンドウを閉じた",
+            "穴塞ぎチップを取り出した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "d8w_06",
+          "title": "作製ソフトを起動する",
+          "instruction": "「DropletGenerator-800DG」と「DinoCapture 2.0」を起動してください。",
+          "task": "「DropletGenerator-800DG」と「DinoCapture 2.0」を起動してください。",
+          "why": "圧力制御と流路観察を同時に行うためです。",
+          "checks": [
+            "DropletGenerator-800DGを起動した",
+            "DinoCapture 2.0を起動した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "ソフトが反応しない場合は、繰り返しStartを押さずに装置担当者へ確認してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p6.png",
+              "title": "作製ソフトを起動する"
+            }
+          ],
+          "ok_state": [
+            "圧力設定画面とカメラ画面の両方が表示される"
+          ],
+          "ng_state": [
+            "ソフトが起動しない、画面が固まる、カメラ映像が表示されない"
+          ]
+        },
+        {
+          "id": "d8w_07",
+          "title": "カメラと照明を設定する",
+          "instruction": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "task": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "why": "フレームレートを上げ、ドロップレット形成を見やすくするためです。",
+          "checks": [
+            "DinoCapture 2.0ウィンドウの上段、「～」をYUY2 640x480に変更した。",
+            "観察ユニット用照明ランプをONにした",
+            "カメラ映像が表示されている"
+          ],
+          "decision_support": [
+            "解像度が高いと縦方向につぶれて見える場合があります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "照明やカメラを無理に動かさないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p6.png",
+              "title": "カメラと照明を設定する"
+            }
+          ],
+          "ok_state": [
+            "流路を探せる明るさでカメラ映像が表示される"
+          ],
+          "ng_state": [
+            "映像が暗い、真っ白、縦につぶれて見える、映像が止まる"
+          ]
+        },
+        {
+          "id": "d8w_08",
+          "title": "チップと使用レーンを準備する",
+          "instruction": "2D Chip-800DGをチップホルダーにセットし、使用するレーンのバルブ（赤いコック）だけONにしてください。",
+          "task": "2D Chip-800DGをチップホルダーにセットし、使用するレーンのバルブ（赤いコック）だけONにしてください。",
+          "why": "使用する流路だけへ圧力をかけるためです。",
+          "checks": [
+            "2D Chip-800DGをチップホルダーに正しい向きでセットした",
+            "使用するレーンだけ赤いバルブのコックを縦（チューブに水平）にした"
+          ],
+          "check_help": {
+            "使用するレーンだけ赤いバルブのコックを縦（チューブに水平）にした": "チップホルダーに繋がっているチューブには、番号がわかる結束具が付いています。Sample・Oilを入れた列に対応する番号のバルブをONにしてください。"
+          },
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "バルブはチューブと平行がON、直角がOFFです。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p4.png",
+              "title": "チップと使用レーンを準備する"
+            }
+          ],
+          "ok_state": [
+            "チップが平らに入り、使用レーンだけがON"
+          ],
+          "ng_state": [
+            "チップが浮く、レーン番号が一致しない、全レーンがONのまま"
+          ]
+        },
+        {
+          "id": "d8w_09",
+          "title": "サンプルとオイルを入れる",
+          "instruction": "使用するレーンのサンプルリザーバーにサンプルを30～60 µL入れてください。続けて、使用するレーンのオイルリザーバーにオイルを約200 µL入れてください。",
+          "task": "使用するレーンのサンプルリザーバーにサンプルを30～60 µL入れてください。続けて、使用するレーンのオイルリザーバーにオイルを約200 µL入れてください。",
+          "why": "W/Oドロップレットの外側となる連続相を準備するためです。また、ドロップレットの内側となる分散相を準備するためです。",
+          "checks": [
+            "サンプルリザーバー（上部のリザーバー）に30～60 µL入れた",
+            "使用するチップ（2D Chip-800DG）のオイルリザーバー（下のリザーバー）にオイルを約200 µL入れた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "リザーバーを間違えないでください。サンプルとオイルを入れ間違えないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_reservoirs_only.png",
+              "title": "サンプルとオイルを入れる"
+            }
+          ],
+          "ok_state": [
+            "オイルが指定リザーバーに入り、周囲へこぼれていない",
+            "サンプルが指定リザーバーに入っている"
+          ],
+          "ng_state": [
+            "Sample側へ入れた、外へこぼれた、大きな気泡がある",
+            "Oil側へ入れた、外へこぼれた、サンプルが不足している"
+          ]
+        },
+        {
+          "id": "d8w_11",
+          "title": "チップホルダーをロックする",
+          "instruction": "上蓋を閉じ、手前のねじを締めてチップホルダーをロックしてください。",
+          "task": "上蓋を閉じ、手前のねじを締めてチップホルダーをロックしてください。",
+          "why": "加圧時の空気漏れとチップのずれを防ぐためです。",
+          "checks": [
+            "チップホルダーの上蓋を閉じた",
+            "チップホルダーの左右のねじを締めてロックした"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "抵抗が強い場合は無理に締めず、チップの位置を確認してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p4.png",
+              "title": "チップホルダーをロックする"
+            }
+          ],
+          "ok_state": [
+            "蓋が水平で、ねじが無理なく固定される"
+          ],
+          "ng_state": [
+            "蓋が浮く、チップを挟んでいる、ねじが片側だけ締まる"
+          ]
+        },
+        {
+          "id": "d8w_12",
+          "title": "流路へ焦点を合わせる",
+          "instruction": "観察ユニットのカメラを、ユニット下部のネジをひねって、流路が見える位置へ動かし、高さを調節して焦点（ピント）を合わせてください。",
+          "task": "観察ユニットのカメラを、ユニット下部のネジをひねって、流路が見える位置へ動かし、高さを調節して焦点（ピント）を合わせてください。",
+          "why": "ドロップレット形成部を正しく観察するためです。",
+          "checks": [
+            "流路の分岐部（十字部分）が画面中央にある",
+            "流路の画像がぼやけておらず、はっきり見える"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "カメラをチップへ接触させないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "流路へ焦点を合わせる"
+            }
+          ],
+          "ok_state": [
+            "流路の合流部がはっきり見える"
+          ],
+          "ng_state": [
+            "流路が見えない、ぼやける、画面が暗い"
+          ]
+        },
+        {
+          "id": "d8w_13",
+          "title": "初期圧力を設定する",
+          "instruction": "Pressure SettingでSampleとOilをそれぞれ30 kPaに設定してください。",
+          "task": "Pressure SettingでSampleとOilをそれぞれ30 kPaに設定してください。",
+          "why": "マニュアル記載の初期条件から、形成状態を確認するためです。",
+          "checks": [
+            "Sampleを30 kPaに設定した",
+            "Oilを30 kPaに設定した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "圧力は7.0～80 kPaの範囲で設定します。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "初期圧力を設定する"
+            }
+          ],
+          "ok_state": [
+            "SampleとOilの設定値が30 kPa"
+          ],
+          "ng_state": [
+            "単位や欄を間違えている、7.0～80 kPaの範囲外"
+          ]
+        },
+        {
+          "id": "d8w_14",
+          "title": "加圧を開始して形成を確認する",
+          "instruction": "Simultaneous ActuationのStartを押し、カメラ画面でドロップレットが連続して形成されるか確認してください。",
+          "task": "Simultaneous ActuationのStartを押し、カメラ画面でドロップレットが連続して形成されるか確認してください。",
+          "why": "圧力を調整する前に、現在の条件で形成できているか判断するためです。",
+          "checks": [
+            "1 Startを押した",
+            "2 流路合流部でドロップレット形成を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "液漏れや異常な圧力表示がある場合はStopを押してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "加圧を開始して形成を確認する"
+            }
+          ],
+          "ok_state": [
+            "流路合流部から同じような大きさのドロップレットが連続して出る"
+          ],
+          "ng_state": [
+            "水相が途切れない、ドロップレットが出ない、形や間隔が大きく乱れる"
+          ]
+        },
+        {
+          "id": "d8w_15",
+          "title": "必要に応じて圧力を調整する",
+          "instruction": "ドロップレットが形成されない場合は、マニュアルの例を見ながらSampleとOilの圧力関係を確認してください。",
+          "task": "ドロップレットが形成されない場合は、マニュアルの例を見ながらSampleとOilの圧力関係を確認してください。",
+          "why": "SampleとOilの流量バランスでドロップレット形成が変わるためです。",
+          "checks": [
+            "チップホルダーを上にずらしていきドロップレットが作られているかを確認した",
+            "目的のドロップレットのサイズになっているか確認。なっていなければ、各圧力を調整した。",
+            "変更後にドロップレットが作られているかを再度確認した"
+          ],
+          "decision_support": [
+            "Sample圧が高すぎる、またはOil圧が低すぎると、水相が途切れにくくなります。",
+            "Sample圧が低すぎる、またはOil圧が高すぎると、Sampleが流れにくくなります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "マニュアルにない固定値を当てはめず、施設SOPと実験条件を優先してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "必要に応じて圧力を調整する"
+            }
+          ],
+          "ok_state": [
+            "同じような大きさのドロップレットが安定して形成される"
+          ],
+          "ng_state": [
+            "形成しない、連続相になる、急にサイズが変わる"
+          ]
+        },
+        {
+          "id": "d8w_16",
+          "title": "加圧を停止して回収する",
+          "instruction": "必要量を作製したらStopを押し、ドロップレットリザーバーからピペットで回収してチューブへ移してください。",
+          "task": "必要量を作製したらStopを押し、ドロップレットリザーバーからピペットで回収してチューブへ移してください。",
+          "why": "回収リザーバーのあふれを防ぎ、作製物を次工程へ移すためです。",
+          "checks": [
+            "必要量を作製した、もしくはサンプル・オイルいずれかが切れて作れなくなった",
+            "Stopを押して加圧を停止した",
+            "ピペットを使用し、出来上がったドロップレット（中段のリザーバー）をチューブへ移した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "回収リザーバーがあふれる前に停止してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "加圧を停止して回収する"
+            }
+          ],
+          "ok_state": [
+            "加圧が停止し、ドロップレットを回収できた"
+          ],
+          "ng_state": [
+            "Stop後も送液が続く、リザーバーからあふれる、回収時にOil側を取り違える"
+          ]
+        },
+        {
+          "id": "d8w_17",
+          "title": "シャットダウンする",
+          "instruction": "チップを取り出し、ソフトを終了して、PC、本体の電源をOFFにしてください。",
+          "task": "チップを取り出し、ソフトを終了して、PC、本体の電源をOFFにしてください。",
+          "why": "装置を安全な状態へ戻し、次回の使用に備えるためです。",
+          "checks": [
+            "チップをチップホルダーから取り出した",
+            "使用していないレーンがチップに残っている場合は施設ルールに従って保管した",
+            "ソフトのウィンドウを閉じた",
+            "PC、本体の電源をOFFにした",
+            "廃棄物を施設SOPに従って処理した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": true,
+          "warning": "使用済みチップと試料は施設SOPに従って処理してください。",
+          "ok_state": [
+            "装置とソフトが終了し、作業場所が片付いている"
+          ],
+          "ng_state": [
+            "チップが残っている、液がこぼれている、ソフトや電源がONのまま"
+          ]
+        }
+      ]
+    },
+    "dg800_gmd": {
+      "label": "ドロップレットを作る：2D Chip-800DG／GMD",
+      "description": "On-chip Droplet Generatorと2D Chip-800DGを使用し、アガロースGMDを作製・ゲル化・回収します。",
+      "steps": [
+        {
+          "id": "d8g_00",
+          "title": "事前に準備するもの",
+          "instruction": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "task": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "why": "途中で不足品に気づくことを防ぎ、安全に一連の操作を進めるためです。",
+          "checks": [
+            "施設SOPと今回の実験計画を確認した",
+            "白衣、保護メガネ、手袋を準備した",
+            "2D Chip-800DGと対応するチップホルダーを準備した",
+            "使用するチップ、チューブ、容器に破損や汚れがない",
+            "SampleとOilを準備した",
+            "回収用チューブ、ピペット、廃棄用品を準備した",
+            "低融点アガロースと必要な培地またはバッファーを準備した",
+            "PFO溶液、ゲル化用の氷または4℃環境、回収用の新しいチューブを準備した"
+          ],
+          "decision_support": [
+            "使用量、廃棄方法、試料の取扱いは施設SOPを優先してください。",
+            "このコースでは「GMD」を作製します。"
+          ],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "notice": "施設または研究室で定められているSOPがある場合は、その内容を優先してください。",
+          "glossary": {
+            "Sample": "ドロップレットの内側に入れる水系の試料です。",
+            "Oil": "ドロップレットの外側を作るフッ素系オイルです。",
+            "W/Oドロップレット": "Water in Oilの略で、オイルの中に水系試料の小さな粒が分散した状態です。",
+            "GMD": "Gel Microdropletの略です。ゲル材料を含むW/Oドロップレットを作り、その後にゲル化して回収します。"
+          }
+        },
+        {
+          "id": "d8g_01",
+          "title": "電源を入れる",
+          "instruction": "PC、Droplet Generator本体、温調ユニットの順に電源をONにしてください。",
+          "task": "PC、Droplet Generator本体、温調ユニットの順に電源をONにしてください。",
+          "why": "装置と観察系を操作できる状態にするためです。",
+          "checks": [
+            "PCとDroplet Generator本体の電源をONにした",
+            "温調ユニットの電源をONにした"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "異常がある場合は操作を続けず、電源を安全に切ってください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p2.png",
+              "title": "電源を入れる"
+            }
+          ],
+          "ok_state": [
+            "PCと装置が起動し、異音、焦げたにおい、液漏れがない"
+          ],
+          "ng_state": [
+            "電源が入らない、異音、焦げたにおい、液漏れがある"
+          ]
+        },
+        {
+          "id": "d8g_02",
+          "title": "温度調整ユニットを設定する",
+          "instruction": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "task": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "why": "チップ内のゲル材料が作製中に固まることを防ぐためです。",
+          "checks": [
+            "目的とするチップ内部温度を実験計画で確認した",
+            "SVを目的温度+3℃に設定した",
+            "ENTで設定温度を確定した",
+            "RUN/STOPで運転を開始した",
+            "PVでステージ温度を確認した"
+          ],
+          "decision_support": [
+            "例：チップ内部を37℃にしたい場合は、温調ユニットを40℃に設定します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度条件は使用するゲル材料と施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "温度調整ユニットを設定する"
+            }
+          ],
+          "ok_state": [
+            "SVが目的温度+3℃で、PVが設定温度へ近づいている"
+          ],
+          "ng_state": [
+            "SVと目的温度の関係が不明、PVが上がらない、異常表示がある"
+          ]
+        },
+        {
+          "id": "d8g_03",
+          "title": "チップホルダーを温める",
+          "instruction": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "task": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "why": "温度が安定する前に試料を入れると、アガロースが流路内で固まる可能性があるためです。",
+          "checks": [
+            "Step 3の作業から15～20分程度待った",
+            "PVが安定していることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度が安定しない場合は試料を入れないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "チップホルダーを温める"
+            }
+          ],
+          "ok_state": [
+            "PVが大きく変動せず、設定温度付近で安定している"
+          ],
+          "ng_state": [
+            "温度が安定しない、設定値から大きく外れる"
+          ]
+        },
+        {
+          "id": "d8g_04",
+          "title": "GMD用フッ素オイルを調製する",
+          "instruction": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "task": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "why": "GMD形成に使用する連続相をプロトコルの条件へ合わせるためです。",
+          "checks": [
+            "008-FluoroSurfactant-5wtH-10mL と008-FluoroSurfactant-0.1wtH-100mLを2:3の比率で希釈し、約2%にした",
+            "調製後のオイルを温めている"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "試薬名と濃度を必ず確認し、施設SOPに従って調製してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMD用フッ素オイルを調製する"
+            }
+          ],
+          "ok_state": [
+            "必要量の約2%フッ素オイルを調製できた"
+          ],
+          "ng_state": [
+            "製品や濃度が確認できない、混合比が不明"
+          ]
+        },
+        {
+          "id": "d8g_05",
+          "title": "低融点アガロースを溶解する",
+          "instruction": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "task": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "why": "均一なアガロース溶液を作り、作製中の固化を防ぐためです。",
+          "checks": [
+            "低融点アガロースを3%（w/v）で調製した",
+            "90～95℃で十分に溶解した",
+            "溶け残りがない",
+            "40℃で維持している"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "高温の溶液を扱うため、火傷に注意してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "低融点アガロースを溶解する"
+            }
+          ],
+          "ok_state": [
+            "透明または均一で、目立つ溶け残りがない"
+          ],
+          "ng_state": [
+            "粒や塊が残る、冷えて固まり始めている"
+          ]
+        },
+        {
+          "id": "d8g_06",
+          "title": "サンプルとアガロースを混合する",
+          "instruction": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "task": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "why": "細胞や微生物を含むゲル材料を均一にドロップレットへ封入するためです。",
+          "checks": [
+            "サンプルとアガロースを等量で混合した",
+            "最終アガロース濃度が約1.5%である",
+            "必要な場合は実験計画に従って細胞濃度を調整した",
+            "混合後も40℃で維持している"
+          ],
+          "decision_support": [
+            "プロトコルでは最終アガロース濃度0.5～2%の範囲が示されています。",
+            "微生物封入の例では、直径約35 µm作製時に最終濃度1×10^7個/mL程度が示されています。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "細胞濃度とゲル濃度は実験計画および施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "サンプルとアガロースを混合する"
+            }
+          ],
+          "ok_state": [
+            "サンプルが均一に混ざり、固化していない"
+          ],
+          "ng_state": [
+            "塊がある、冷えて固まる、濃度計算が確認できない"
+          ]
+        },
+        {
+          "id": "d8g_07",
+          "title": "装置本体と8連結バルブを接続する",
+          "instruction": "Oilは青色、Sampleは透明のチューブを使い、装置本体から8連結バルブ、チップホルダーまで接続してください。",
+          "task": "Oilは青色、Sampleは透明のチューブを使い、装置本体から8連結バルブ、チップホルダーまで接続してください。",
+          "why": "GMD用SampleとOilを正しい流路へ送るためです。",
+          "checks": [
+            "本体の「Oil」と表記されているコネクタから青色のチューブがホルダー下段のコネクタにしっかり接続されている",
+            "本体の「Sample」と表記されているコネクタから透明のチューブがホルダー上段のコネクタにしっかり接続されている",
+            "チューブに折れ、つぶれ、緩みがない（チューブの接続部を軽くひっぱっても抜けない）"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "SampleとOilのラインを入れ替えないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_connections_clean.png",
+              "title": "装置本体と8連結バルブを接続する"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleのラインが色どおりに接続されている"
+          ],
+          "ng_state": [
+            "色が逆、接続が緩い、チューブが折れている"
+          ]
+        },
+        {
+          "id": "d8g_08",
+          "title": "空気漏れ確認を準備する",
+          "instruction": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "task": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "why": "加圧する前に、配管とチップホルダーが気密に接続されているか確認するためです。",
+          "checks": [
+            "Droplet Testerを起動した",
+            "穴塞ぎチップをチップホルダーにセットした",
+            "上蓋を閉じ、左右のねじを時計回りに回して固定した",
+            "8連結の赤いバルブをすべてONにした（チューブと平行な向きがONです）"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "無理に蓋やねじを締めないでください。",
+          "screen_images": [
+            {
+              "filename": "dg_air_leak_droplet_tester_icon.png",
+              "title": "Droplet Testerを起動するデスクトップアイコン",
+              "caption": "Droplet Testerを起動するデスクトップアイコン",
+              "hide_title": true
+            },
+            {
+              "filename": "dg_air_leak_blocking_chip.png",
+              "title": "穴塞ぎチップ",
+              "caption": "穴塞ぎチップ",
+              "hide_title": true
+            },
+            {
+              "filename": "dg_air_leak_holder_lock.png",
+              "title": "穴塞ぎチップをセットするチップホルダーと固定ねじ",
+              "caption": "穴塞ぎチップをセットするチップホルダーと固定ねじ",
+              "hide_title": true
+            },
+            {
+              "filename": "dg_air_leak_valve_on.png",
+              "title": "8連結バルブのOFF／ON位置",
+              "caption": "8連結バルブのOFF／ON位置",
+              "hide_title": true
+            }
+          ],
+          "ok_state": [
+            "穴塞ぎチップが正しく入り、上蓋が固定されている"
+          ],
+          "ng_state": [
+            "チップが斜め、蓋が浮く、左右のねじが固定できない"
+          ]
+        },
+        {
+          "id": "d8g_09",
+          "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する",
+          "instruction": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "task": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "why": "SampleラインとOilラインを分けて確認し、漏れのある場所を見つけやすくするためです。",
+          "checks": [
+            "Droplet TesterのSample欄のStartを押した",
+            "測定数値が段々と安定していきSample欄にOKが表示された",
+            "Droplet TesterのOil欄のStartを押した",
+            "測定数値が段々と安定していきOil欄にOKが表示された"
+          ],
+          "decision_support": [
+            "Regent欄は使用しません。",
+            "NGの場合は、チューブ接続の緩みとチップホルダーの閉まり具合を確認して再試行します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "複数回確認してもNGのみ表示される場合は、操作を中止してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p3.png",
+              "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する"
+            }
+          ],
+          "ok_state": [
+            "SampleとOilの両方にOKが表示される"
+          ],
+          "ng_state": [
+            "NGが表示される、Runningのまま終了しない、圧力が安定しない"
+          ]
+        },
+        {
+          "id": "d8g_10",
+          "title": "Droplet Testerを終了する",
+          "instruction": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "task": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "why": "通常の作製チップへ安全に交換するためです。",
+          "checks": [
+            "Droplet Testerを閉じた",
+            "穴塞ぎチップを取り出した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "d8g_11",
+          "title": "作製ソフトを起動する",
+          "instruction": "「DropletGenerator-800DG」と「DinoCapture 2.0」を起動してください。",
+          "task": "「DropletGenerator-800DG」と「DinoCapture 2.0」を起動してください。",
+          "why": "圧力制御と流路観察を同時に行うためです。",
+          "checks": [
+            "DropletGenerator-800DGを起動した",
+            "DinoCapture 2.0を起動した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "ソフトが反応しない場合は、繰り返しStartを押さずに装置担当者へ確認してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p6.png",
+              "title": "作製ソフトを起動する"
+            }
+          ],
+          "ok_state": [
+            "圧力設定画面とカメラ画面の両方が表示される"
+          ],
+          "ng_state": [
+            "ソフトが起動しない、画面が固まる、カメラ映像が表示されない"
+          ]
+        },
+        {
+          "id": "d8g_12",
+          "title": "カメラと照明を設定する",
+          "instruction": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "task": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "why": "フレームレートを上げ、ドロップレット形成を見やすくするためです。",
+          "checks": [
+            "DinoCapture 2.0ウィンドウの上段、「～」をYUY2 640x480に変更した。",
+            "観察ユニット用照明ランプをONにした",
+            "カメラ映像が表示されている"
+          ],
+          "decision_support": [
+            "解像度が高いと縦方向につぶれて見える場合があります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "照明やカメラを無理に動かさないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p6.png",
+              "title": "カメラと照明を設定する"
+            }
+          ],
+          "ok_state": [
+            "流路を探せる明るさでカメラ映像が表示される"
+          ],
+          "ng_state": [
+            "映像が暗い、真っ白、縦につぶれて見える、映像が止まる"
+          ]
+        },
+        {
+          "id": "d8g_13",
+          "title": "チップと使用レーンを準備する",
+          "instruction": "2D Chip-800DGをチップホルダーにセットし、使用するレーンのバルブ（赤いコック）だけONにしてください。",
+          "task": "2D Chip-800DGをチップホルダーにセットし、使用するレーンのバルブ（赤いコック）だけONにしてください。",
+          "why": "GMDを作製する流路だけへ圧力をかけるためです。",
+          "checks": [
+            "2D Chip-800DGを正しい向きでセットした",
+            "使用するレーンだけ赤いバルブのコックを縦（チューブに水平）にした"
+          ],
+          "check_help": {
+            "使用するレーンだけ赤いバルブのコックを縦（チューブに水平）にした": "チップホルダーに繋がっているチューブには、番号がわかる結束具が付いています。Sample・Oilを入れた列に対応する番号のバルブをONにしてください。"
+          },
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温めたチップホルダーを扱う際は火傷に注意してください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p4.png",
+              "title": "チップと使用レーンを準備する"
+            }
+          ],
+          "ok_state": [
+            "チップが平らに入り、使用レーンだけがON"
+          ],
+          "ng_state": [
+            "チップが浮く、レーン番号が一致しない"
+          ]
+        },
+        {
+          "id": "d8g_14",
+          "title": "アガロースサンプルとGMD用オイルを入れる",
+          "instruction": "サンプルリザーバーに、40℃で維持したアガロースサンプル溶液を約100 µL入れてください。続けて、使用するレーンのオイルリザーバーに、調製して温めた約2%フッ素オイルを約200 µL入れてください。",
+          "task": "サンプルリザーバーに、40℃で維持したアガロースサンプル溶液を約100 µL入れてください。続けて、使用するレーンのオイルリザーバーに、調製して温めた約2%フッ素オイルを約200 µL入れてください。",
+          "why": "GMDプロトコルに示されたオイル量と濃度で作製するためです。また、GMDプロトコルに示された条件でゲル材料を流路へ供給するためです。",
+          "checks": [
+            "サンプルリザーバーへ約100 µL入れた",
+            "アガロースサンプルが液状である",
+            "使用するチップ（2D Chip-800DG）のオイルリザーバー（下のリザーバー）にオイルを約200 µL入れた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "オイルの製品名と調製濃度を確認してください。固まり始めた試料を無理に流さないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_reservoirs_only.png",
+              "title": "アガロースサンプルとGMD用オイルを入れる"
+            }
+          ],
+          "ok_state": [
+            "GMD用オイルがOil側へ入っている",
+            "アガロースサンプルがSample側へ入り、固化していない"
+          ],
+          "ng_state": [
+            "通常オイルと取り違えた、Sample側へ入れた",
+            "冷えて固まる、Oil側へ入れた、流路入口に塊がある"
+          ]
+        },
+        {
+          "id": "d8g_16",
+          "title": "チップホルダーをロックして焦点を合わせる",
+          "instruction": "上蓋とねじを固定し、温調ステージ上で流路合流部へカメラの焦点を合わせてください。",
+          "task": "上蓋とねじを固定し、温調ステージ上で流路合流部へカメラの焦点を合わせてください。",
+          "why": "気密性と温度を保ちながら形成部を観察するためです。",
+          "checks": [
+            "上蓋とねじを固定した",
+            "チップホルダーを温調ステージへ置いた",
+            "流路の分岐部（十字部分）が画面中央にある",
+            "流路の画像がぼやけておらず、はっきり見える"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "カメラをチップへ接触させないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "チップホルダーをロックして焦点を合わせる"
+            }
+          ],
+          "ok_state": [
+            "流路が鮮明で、温調状態を維持している"
+          ],
+          "ng_state": [
+            "蓋が浮く、流路が見えない、試料が固まり始める"
+          ]
+        },
+        {
+          "id": "d8g_17",
+          "title": "GMD作製の初期圧力を設定する",
+          "instruction": "Oilを30 kPa、Sampleを30 kPaに設定してください。Sampleは25～40 kPa程度の範囲で調整する例が示されています。",
+          "task": "Oilを30 kPa、Sampleを30 kPaに設定してください。Sampleは25～40 kPa程度の範囲で調整する例が示されています。",
+          "why": "GMDプロトコルの初期条件から形成状態を確認するためです。",
+          "checks": [
+            "Oilを30 kPaに設定した",
+            "Sampleを30 kPaに設定した",
+            "入力値を再確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "圧力を上げすぎたり下げすぎたりすると形成しなくなります。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMD作製の初期圧力を設定する"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleの設定値が各30 kPa"
+          ],
+          "ng_state": [
+            "欄や単位を取り違えた、設定範囲を確認していない"
+          ]
+        },
+        {
+          "id": "d8g_18",
+          "title": "加圧してGMD形成を調整する",
+          "instruction": "Startを押して形成を確認し、サイズを変える場合はSample圧力を調整してください。",
+          "task": "Startを押して形成を確認し、サイズを変える場合はSample圧力を調整してください。",
+          "why": "ゲルの粘度によってサイズが変わるため、形成状態を見ながら調整する必要があります。",
+          "checks": [
+            "Startを押した",
+            "連続してドロップレットが形成されることを確認した",
+            "必要な場合はSample圧力を小さく変更した",
+            "変更後にドロップレットが作られているかを再度確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "圧力を変更する際は一度に大きく変えないでください。",
+          "screen_images": [
+            {
+              "filename": "dg800_manual_p5.png",
+              "title": "加圧してGMD形成を調整する"
+            }
+          ],
+          "ok_state": [
+            "同じような大きさのドロップレットが安定して形成される"
+          ],
+          "ng_state": [
+            "形成しない、水相が連続する、急にサイズが変わる"
+          ]
+        },
+        {
+          "id": "d8g_19",
+          "title": "20分以内に停止して回収する",
+          "instruction": "作製時間を20分以内に留め、Stopを押して、回収リザーバーから1.5 mLチューブへ回収してください。",
+          "task": "作製時間を20分以内に留め、Stopを押して、回収リザーバーから1.5 mLチューブへ回収してください。",
+          "why": "回収リザーバーのあふれを防ぐためです。",
+          "checks": [
+            "作製時間は20分以内に収めた",
+            "Stopを押した",
+            "ピペットを使用し、出来上がったドロップレット（中段のリザーバー）をチューブへ移した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "作製中は回収リザーバーから目を離さないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "20分以内に停止して回収する"
+            }
+          ],
+          "ok_state": [
+            "あふれる前に停止し、GMDを回収できた"
+          ],
+          "ng_state": [
+            "20分を超えて作製を続けた、リザーバーがあふれた"
+          ]
+        },
+        {
+          "id": "d8g_20",
+          "title": "GMDをゲル化する",
+          "instruction": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "task": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "why": "アガロースを固め、オイル除去後も粒子形状を保つためです。",
+          "checks": [
+            "回収チューブを氷上または4℃へ置いた",
+            "20分程度静置した",
+            "チューブを強く振っていない"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プロトコルには、必要に応じて37℃培養後にゲル化する方法も記載されています。実験計画を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMDをゲル化する"
+            }
+          ],
+          "ok_state": [
+            "ドロップレットがゲル化する条件で静置できた"
+          ],
+          "ng_state": [
+            "室温で長時間放置した、ゲル化前に強く混ぜた"
+          ]
+        },
+        {
+          "id": "d8g_21",
+          "title": "下層のオイルを除去する",
+          "instruction": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "task": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "why": "後の水相回収へ持ち込むオイル量を減らすためです。",
+          "checks": [
+            "チューブ内の層を確認した",
+            "下層のオイルをゆっくり除去した",
+            "GMDを吸い込まないよう注意した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "境界付近は無理に取り切らず、GMDの回収を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "下層のオイルを除去する"
+            }
+          ],
+          "ok_state": [
+            "上層のGMDを残しながら下層オイルを減らせた"
+          ],
+          "ng_state": [
+            "GMDを一緒に吸い取った、層を確認せずに操作した"
+          ]
+        },
+        {
+          "id": "d8g_22",
+          "title": "PFO溶液と水相を加える",
+          "instruction": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "task": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "why": "W/O界面を壊し、ゲルボールを水相へ移す準備をするためです。",
+          "checks": [
+            "10% PFO溶液を確認した",
+            "ドロップレット液と等量～2倍量を加えた",
+            "軽く転倒混和した",
+            "等量の培地またはバッファーを上から加えた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "PFOとHFE7500の取扱いは試薬の安全データシートと施設SOPに従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "PFO溶液と水相を加える"
+            }
+          ],
+          "ok_state": [
+            "層を保ちながら指定順序で液を加えた"
+          ],
+          "ng_state": [
+            "強く振とうした、加える順序や濃度が不明"
+          ]
+        },
+        {
+          "id": "d8g_23",
+          "title": "W/Oドロップレットを壊す",
+          "instruction": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "task": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "why": "ゲル化した粒子をオイル相から水相へ移すためです。",
+          "checks": [
+            "施設SOPで認められた方法を選んだ",
+            "W/Oドロップレットが壊れるまで待った",
+            "チューブの状態を観察した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プラズマボールを使用する場合は、施設の電気安全ルールと機器の取扱説明に従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "W/Oドロップレットを壊す"
+            }
+          ],
+          "ok_state": [
+            "エマルションが崩れ、水相とオイル相の境界が確認できる"
+          ],
+          "ng_state": [
+            "エマルションが残る、強く振ってゲルボールを損傷した"
+          ]
+        },
+        {
+          "id": "d8g_24",
+          "title": "ゲルボールを水相へ回収する",
+          "instruction": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "task": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "why": "オイルの持ち込みを抑えながらゲルボールを回収するためです。",
+          "checks": [
+            "上清をゆっくりピペッティングした",
+            "境界付近のゲルボールを水相へ分散させた",
+            "上清を新しいチューブへ移した",
+            "なるべくオイルを取り込まなかった"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "少量の上清を残してもよいので、オイルを無理に吸い込まないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "ゲルボールを水相へ回収する"
+            }
+          ],
+          "ok_state": [
+            "新しいチューブの水相にゲルボールを回収できた"
+          ],
+          "ng_state": [
+            "下層オイルを多く吸い込んだ、ゲルボールが元チューブに大量に残った"
+          ]
+        },
+        {
+          "id": "d8g_25",
+          "title": "次の工程へ進む準備をする",
+          "instruction": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "task": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "why": "回収したGMDを目的の実験条件へ移すためです。",
+          "checks": [
+            "回収量と状態を確認した",
+            "必要な培地またはバッファーを追加した",
+            "チューブへ試料名と日時を記録した",
+            "次工程の保存または培養条件を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "d8g_26",
+          "title": "シャットダウンする",
+          "instruction": "チップを取り出し、ソフトを終了して、PC、本体、温調電源、電源タップをOFFにしてください。",
+          "task": "チップを取り出し、ソフトを終了して、PC、本体、温調電源、電源タップをOFFにしてください。",
+          "why": "装置を安全な状態へ戻すためです。",
+          "checks": [
+            "チップを取り出した",
+            "使用していないレーンがチップに残っている場合は施設ルールに従って保管した",
+            "ソフトを終了した",
+            "PC、本体、温調電源、電源タップをOFFにした",
+            "試薬と廃棄物を施設SOPに従って処理した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": true,
+          "warning": "高温の試料と化学試薬を使用した場所を施設SOPに従って清掃してください。",
+          "ok_state": [
+            "装置が停止し、試料と廃棄物が適切に処理されている"
+          ],
+          "ng_state": [
+            "温調や電源がONのまま、液が残っている"
+          ]
+        }
+      ]
+    },
+    "dg1060_1100_wo": {
+      "label": "ドロップレットを作る：2D Chip-1060DG or 2D Chip-1100DG／W/Oドロップレット",
+      "description": "On-chip Droplet Generatorと2D Chip-1060DGまたは2D Chip-1100DGを使用し、W/Oドロップレットを作製します。1060DG／1100DGを区別せず、共通工程として案内します。",
+      "steps": [
+        {
+          "id": "d6w_00",
+          "title": "事前に準備するもの",
+          "instruction": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "task": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "why": "途中で不足品に気づくことを防ぎ、安全に一連の操作を進めるためです。",
+          "checks": [
+            "施設SOPと今回の実験計画を確認した",
+            "白衣、保護メガネ、手袋を準備した",
+            "使用する2D Chip-1060DGまたは2D Chip-1100DGと対応するチップホルダーを準備した",
+            "使用するチップ、チューブ、容器に破損や汚れがない",
+            "SampleとOilを準備した",
+            "回収用チューブ、ピペット、廃棄用品を準備した"
+          ],
+          "decision_support": [
+            "使用量、廃棄方法、試料の取扱いは施設SOPを優先してください。",
+            "このコースでは「W/Oドロップレット」を作製します。",
+            "このナビでは、2D Chip-1060DGと2D Chip-1100DGを区別せず、同じ操作手順で案内します。"
+          ],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "notice": "施設または研究室で定められているSOPがある場合は、その内容を優先してください。",
+          "glossary": {
+            "Sample": "ドロップレットの内側に入れる水系の試料です。",
+            "Oil": "ドロップレットの外側を作るフッ素系オイルです。",
+            "W/Oドロップレット": "Water in Oilの略で、オイルの中に水系試料の小さな粒が分散した状態です。",
+            "GMD": "Gel Microdropletの略です。ゲル材料を含むW/Oドロップレットを作り、その後にゲル化して回収します。"
+          }
+        },
+        {
+          "id": "d6w_01",
+          "title": "電源を入れる",
+          "instruction": "PC、Droplet Generator本体の順に電源をONにしてください。",
+          "task": "PC、Droplet Generator本体の順に電源をONにしてください。",
+          "why": "装置と観察系を操作できる状態にするためです。",
+          "checks": [
+            "PCとDroplet Generator本体の電源をONにした"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "異常がある場合は操作を続けず、電源を安全に切ってください。",
+          "screen_images": [
+            {
+              "filename": "dg_power_devices_only.png",
+              "title": "電源を入れる"
+            }
+          ],
+          "ok_state": [
+            "PCと装置が起動し、異音、焦げたにおい、液漏れがない"
+          ],
+          "ng_state": [
+            "電源が入らない、異音、焦げたにおい、液漏れがある"
+          ]
+        },
+        {
+          "id": "d6w_03",
+          "title": "SampleとOilのラインを接続する",
+          "instruction": "Oilは青色、Sampleは透明のチューブを使い、装置本体とチップホルダーを接続してください。",
+          "task": "Oilは青色、Sampleは透明のチューブを使い、装置本体とチップホルダーを接続してください。",
+          "why": "SampleとOilを正しい流路へ送るためです。",
+          "checks": [
+            "本体の「Oil」と表記されているコネクタから青色のチューブがホルダー下段のコネクタにしっかり接続されている",
+            "本体の「Sample」と表記されているコネクタから透明のチューブがホルダー上段のコネクタにしっかり接続されている",
+            "チューブに折れ、つぶれ、緩みがない（チューブの接続部を軽くひっぱっても抜けない）"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "SampleとOilのラインを入れ替えないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p2_wo.png",
+              "title": "SampleとOilのラインを接続する"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleのラインが色どおりに接続されている"
+          ],
+          "ng_state": [
+            "色が逆、Reagentへ接続、チューブが緩い"
+          ]
+        },
+        {
+          "id": "d6w_04",
+          "title": "空気漏れ確認を準備する",
+          "instruction": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "task": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "why": "加圧する前に、配管とチップホルダーが気密に接続されているか確認するためです。",
+          "checks": [
+            "Droplet Testerを起動した",
+            "穴塞ぎチップをチップホルダーにセットした",
+            "上蓋を閉じ、左右のねじを時計回りに回して固定した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "無理に蓋やねじを締めないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p3.png",
+              "title": "空気漏れ確認を準備する"
+            }
+          ],
+          "ok_state": [
+            "穴塞ぎチップが正しく入り、上蓋が固定されている"
+          ],
+          "ng_state": [
+            "チップが斜め、蓋が浮く、左右のねじが固定できない"
+          ]
+        },
+        {
+          "id": "d6w_05",
+          "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する",
+          "instruction": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "task": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "why": "SampleラインとOilラインを分けて確認し、漏れのある場所を見つけやすくするためです。",
+          "checks": [
+            "Droplet TesterのSample欄のStartを押した",
+            "測定数値が段々と安定していきSample欄にOKが表示された",
+            "Droplet TesterのOil欄のStartを押した",
+            "測定数値が段々と安定していきOil欄にOKが表示された"
+          ],
+          "decision_support": [
+            "Regent欄は使用しません。",
+            "NGの場合は、チューブ接続の緩みとチップホルダーの閉まり具合を確認して再試行します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "複数回確認してもNGのみ表示される場合は、操作を中止してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p3.png",
+              "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する"
+            }
+          ],
+          "ok_state": [
+            "SampleとOilの両方にOKが表示される"
+          ],
+          "ng_state": [
+            "NGが表示される、Runningのまま終了しない、圧力が安定しない"
+          ]
+        },
+        {
+          "id": "d6w_06",
+          "title": "Droplet Testerを終了する",
+          "instruction": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "task": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "why": "通常の作製チップへ安全に交換するためです。",
+          "checks": [
+            "Droplet Testerを閉じた",
+            "穴塞ぎチップを取り出した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "d6w_07",
+          "title": "作製ソフトを起動する",
+          "instruction": "「DropletGenerator-1060DG」と「DinoCapture 2.0」を起動してください。",
+          "task": "「DropletGenerator-1060DG」と「DinoCapture 2.0」を起動してください。",
+          "why": "圧力制御と流路観察を同時に行うためです。",
+          "checks": [
+            "DropletGenerator-1060DGを起動した",
+            "DinoCapture 2.0を起動した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "ソフトが反応しない場合は、繰り返しStartを押さずに装置担当者へ確認してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p6.png",
+              "title": "作製ソフトを起動する"
+            }
+          ],
+          "ok_state": [
+            "圧力設定画面とカメラ画面の両方が表示される"
+          ],
+          "ng_state": [
+            "ソフトが起動しない、画面が固まる、カメラ映像が表示されない"
+          ]
+        },
+        {
+          "id": "d6w_08",
+          "title": "カメラと照明を設定する",
+          "instruction": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "task": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "why": "フレームレートを上げ、ドロップレット形成を見やすくするためです。",
+          "checks": [
+            "DinoCapture 2.0ウィンドウの上段、「～」をYUY2 640x480に変更した。",
+            "観察ユニット用照明ランプをONにした",
+            "カメラ映像が表示されている"
+          ],
+          "decision_support": [
+            "解像度が高いと縦方向につぶれて見える場合があります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "照明やカメラを無理に動かさないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p6.png",
+              "title": "カメラと照明を設定する"
+            }
+          ],
+          "ok_state": [
+            "流路を探せる明るさでカメラ映像が表示される"
+          ],
+          "ng_state": [
+            "映像が暗い、真っ白、縦につぶれて見える、映像が止まる"
+          ]
+        },
+        {
+          "id": "d6w_09",
+          "title": "チップ付属チューブを組み立てる",
+          "instruction": "使用するチップに付属するチューブの太い部分をチップ下部の出口の小穴に取り付けてください。",
+          "task": "使用するチップに付属するチューブの太い部分をチップ下部の出口の小穴に取り付けてください。",
+          "why": "チップと装置ラインを気密に接続するためです。",
+          "checks": [
+            "チューブの太い部分をチップ下部の出口の小穴に差し込んだ"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "チューブはできるだけ奥まで差し込んでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p4.png",
+              "title": "チップ付属チューブを組み立てる"
+            }
+          ],
+          "ok_state": [
+            "チューブが奥まで入り、抜けや折れがない"
+          ],
+          "ng_state": [
+            "差し込みが浅い、チューブが折れる、左右を取り違える"
+          ]
+        },
+        {
+          "id": "d6w_10",
+          "title": "サンプルとオイルを入れる",
+          "instruction": "Sampleリザーバーにサンプルを、Oilリザーバーにオイルを入れ、チップホルダーへセットして上蓋を閉じてください。",
+          "task": "Sampleリザーバーにサンプルを、Oilリザーバーにオイルを入れ、チップホルダーへセットして上蓋を閉じてください。",
+          "why": "作製に必要な2液を正しい位置へ準備するためです。",
+          "checks": [
+            "Sampleを丸いリザーバーに、Oilを大きいリザーバーへそれぞれ入れた",
+            "チップホルダーへセットして上蓋を閉じ左右のネジをしめた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "マニュアルに具体的な投入量の記載がないため、施設SOPと実験計画を優先してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p4.png",
+              "title": "サンプルとオイルを入れる"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleが正しい側へ入り、蓋が閉じている"
+          ],
+          "ng_state": [
+            "入れ間違い、こぼれ、蓋が浮く"
+          ]
+        },
+        {
+          "id": "d6w_11",
+          "title": "観察ユニットと回収チューブをセットする",
+          "instruction": "チップホルダーを観察ユニットへセットし、排出口から伸びるチューブを回収用1.5 mLチューブへ入れてください。",
+          "task": "チップホルダーを観察ユニットへセットし、排出口から伸びるチューブを回収用1.5 mLチューブへ入れてください。",
+          "why": "形成部を観察しながら、作製されたドロップレットを安全に回収するためです。",
+          "checks": [
+            "チップホルダーを観察ユニットへセットした",
+            "ライトが流路へ当たるよう調節した",
+            "回収チューブが倒れないよう付属のアルミラックにセットした",
+            "チップに差し込んだチューブの先を回収用1.5 mLチューブへ入れた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "排出チューブの先端がチューブ外へ出ないようにしてください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "観察ユニットと回収チューブをセットする"
+            }
+          ],
+          "ok_state": [
+            "流路へ光が当たり、排出チューブが回収チューブ内にある"
+          ],
+          "ng_state": [
+            "排出チューブが外、回収チューブが不安定、流路が暗い"
+          ]
+        },
+        {
+          "id": "d6w_12",
+          "title": "流路へ焦点を合わせる",
+          "instruction": "観察ユニットのカメラを、ユニット下部のネジをひねって、流路が見える位置へ動かし、高さを調節して焦点（ピント）を合わせてください。",
+          "task": "観察ユニットのカメラを、ユニット下部のネジをひねって、流路が見える位置へ動かし、高さを調節して焦点（ピント）を合わせてください。",
+          "why": "ドロップレット形成部を明確に観察するためです。",
+          "checks": [
+            "流路の分岐部（十字部分）が画面中央にある",
+            "流路の画像がぼやけておらず、はっきり見える"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "カメラをチップへ接触させないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "流路へ焦点を合わせる"
+            }
+          ],
+          "ok_state": [
+            "流路の合流部がはっきり見える"
+          ],
+          "ng_state": [
+            "流路が見えない、ぼやける、画面が暗い"
+          ]
+        },
+        {
+          "id": "d6w_13",
+          "title": "初期圧力を設定する",
+          "instruction": "Pressure SettingでSampleを10 kPa、Oilを15 kPaに設定してください。",
+          "task": "Pressure SettingでSampleを10 kPa、Oilを15 kPaに設定してください。",
+          "why": "1060DG／1100DGマニュアルの初期条件から形成状態を確認するためです。",
+          "checks": [
+            "Sampleを10 kPaに設定した",
+            "Oilを15 kPaに設定した"
+          ],
+          "decision_support": [
+            "圧力は7.0～80 kPaの範囲で調整可能です。",
+            "この初期値は1060DGマニュアルに記載された値です。1100DGも同じ操作条件として案内します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "圧力条件は施設SOPと実験条件を優先してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "初期圧力を設定する"
+            }
+          ],
+          "ok_state": [
+            "Sample 10 kPa、Oil 15 kPaが設定されている"
+          ],
+          "ng_state": [
+            "欄や単位を取り違えた、設定範囲外"
+          ]
+        },
+        {
+          "id": "d6w_14",
+          "title": "加圧を開始して形成を確認する",
+          "instruction": "Startを押し、カメラ画面でドロップレットが連続して形成されるか確認してください。",
+          "task": "Startを押し、カメラ画面でドロップレットが連続して形成されるか確認してください。",
+          "why": "現在の圧力バランスで形成できているか判断するためです。",
+          "checks": [
+            "Startを押した",
+            "流路合流部でドロップレット形成を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "液漏れや異常な圧力表示がある場合はStopを押してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "加圧を開始して形成を確認する"
+            }
+          ],
+          "ok_state": [
+            "同じような大きさのドロップレットが連続して形成される"
+          ],
+          "ng_state": [
+            "水相が途切れない、ドロップレットが出ない、急にサイズが変わる"
+          ]
+        },
+        {
+          "id": "d6w_15",
+          "title": "必要に応じて圧力を調整する",
+          "instruction": "形成されない場合は、Sample圧とOil圧の関係を確認し、少しずつ変更して再確認してください。",
+          "task": "形成されない場合は、Sample圧とOil圧の関係を確認し、少しずつ変更して再確認してください。",
+          "why": "SampleとOilの流量バランスで形成状態が変わるためです。",
+          "checks": [
+            "チップホルダーを上にずらしていきドロップレットが作られているかを確認した",
+            "圧力を変更する場合は小さく変更した",
+            "変更後にドロップレットが作られているかを再度確認した"
+          ],
+          "decision_support": [
+            "Sample圧が高すぎる、またはOil圧が低すぎると、水相が途切れにくくなります。",
+            "Sample圧が低すぎる、またはOil圧が高すぎると、Sampleが流れにくくなります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "マニュアルにない固定値を追加せず、形成状態と施設SOPを基準にしてください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "必要に応じて圧力を調整する"
+            }
+          ],
+          "ok_state": [
+            "同じような大きさのドロップレットが安定して形成される"
+          ],
+          "ng_state": [
+            "形成しない、連続相になる、サイズが不安定"
+          ]
+        },
+        {
+          "id": "d6w_16",
+          "title": "加圧を停止して回収状態を確認する",
+          "instruction": "必要量を作製したらStopを押し、回収用1.5 mLチューブの上層に白濁したエマルションが蓄積していることを確認してください。",
+          "task": "必要量を作製したらStopを押し、回収用1.5 mLチューブの上層に白濁したエマルションが蓄積していることを確認してください。",
+          "why": "必要量を超えて作製することを防ぎ、回収物を確認するためです。",
+          "checks": [
+            "必要量を作製した、もしくはサンプル・オイルいずれかが切れて作れなくなった",
+            "Stopを押した",
+            "回収チューブ（1.5ml）上層に白く濁った部分があることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "培養する場合はチューブのまま、解析する場合は上層のみを回収する手順がマニュアルに記載されています。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p6.png",
+              "title": "加圧を停止して回収状態を確認する"
+            }
+          ],
+          "ok_state": [
+            "上層に白濁したエマルションがあり、加圧が停止している"
+          ],
+          "ng_state": [
+            "送液が続く、回収チューブからあふれる、エマルションが確認できない"
+          ]
+        },
+        {
+          "id": "d6w_17",
+          "title": "シャットダウンする",
+          "instruction": "チップを取り出し、ソフトを終了して、PC、本体の電源をOFFにしてください。",
+          "task": "チップを取り出し、ソフトを終了して、PC、本体の電源をOFFにしてください。",
+          "why": "装置を安全な状態へ戻すためです。",
+          "checks": [
+            "チップを取り出した",
+            "ソフトをXで終了した",
+            "PC、本体の電源をOFFにした",
+            "廃棄物を施設SOPに従って処理した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": true,
+          "warning": "使用済みチップ、試料、オイル、GMD関連試薬は施設SOPに従って処理してください。",
+          "ok_state": [
+            "装置とソフトが終了し、作業場所が片付いている"
+          ],
+          "ng_state": [
+            "チップが残る、液がこぼれる、電源がONのまま"
+          ]
+        }
+      ]
+    },
+    "dg1060_1100_gmd": {
+      "label": "ドロップレットを作る：2D Chip-1060DG or 2D Chip-1100DG／GMD",
+      "description": "On-chip Droplet Generatorと2D Chip-1060DGまたは2D Chip-1100DGを使用し、GMDを作製します。1060DG／1100DGを区別せず、共通工程として案内します。",
+      "steps": [
+        {
+          "id": "d6g_00",
+          "title": "事前に準備するもの",
+          "instruction": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "task": "操作を始める前に、装置、チップ、試料、オイル、回収用品、安全用品をそろえてください。",
+          "why": "途中で不足品に気づくことを防ぎ、安全に一連の操作を進めるためです。",
+          "checks": [
+            "施設SOPと今回の実験計画を確認した",
+            "白衣、保護メガネ、手袋を準備した",
+            "使用する2D Chip-1060DGまたは2D Chip-1100DGと対応するチップホルダーを準備した",
+            "使用するチップ、チューブ、容器に破損や汚れがない",
+            "SampleとOilを準備した",
+            "回収用チューブ、ピペット、廃棄用品を準備した",
+            "低融点アガロースと必要な培地またはバッファーを準備した",
+            "PFO溶液、ゲル化用の氷または4℃環境、回収用の新しいチューブを準備した"
+          ],
+          "decision_support": [
+            "使用量、廃棄方法、試料の取扱いは施設SOPを優先してください。",
+            "このコースでは「GMD」を作製します。",
+            "このナビでは、2D Chip-1060DGと2D Chip-1100DGを区別せず、同じ操作手順で案内します。"
+          ],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "notice": "施設または研究室で定められているSOPがある場合は、その内容を優先してください。",
+          "glossary": {
+            "Sample": "ドロップレットの内側に入れる水系の試料です。",
+            "Oil": "ドロップレットの外側を作るフッ素系オイルです。",
+            "W/Oドロップレット": "Water in Oilの略で、オイルの中に水系試料の小さな粒が分散した状態です。",
+            "GMD": "Gel Microdropletの略です。ゲル材料を含むW/Oドロップレットを作り、その後にゲル化して回収します。"
+          }
+        },
+        {
+          "id": "d6g_01",
+          "title": "電源を入れる",
+          "instruction": "PC、Droplet Generator本体、温調ユニットの順に電源をONにしてください。",
+          "task": "PC、Droplet Generator本体、温調ユニットの順に電源をONにしてください。",
+          "why": "装置と観察系を操作できる状態にするためです。",
+          "checks": [
+            "PCとDroplet Generator本体の電源をONにした",
+            "温調ユニットの電源をONにした"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "異常がある場合は操作を続けず、電源を安全に切ってください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p2.png",
+              "title": "電源を入れる"
+            }
+          ],
+          "ok_state": [
+            "PCと装置が起動し、異音、焦げたにおい、液漏れがない"
+          ],
+          "ng_state": [
+            "電源が入らない、異音、焦げたにおい、液漏れがある"
+          ]
+        },
+        {
+          "id": "d6g_03",
+          "title": "温度調整ユニットを設定する",
+          "instruction": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "task": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "why": "チップ内のゲル材料が作製中に固まることを防ぐためです。",
+          "checks": [
+            "目的とするチップ内部温度を実験計画で確認した",
+            "SVを目的温度+3℃に設定した",
+            "ENTで設定温度を確定した",
+            "RUN/STOPで運転を開始した",
+            "PVでステージ温度を確認した"
+          ],
+          "decision_support": [
+            "例：チップ内部を37℃にしたい場合は、温調ユニットを40℃に設定します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度条件は使用するゲル材料と施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "温度調整ユニットを設定する"
+            }
+          ],
+          "ok_state": [
+            "SVが目的温度+3℃で、PVが設定温度へ近づいている"
+          ],
+          "ng_state": [
+            "SVと目的温度の関係が不明、PVが上がらない、異常表示がある"
+          ]
+        },
+        {
+          "id": "d6g_04",
+          "title": "チップホルダーを温める",
+          "instruction": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "task": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "why": "温度が安定する前に試料を入れると、アガロースが流路内で固まる可能性があるためです。",
+          "checks": [
+            "Step 3の作業から15～20分程度待った",
+            "PVが安定していることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度が安定しない場合は試料を入れないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "チップホルダーを温める"
+            }
+          ],
+          "ok_state": [
+            "PVが大きく変動せず、設定温度付近で安定している"
+          ],
+          "ng_state": [
+            "温度が安定しない、設定値から大きく外れる"
+          ]
+        },
+        {
+          "id": "d6g_05",
+          "title": "GMD用フッ素オイルを調製する",
+          "instruction": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "task": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "why": "GMD形成に使用する連続相をプロトコルの条件へ合わせるためです。",
+          "checks": [
+            "008-FluoroSurfactant-5wtH-10mL と008-FluoroSurfactant-0.1wtH-100mLを2:3の比率で希釈し、約2%にした",
+            "調製後のオイルを温めている"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "試薬名と濃度を必ず確認し、施設SOPに従って調製してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMD用フッ素オイルを調製する"
+            }
+          ],
+          "ok_state": [
+            "必要量の約2%フッ素オイルを調製できた"
+          ],
+          "ng_state": [
+            "製品や濃度が確認できない、混合比が不明"
+          ]
+        },
+        {
+          "id": "d6g_06",
+          "title": "低融点アガロースを溶解する",
+          "instruction": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "task": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "why": "均一なアガロース溶液を作り、作製中の固化を防ぐためです。",
+          "checks": [
+            "低融点アガロースを3%（w/v）で調製した",
+            "90～95℃で十分に溶解した",
+            "溶け残りがない",
+            "40℃で維持している"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "高温の溶液を扱うため、火傷に注意してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "低融点アガロースを溶解する"
+            }
+          ],
+          "ok_state": [
+            "透明または均一で、目立つ溶け残りがない"
+          ],
+          "ng_state": [
+            "粒や塊が残る、冷えて固まり始めている"
+          ]
+        },
+        {
+          "id": "d6g_07",
+          "title": "サンプルとアガロースを混合する",
+          "instruction": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "task": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "why": "細胞や微生物を含むゲル材料を均一にドロップレットへ封入するためです。",
+          "checks": [
+            "サンプルとアガロースを等量で混合した",
+            "最終アガロース濃度が約1.5%である",
+            "必要な場合は実験計画に従って細胞濃度を調整した",
+            "混合後も40℃で維持している"
+          ],
+          "decision_support": [
+            "プロトコルでは最終アガロース濃度0.5～2%の範囲が示されています。",
+            "微生物封入の例では、直径約35 µm作製時に最終濃度1×10^7個/mL程度が示されています。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "細胞濃度とゲル濃度は実験計画および施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "サンプルとアガロースを混合する"
+            }
+          ],
+          "ok_state": [
+            "サンプルが均一に混ざり、固化していない"
+          ],
+          "ng_state": [
+            "塊がある、冷えて固まる、濃度計算が確認できない"
+          ]
+        },
+        {
+          "id": "d6g_08",
+          "title": "SampleとOilのラインを接続する",
+          "instruction": "Oilは青色、Sampleは透明のチューブを使い、装置本体とチップホルダーを接続してください。",
+          "task": "Oilは青色、Sampleは透明のチューブを使い、装置本体とチップホルダーを接続してください。",
+          "why": "SampleとOilを正しい流路へ送るためです。",
+          "checks": [
+            "本体の「Oil」と表記されているコネクタから青色のチューブがホルダー下段のコネクタにしっかり接続されている",
+            "本体の「Sample」と表記されているコネクタから透明のチューブがホルダー上段のコネクタにしっかり接続されている",
+            "チューブに折れ、つぶれ、緩みがない（チューブの接続部を軽くひっぱっても抜けない）"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "SampleとOilのラインを入れ替えないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p2.png",
+              "title": "SampleとOilのラインを接続する"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleのラインが色どおりに接続されている"
+          ],
+          "ng_state": [
+            "色が逆、Reagentへ接続、チューブが緩い"
+          ]
+        },
+        {
+          "id": "d6g_09",
+          "title": "空気漏れ確認を準備する",
+          "instruction": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "task": "Droplet Testerを起動し、穴塞ぎチップをチップホルダーへセットしてください。",
+          "why": "加圧する前に、配管とチップホルダーが気密に接続されているか確認するためです。",
+          "checks": [
+            "Droplet Testerを起動した",
+            "穴塞ぎチップをチップホルダーにセットした",
+            "上蓋を閉じ、左右のねじを時計回りに回して固定した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "無理に蓋やねじを締めないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p3.png",
+              "title": "空気漏れ確認を準備する"
+            }
+          ],
+          "ok_state": [
+            "穴塞ぎチップが正しく入り、上蓋が固定されている"
+          ],
+          "ng_state": [
+            "チップが斜め、蓋が浮く、左右のねじが固定できない"
+          ]
+        },
+        {
+          "id": "d6g_10",
+          "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する",
+          "instruction": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "task": "Droplet TesterでSample圧のチェック、Oil圧のチェックをそれぞれ実施してください。",
+          "why": "SampleラインとOilラインを分けて確認し、漏れのある場所を見つけやすくするためです。",
+          "checks": [
+            "Droplet TesterのSample欄のStartを押した",
+            "測定数値が段々と安定していきSample欄にOKが表示された",
+            "Droplet TesterのOil欄のStartを押した",
+            "測定数値が段々と安定していきOil欄にOKが表示された"
+          ],
+          "decision_support": [
+            "Regent欄は使用しません。",
+            "NGの場合は、チューブ接続の緩みとチップホルダーの閉まり具合を確認して再試行します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "複数回確認してもNGのみ表示される場合は、操作を中止してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p3.png",
+              "title": "Droplet TesterでSampleとOilのそれぞれの圧が正常かを確認する"
+            }
+          ],
+          "ok_state": [
+            "SampleとOilの両方にOKが表示される"
+          ],
+          "ng_state": [
+            "NGが表示される、Runningのまま終了しない、圧力が安定しない"
+          ]
+        },
+        {
+          "id": "d6g_11",
+          "title": "Droplet Testerを終了する",
+          "instruction": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "task": "SampleとOilのOKを確認したらDroplet Testerを閉じ、穴塞ぎチップを取り出してください。",
+          "why": "通常の作製チップへ安全に交換するためです。",
+          "checks": [
+            "Droplet Testerを閉じた",
+            "穴塞ぎチップを取り出した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "d6g_12",
+          "title": "作製ソフトを起動する",
+          "instruction": "「DropletGenerator-1060DG」と「DinoCapture 2.0」を起動してください。",
+          "task": "「DropletGenerator-1060DG」と「DinoCapture 2.0」を起動してください。",
+          "why": "圧力制御と流路観察を同時に行うためです。",
+          "checks": [
+            "DropletGenerator-1060DGを起動した",
+            "DinoCapture 2.0を起動した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "ソフトが反応しない場合は、繰り返しStartを押さずに装置担当者へ確認してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p6.png",
+              "title": "作製ソフトを起動する"
+            }
+          ],
+          "ok_state": [
+            "圧力設定画面とカメラ画面の両方が表示される"
+          ],
+          "ng_state": [
+            "ソフトが起動しない、画面が固まる、カメラ映像が表示されない"
+          ]
+        },
+        {
+          "id": "d6g_13",
+          "title": "カメラと照明を設定する",
+          "instruction": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "task": "DinoCapture 2.0の解像度を「YUY2 640x480」に変更し、観察ユニット用照明ランプをONにしてください。",
+          "why": "フレームレートを上げ、ドロップレット形成を見やすくするためです。",
+          "checks": [
+            "DinoCapture 2.0ウィンドウの上段、「～」をYUY2 640x480に変更した。",
+            "観察ユニット用照明ランプをONにした",
+            "カメラ映像が表示されている"
+          ],
+          "decision_support": [
+            "解像度が高いと縦方向につぶれて見える場合があります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "照明やカメラを無理に動かさないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p6.png",
+              "title": "カメラと照明を設定する"
+            }
+          ],
+          "ok_state": [
+            "流路を探せる明るさでカメラ映像が表示される"
+          ],
+          "ng_state": [
+            "映像が暗い、真っ白、縦につぶれて見える、映像が止まる"
+          ]
+        },
+        {
+          "id": "d6g_14",
+          "title": "チップ付属チューブを組み立てる",
+          "instruction": "使用するチップに付属するチューブの太い部分をチップ下部の出口の小穴に取り付けてください。",
+          "task": "使用するチップに付属するチューブの太い部分をチップ下部の出口の小穴に取り付けてください。",
+          "why": "チップと装置ラインを気密に接続するためです。",
+          "checks": [
+            "チューブの太い部分をチップ下部の出口の小穴に差し込んだ"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "チューブはできるだけ奥まで差し込んでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p4.png",
+              "title": "チップ付属チューブを組み立てる"
+            }
+          ],
+          "ok_state": [
+            "チューブが奥まで入り、抜けや折れがない"
+          ],
+          "ng_state": [
+            "差し込みが浅い、チューブが折れる、左右を取り違える"
+          ]
+        },
+        {
+          "id": "d6g_15",
+          "title": "アガロースサンプルとGMD用オイルを入れる",
+          "instruction": "Sampleリザーバーに40℃で維持したアガロースサンプルを、Oilリザーバーに調製して温めた約2%フッ素オイルを入れてください。",
+          "task": "Sampleリザーバーに40℃で維持したアガロースサンプルを、Oilリザーバーに調製して温めた約2%フッ素オイルを入れてください。",
+          "why": "GMD材料を1060DG／1100DGのチップへ供給するためです。",
+          "checks": [
+            "SampleリザーバーとOilリザーバーを確認した",
+            "アガロースサンプルをSample側へ入れた",
+            "GMD用オイルをOil側へ入れた",
+            "試料が固化していない"
+          ],
+          "decision_support": [
+            "1060DG／1100DGマニュアルにはリザーバーへの具体的な投入量が記載されていないため、このナビでは投入量を固定しません。施設SOPと実験計画に従ってください。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "800DG用GMDプロトコルの投入量を1060DG／1100DGへそのまま適用しないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p4.png",
+              "title": "アガロースサンプルとGMD用オイルを入れる"
+            }
+          ],
+          "ok_state": [
+            "OilとSampleが正しいリザーバーへ入り、アガロースが液状"
+          ],
+          "ng_state": [
+            "入れ間違い、固化、漏れ、大きな気泡"
+          ]
+        },
+        {
+          "id": "d6g_16",
+          "title": "観察ユニットと回収チューブをセットする",
+          "instruction": "チップホルダーを観察ユニットへセットし、排出口から伸びるチューブを回収用1.5 mLチューブへ入れてください。",
+          "task": "チップホルダーを観察ユニットへセットし、排出口から伸びるチューブを回収用1.5 mLチューブへ入れてください。",
+          "why": "形成部を観察しながら、作製されたドロップレットを安全に回収するためです。",
+          "checks": [
+            "チップホルダーを観察ユニットへセットした",
+            "ライトが流路へ当たるよう調節した",
+            "回収チューブが倒れないよう付属のアルミラックにセットした",
+            "チップに差し込んだチューブの先を回収用1.5 mLチューブへ入れた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "排出チューブの先端がチューブ外へ出ないようにしてください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "観察ユニットと回収チューブをセットする"
+            }
+          ],
+          "ok_state": [
+            "流路へ光が当たり、排出チューブが回収チューブ内にある"
+          ],
+          "ng_state": [
+            "排出チューブが外、回収チューブが不安定、流路が暗い"
+          ]
+        },
+        {
+          "id": "d6g_17",
+          "title": "流路へ焦点を合わせる",
+          "instruction": "観察ユニットのカメラを、ユニット下部のネジをひねって、流路が見える位置へ動かし、高さを調節して焦点（ピント）を合わせてください。",
+          "task": "観察ユニットのカメラを、ユニット下部のネジをひねって、流路が見える位置へ動かし、高さを調節して焦点（ピント）を合わせてください。",
+          "why": "ドロップレット形成部を明確に観察するためです。",
+          "checks": [
+            "流路の分岐部（十字部分）が画面中央にある",
+            "流路の画像がぼやけておらず、はっきり見える"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "カメラをチップへ接触させないでください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "流路へ焦点を合わせる"
+            }
+          ],
+          "ok_state": [
+            "流路の合流部がはっきり見える"
+          ],
+          "ng_state": [
+            "流路が見えない、ぼやける、画面が暗い"
+          ]
+        },
+        {
+          "id": "d6g_18",
+          "title": "初期圧力を設定する",
+          "instruction": "Pressure SettingでSampleを10 kPa、Oilを15 kPaに設定してください。",
+          "task": "Pressure SettingでSampleを10 kPa、Oilを15 kPaに設定してください。",
+          "why": "1060DG／1100DGマニュアルの初期条件から形成状態を確認するためです。",
+          "checks": [
+            "Sampleを10 kPaに設定した",
+            "Oilを15 kPaに設定した"
+          ],
+          "decision_support": [
+            "圧力は7.0～80 kPaの範囲で調整可能です。",
+            "この初期値は1060DGマニュアルに記載された値です。1100DGも同じ操作条件として案内します。",
+            "GMDの粘度により形成状態が変わるため、初期値から形成を観察し、施設SOPに従って調整してください。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "圧力条件は施設SOPと実験条件を優先してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "初期圧力を設定する"
+            }
+          ],
+          "ok_state": [
+            "Sample 10 kPa、Oil 15 kPaが設定されている"
+          ],
+          "ng_state": [
+            "欄や単位を取り違えた、設定範囲外"
+          ]
+        },
+        {
+          "id": "d6g_19",
+          "title": "加圧を開始して形成を確認する",
+          "instruction": "Startを押し、カメラ画面でドロップレットが連続して形成されるか確認してください。",
+          "task": "Startを押し、カメラ画面でドロップレットが連続して形成されるか確認してください。",
+          "why": "現在の圧力バランスで形成できているか判断するためです。",
+          "checks": [
+            "Startを押した",
+            "流路合流部でドロップレット形成を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "液漏れや異常な圧力表示がある場合はStopを押してください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "加圧を開始して形成を確認する"
+            }
+          ],
+          "ok_state": [
+            "同じような大きさのドロップレットが連続して形成される"
+          ],
+          "ng_state": [
+            "水相が途切れない、ドロップレットが出ない、急にサイズが変わる"
+          ]
+        },
+        {
+          "id": "d6g_20",
+          "title": "必要に応じて圧力を調整する",
+          "instruction": "形成されない場合は、Sample圧とOil圧の関係を確認し、少しずつ変更して再確認してください。",
+          "task": "形成されない場合は、Sample圧とOil圧の関係を確認し、少しずつ変更して再確認してください。",
+          "why": "SampleとOilの流量バランスで形成状態が変わるためです。",
+          "checks": [
+            "チップホルダーを上にずらしていきドロップレットが作られているかを確認した",
+            "圧力を変更する場合は小さく変更した",
+            "変更後にドロップレットが作られているかを再度確認した"
+          ],
+          "decision_support": [
+            "Sample圧が高すぎる、またはOil圧が低すぎると、水相が途切れにくくなります。",
+            "Sample圧が低すぎる、またはOil圧が高すぎると、Sampleが流れにくくなります。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "マニュアルにない固定値を追加せず、形成状態と施設SOPを基準にしてください。",
+          "screen_images": [
+            {
+              "filename": "dg1060_manual_p5.png",
+              "title": "必要に応じて圧力を調整する"
+            }
+          ],
+          "ok_state": [
+            "同じような大きさのドロップレットが安定して形成される"
+          ],
+          "ng_state": [
+            "形成しない、連続相になる、サイズが不安定"
+          ]
+        },
+        {
+          "id": "d6g_21",
+          "title": "20分以内に停止して回収する",
+          "instruction": "GMD作製は20分以内に留め、Stopを押して、回収用1.5 mLチューブを取り外してください。",
+          "task": "GMD作製は20分以内に留め、Stopを押して、回収用1.5 mLチューブを取り外してください。",
+          "why": "GMDプロトコルに従い、回収部のあふれを防ぐためです。",
+          "checks": [
+            "作製時間は20分以内に収めた",
+            "Stopを押した",
+            "回収チューブを安全に取り外した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "作製中は回収量を確認してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "20分以内に停止して回収する"
+            }
+          ],
+          "ok_state": [
+            "あふれる前に停止し、白濁したエマルションを回収できた"
+          ],
+          "ng_state": [
+            "20分を超えて作製した、回収チューブからあふれた"
+          ]
+        },
+        {
+          "id": "d6g_22",
+          "title": "GMDをゲル化する",
+          "instruction": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "task": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "why": "アガロースを固め、オイル除去後も粒子形状を保つためです。",
+          "checks": [
+            "回収チューブを氷上または4℃へ置いた",
+            "20分程度静置した",
+            "チューブを強く振っていない"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プロトコルには、必要に応じて37℃培養後にゲル化する方法も記載されています。実験計画を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMDをゲル化する"
+            }
+          ],
+          "ok_state": [
+            "ドロップレットがゲル化する条件で静置できた"
+          ],
+          "ng_state": [
+            "室温で長時間放置した、ゲル化前に強く混ぜた"
+          ]
+        },
+        {
+          "id": "d6g_23",
+          "title": "下層のオイルを除去する",
+          "instruction": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "task": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "why": "後の水相回収へ持ち込むオイル量を減らすためです。",
+          "checks": [
+            "チューブ内の層を確認した",
+            "下層のオイルをゆっくり除去した",
+            "GMDを吸い込まないよう注意した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "境界付近は無理に取り切らず、GMDの回収を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "下層のオイルを除去する"
+            }
+          ],
+          "ok_state": [
+            "上層のGMDを残しながら下層オイルを減らせた"
+          ],
+          "ng_state": [
+            "GMDを一緒に吸い取った、層を確認せずに操作した"
+          ]
+        },
+        {
+          "id": "d6g_24",
+          "title": "PFO溶液と水相を加える",
+          "instruction": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "task": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "why": "W/O界面を壊し、ゲルボールを水相へ移す準備をするためです。",
+          "checks": [
+            "10% PFO溶液を確認した",
+            "ドロップレット液と等量～2倍量を加えた",
+            "軽く転倒混和した",
+            "等量の培地またはバッファーを上から加えた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "PFOとHFE7500の取扱いは試薬の安全データシートと施設SOPに従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "PFO溶液と水相を加える"
+            }
+          ],
+          "ok_state": [
+            "層を保ちながら指定順序で液を加えた"
+          ],
+          "ng_state": [
+            "強く振とうした、加える順序や濃度が不明"
+          ]
+        },
+        {
+          "id": "d6g_25",
+          "title": "W/Oドロップレットを壊す",
+          "instruction": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "task": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "why": "ゲル化した粒子をオイル相から水相へ移すためです。",
+          "checks": [
+            "施設SOPで認められた方法を選んだ",
+            "W/Oドロップレットが壊れるまで待った",
+            "チューブの状態を観察した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プラズマボールを使用する場合は、施設の電気安全ルールと機器の取扱説明に従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "W/Oドロップレットを壊す"
+            }
+          ],
+          "ok_state": [
+            "エマルションが崩れ、水相とオイル相の境界が確認できる"
+          ],
+          "ng_state": [
+            "エマルションが残る、強く振ってゲルボールを損傷した"
+          ]
+        },
+        {
+          "id": "d6g_26",
+          "title": "ゲルボールを水相へ回収する",
+          "instruction": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "task": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "why": "オイルの持ち込みを抑えながらゲルボールを回収するためです。",
+          "checks": [
+            "上清をゆっくりピペッティングした",
+            "境界付近のゲルボールを水相へ分散させた",
+            "上清を新しいチューブへ移した",
+            "なるべくオイルを取り込まなかった"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "少量の上清を残してもよいので、オイルを無理に吸い込まないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "ゲルボールを水相へ回収する"
+            }
+          ],
+          "ok_state": [
+            "新しいチューブの水相にゲルボールを回収できた"
+          ],
+          "ng_state": [
+            "下層オイルを多く吸い込んだ、ゲルボールが元チューブに大量に残った"
+          ]
+        },
+        {
+          "id": "d6g_27",
+          "title": "次の工程へ進む準備をする",
+          "instruction": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "task": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "why": "回収したGMDを目的の実験条件へ移すためです。",
+          "checks": [
+            "回収量と状態を確認した",
+            "必要な培地またはバッファーを追加した",
+            "チューブへ試料名と日時を記録した",
+            "次工程の保存または培養条件を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "d6g_28",
+          "title": "シャットダウンする",
+          "instruction": "チップを取り出し、ソフトを終了して、PC、本体、温調電源、電源タップをOFFにしてください。",
+          "task": "チップを取り出し、ソフトを終了して、PC、本体、温調電源、電源タップをOFFにしてください。",
+          "why": "装置を安全な状態へ戻すためです。",
+          "checks": [
+            "チップを取り出した",
+            "ソフトをXで終了した",
+            "PC、本体、温調電源、電源タップをOFFにした",
+            "廃棄物を施設SOPに従って処理した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": true,
+          "warning": "使用済みチップ、試料、オイル、GMD関連試薬は施設SOPに従って処理してください。",
+          "ok_state": [
+            "装置とソフトが終了し、作業場所が片付いている"
+          ],
+          "ng_state": [
+            "チップが残る、液がこぼれる、電源がONのまま"
+          ]
+        }
+      ]
+    }
+  },
+  "troubleshooting": [
+    {
+      "category": "流路",
+      "symptom": "流路に気泡が見える",
+      "cause": "Prime不足、液量不足、チップ設置不良、気密不良などが考えられます。",
+      "action": "測定を停止し、液量とチップ・パッキンを確認。SOPに従ってPrimeまたは必要時のみFlushを実施してください。",
+      "reference": "2-3 Processing zone / Prime / Flush"
+    },
+    {
+      "category": "測定",
+      "symptom": "イベントがほとんど表示されない",
+      "cause": "サンプル未導入、流路停止、Threshold過大、Gain不足、レーザー位置ずれなどが考えられます。",
+      "action": "サンプル導入、流れ、Camera View、Threshold、Gain、レーザーアライメントの順に確認してください。",
+      "reference": "4-9〜4-13"
+    },
+    {
+      "category": "液面",
+      "symptom": "Level sensor detectが表示された",
+      "cause": "回収・廃液・ソーティングリザーバーの液面が検知位置に達した可能性があります。",
+      "action": "データ保存の要否を選択し、動作停止後に液量を確認。必要に応じて液を除去し、原因を解消してから再開してください。",
+      "reference": "1-3-3 液面検知センサー"
+    },
+    {
+      "category": "通信",
+      "symptom": "装置との通信が不安定・停止する",
+      "cause": "LAN/USB接続、Wi-Fi、追加ソフト、ケーブル仕様などが影響する場合があります。",
+      "action": "測定を安全に停止し、ケーブル接続、PC設定、指定LANケーブルを確認。勝手なソフト導入やネットワーク変更は避けてください。",
+      "reference": "1-5 制御PC / 1-7 接続方法"
+    },
+    {
+      "category": "保存",
+      "symptom": "ゲートや数値の変更が保存されていない",
+      "cause": "別ファイルを開く前にSaveを押していない可能性があります。",
+      "action": "変更後はSample management下のSaveを明示的に押し、保存完了を確認してください。",
+      "reference": "2-2-5 ファイルマネージメントボタン"
+    },
+    {
+      "category": "分注",
+      "symptom": "分注先ウェルがずれる・分注できない",
+      "cause": "プレート向き、ウェル指定、分注チップ開始位置、ラック装着不良などが考えられます。",
+      "action": "分注を停止し、プレートマップ、実物の向き、チップラック、開始位置、Dispensing checkを確認してください。",
+      "reference": "2-9〜2-10 / 4-15"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "パソコンと装置がつながらない",
+      "support_only": true,
+      "support_title": "パソコンと装置が繋がらない時の対処方法",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a02",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "液面検知エラーが表示される",
+      "support_only": true,
+      "support_title": "液面検知エラーが出た時の対処方法",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a03",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "ソフトがフリーズする",
+      "support_only": true,
+      "support_title": "ソフトがフリーズした時の対処方法",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a04",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "バルクソーティングがうまくいかない",
+      "support_only": true,
+      "support_title": "バルクソーティングが上手く行っていない時のYGビーズを使用した確認方法（ミネラルオイル編）",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a05",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "Auto Alignmentが正常に動作しない",
+      "support_only": true,
+      "support_title": "Auto Alignmentが正常に動作しない時の確認と対処方法",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a06",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "Auto Check lineでエラーが表示される",
+      "support_only": true,
+      "support_title": "Auto Check lineのエラー時の確認と対処方法",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a07",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    },
+    {
+      "category": "公式サポート",
+      "symptom": "ドロップレット分注がうまくいかない",
+      "support_only": true,
+      "support_title": "ドロップレット分注が上手く行っていない時のYGビーズを使用した確認方法",
+      "support_url": "https://on-chip.co.jp/support_post/sptv_a01",
+      "reference": "株式会社オンチップ・バイオテクノロジーズ サポート ＞ トラブルシューティング"
+    }
+  ],
+  "app_version": "v34-no354",
+  "contact": "装置の異常があった際は、保守（tech@on-chip.co.jp）へご連絡ください。",
+  "sop_notice": "施設または研究室で定められているSOPがある場合は、その内容に従って操作してください。このナビより施設SOPを優先してください。"
+}

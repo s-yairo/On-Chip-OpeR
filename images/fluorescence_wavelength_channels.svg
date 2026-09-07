@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">励起レーザーと蛍光検出チャンネル</title>
+  <desc id="desc">405、488、561、637ナノメートルの励起レーザーと、FL1からFL6の検出帯域を波長軸上に示した概略図。</desc>
+  <defs>
+    <linearGradient id="spectrum" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#4b0082"/>
+      <stop offset="10%" stop-color="#6f00ff"/>
+      <stop offset="22%" stop-color="#0068ff"/>
+      <stop offset="34%" stop-color="#00b8ff"/>
+      <stop offset="46%" stop-color="#24c95a"/>
+      <stop offset="58%" stop-color="#d6df2b"/>
+      <stop offset="68%" stop-color="#ffb21c"/>
+      <stop offset="78%" stop-color="#ff4b2b"/>
+      <stop offset="90%" stop-color="#d40018"/>
+      <stop offset="100%" stop-color="#780014"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#18324f" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect x="8" y="8" width="1184" height="414" rx="20" fill="#ffffff" stroke="#c9d9e8" stroke-width="2" filter="url(#softShadow)"/>
+
+  <text x="48" y="48" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="25" font-weight="800" fill="#173d66">励起レーザーと蛍光検出チャンネル</text>
+  <text x="48" y="76" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="14" fill="#60758a">レーザー波長と、FL1〜FL6が受け取る主な波長帯の位置関係</text>
+
+  <text x="48" y="122" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="700" fill="#334d68">励起レーザー</text>
+  <text x="48" y="211" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="15" font-weight="700" fill="#334d68">検出帯域</text>
+  <text x="48" y="231" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="12" fill="#73869a">（概略）</text>
+
+  <!-- Plot grid -->
+  <g stroke="#dce5ed" stroke-width="1">
+    <line x1="180" y1="145" x2="180" y2="330"/>
+    <line x1="284" y1="145" x2="284" y2="330"/>
+    <line x1="388" y1="145" x2="388" y2="330"/>
+    <line x1="492" y1="145" x2="492" y2="330"/>
+    <line x1="596" y1="145" x2="596" y2="330"/>
+    <line x1="700" y1="145" x2="700" y2="330"/>
+    <line x1="804" y1="145" x2="804" y2="330"/>
+    <line x1="908" y1="145" x2="908" y2="330"/>
+    <line x1="1012" y1="145" x2="1012" y2="330"/>
+    <line x1="1116" y1="145" x2="1116" y2="330"/>
+  </g>
+
+  <!-- Detection bands: wavelength mapping 350-850 nm to x=180-1116 -->
+  <g font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif">
+    <rect x="330" y="174" width="47" height="112" rx="10" fill="#7757e8" fill-opacity="0.26" stroke="#7757e8" stroke-width="2"/>
+    <text x="353.5" y="204" text-anchor="middle" font-size="18" font-weight="800" fill="#5b3cc4">FL1</text>
+    <text x="353.5" y="226" text-anchor="middle" font-size="11" fill="#5b3cc4">Violet</text>
+
+    <rect x="498" y="174" width="66" height="112" rx="10" fill="#58c95b" fill-opacity="0.25" stroke="#42ae48" stroke-width="2"/>
+    <text x="531" y="204" text-anchor="middle" font-size="18" font-weight="800" fill="#278a31">FL2</text>
+    <text x="531" y="226" text-anchor="middle" font-size="11" fill="#278a31">Green</text>
+
+    <rect x="591" y="174" width="94" height="112" rx="10" fill="#f2c34b" fill-opacity="0.34" stroke="#dda61d" stroke-width="2"/>
+    <text x="638" y="204" text-anchor="middle" font-size="18" font-weight="800" fill="#a87700">FL3</text>
+    <text x="638" y="226" text-anchor="middle" font-size="11" fill="#a87700">Yellow</text>
+
+    <rect x="741" y="174" width="75" height="112" rx="10" fill="#ff6b74" fill-opacity="0.28" stroke="#e34d58" stroke-width="2"/>
+    <text x="778.5" y="204" text-anchor="middle" font-size="18" font-weight="800" fill="#bd2d3b">FL4</text>
+    <text x="778.5" y="226" text-anchor="middle" font-size="11" fill="#bd2d3b">Red</text>
+
+    <rect x="816" y="174" width="112" height="112" rx="10" fill="#ef6472" fill-opacity="0.34" stroke="#d64959" stroke-width="2"/>
+    <text x="872" y="204" text-anchor="middle" font-size="18" font-weight="800" fill="#b52d3c">FL5</text>
+    <text x="872" y="226" text-anchor="middle" font-size="11" fill="#b52d3c">Far red</text>
+
+    <rect x="937" y="174" width="94" height="112" rx="10" fill="#c65360" fill-opacity="0.38" stroke="#a93d49" stroke-width="2"/>
+    <text x="984" y="204" text-anchor="middle" font-size="18" font-weight="800" fill="#8f2935">FL6</text>
+    <text x="984" y="226" text-anchor="middle" font-size="11" fill="#8f2935">Far red</text>
+  </g>
+
+  <!-- Excitation lasers -->
+  <g font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif">
+    <line x1="283" y1="139" x2="283" y2="310" stroke="#7b2cbf" stroke-width="4"/>
+    <rect x="239" y="98" width="88" height="34" rx="17" fill="#f4eaff" stroke="#b985e0"/>
+    <circle cx="254" cy="115" r="5" fill="#7b2cbf"/>
+    <text x="266" y="120" font-size="14" font-weight="800" fill="#67209f">405 nm</text>
+
+    <line x1="438" y1="139" x2="438" y2="310" stroke="#1685db" stroke-width="4"/>
+    <rect x="394" y="98" width="88" height="34" rx="17" fill="#e9f5ff" stroke="#7ab8e9"/>
+    <circle cx="409" cy="115" r="5" fill="#1685db"/>
+    <text x="421" y="120" font-size="14" font-weight="800" fill="#0b66aa">488 nm</text>
+
+    <line x1="575" y1="139" x2="575" y2="310" stroke="#20a94b" stroke-width="4"/>
+    <rect x="531" y="98" width="88" height="34" rx="17" fill="#ebfaef" stroke="#7fcf92"/>
+    <circle cx="546" cy="115" r="5" fill="#20a94b"/>
+    <text x="558" y="120" font-size="14" font-weight="800" fill="#16803a">561 nm</text>
+
+    <line x1="717" y1="139" x2="717" y2="310" stroke="#d62828" stroke-width="4"/>
+    <rect x="673" y="98" width="88" height="34" rx="17" fill="#fff0f0" stroke="#e78c8c"/>
+    <circle cx="688" cy="115" r="5" fill="#d62828"/>
+    <text x="700" y="120" font-size="14" font-weight="800" fill="#b11f1f">637 nm</text>
+  </g>
+
+  <!-- Spectrum and axis -->
+  <rect x="180" y="306" width="936" height="24" rx="5" fill="url(#spectrum)"/>
+  <line x1="180" y1="330" x2="1116" y2="330" stroke="#1d2c3b" stroke-width="2"/>
+  <g font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="12" fill="#40566b" text-anchor="middle">
+    <text x="180" y="351">350</text>
+    <text x="284" y="351">400</text>
+    <text x="388" y="351">450</text>
+    <text x="492" y="351">500</text>
+    <text x="596" y="351">550</text>
+    <text x="700" y="351">600</text>
+    <text x="804" y="351">650</text>
+    <text x="908" y="351">700</text>
+    <text x="1012" y="351">750</text>
+    <text x="1116" y="351">800</text>
+  </g>
+  <text x="648" y="378" text-anchor="middle" font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="14" font-weight="700" fill="#334d68">波長（nm）</text>
+
+  <g font-family="'Noto Sans CJK JP','Yu Gothic','Meiryo',sans-serif" font-size="12" fill="#60758a">
+    <line x1="48" y1="401" x2="72" y2="401" stroke="#315bd6" stroke-width="4"/>
+    <text x="80" y="405">縦線：励起レーザー</text>
+    <rect x="235" y="392" width="24" height="17" rx="4" fill="#7a4de8" fill-opacity="0.25" stroke="#7a4de8"/>
+    <text x="268" y="405">色付き帯：主な検出帯域のイメージ</text>
+    <text x="1120" y="405" text-anchor="end">実際の帯域は装置のフィルター仕様を確認してください。</text>
+  </g>
+</svg>
