@@ -116,6 +116,7 @@ data/
   glossary.json                 用語集
   experiment_records.json       実験記録の保存先
 images/                         工程の画面画像・解説図（products/ は製品画像）
+docs/                           内部仕様ドキュメント
 ```
 
 工程の追加・変更は `data/manual_steps.json` で行い、`app.py` には工程内容を書きません。
@@ -145,6 +146,10 @@ images/                         工程の画面画像・解説図（products/ �
 - ドロップレットジェネレータ S ユーザーマニュアル Document Version 2.0.0
 - GMD作製プロトコル（アガロース）
 - 株式会社オンチップ・バイオテクノロジーズ「サポート ＞ トラブルシューティング」
+
+## 内部仕様
+
+コードの構造や、過去に採用して取りやめた設計の記録は [docs/](docs/README.md) にあります。
 
 ## 変更履歴
 

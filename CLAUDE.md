@@ -12,17 +12,10 @@ On-Chip OpeR は、On-chip Biotechnologies 社のマイクロ流路デバイス�
 
 ```bash
 pip install -r requirements.txt
-pip install -r optional_requirements/experiment_condition_advisor.txt  # 有料プラグイン同梱時のみ
 streamlit run app.py
 ```
 
 Windows では `launch.bat`（依存インストール＋起動をまとめて実行）。
-
-有料プラグインの状態は `config/features.json` か環境変数で切り替える：
-
-```bash
-ONCHIP_EXPERIMENT_CONDITION_ADVISOR_MODE=disabled streamlit run app.py
-```
 
 ### 検証
 
@@ -78,9 +71,9 @@ UI 変更時は工程数・チェック件数・製品件数が変わってい�
 
 ### core/ ：本体から切り出した4つの層
 
-- `core/feature_registry.py`：有料プラグインを **import せずに** 状態判定する。
-  `plugins/<id>/plugin_manifest.json` を読み、`render_feature()` が entrypoint 文字列
-  （`module:function`）から実行時ロードする。コアからプラグインを直接 import してはならない。
+- `core/experiment_condition_advisor/`：実験条件検討。`app.py` から
+  `render(navigation_version=..., product_catalog=..., product_matcher=...)` で直接呼ぶ。
+  閉域のルールベース試作で、外部送信も生成モデルも使わない。
 - `core/ai/`：AI 呼び出しの単一窓口。UI からは `AIConnector.ask(question, context)` のみを呼ぶ。
   provider は `config/features.json` の `joint_ai.provider` で決まり、現状 `dummy`（固定応答「これはテストです」、
   ネットワークアクセスなし）だけが実装済み。`AIConnector` は例外を投げず、必ず `AIResponse` を返す設計。
@@ -93,12 +86,12 @@ UI 変更時は工程数・チェック件数・製品件数が変わってい�
 読み取り専用コンテキストとして渡すだけ。サイドバーの参考資料アップロードもファイル名・MIME・サイズのみを
 コンテキストに含め、本文解析はしない。この境界は仕様として明示されているので、拡張時は必ず確認を取る。
 
-### プラグイン（plugins/experiment_condition_advisor/）
+### 参照されていない旧プラグイン機構
 
-有料オプションの実験条件検討。manifest の `removal_contract` のとおり、
-**このディレクトリを削除しても本体が起動し6ワークフローが動作すること**が必須条件。
-そのため工程 JSON にプラグイン固有の項目を足さず、依存（reportlab）も
-`optional_requirements/` に分離する。製品情報の参照は `core/product_catalog.py` の公開関数経由に限る。
+`plugins/`、`optional_requirements/`、`core/feature_registry.py` は、No.378 で実験条件検討を
+`core/` へ統合した時点から **どこからも import されていない**。`plugins/experiment_condition_advisor/` は
+`core/experiment_condition_advisor/` とほぼ同一内容の重複コピーなので、実験条件検討を直すときは
+`core/` 側だけを編集する。仕様と経緯は [docs/plugin-architecture.md](docs/plugin-architecture.md)。
 
 ### 画像
 
