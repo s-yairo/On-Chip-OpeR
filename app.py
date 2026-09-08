@@ -18,7 +18,7 @@ from core.experiment_records import (
     save_experiment_records,
     update_experiment_record,
 )
-from core.feature_registry import get_feature_status, render_feature
+from core.experiment_condition_advisor import render as render_experiment_condition_advisor_page
 from core.product_catalog import (
     build_product_name_index,
     filter_products,
@@ -94,7 +94,6 @@ LOGO_PATH = BASE_DIR / "onchip_logo_display.png"
 VERSION = "v34-no354"
 CONTACT_EMAIL = "tech@on-chip.co.jp"
 COMPANY_NAME = "On-chip Biotechnologies"
-EXPERIMENT_ADVISOR_PLUGIN_ID = "experiment_condition_advisor"
 JOINT_AI_FEATURE_ID = "joint_ai"
 JOINT_AI_USAGE_NOTE = "JointAIは施設内AIを介して応答します。所属施設のAI利用ルールに従ってご質問ください。"
 GLOSSARY_HOVER_PAGES = {"dg_setup", "sorting_setup", "guide", "complete"}
@@ -133,7 +132,7 @@ h1{font-size:3rem!important;line-height:1.2!important;letter-spacing:.01em}
 .home-lead{font-size:1.02rem;margin-bottom:1rem}
 .home-card{position:relative;border:1px solid #d8e1eb;border-radius:15px;padding:1.35rem 1.35rem 1.15rem;background:#fff;box-shadow:0 1px 3px rgba(20,45,75,.04);box-sizing:border-box;overflow:hidden}
 .home-card.has-badge{padding-bottom:3.35rem}
-.home-card.top,.home-card.bottom{height:350px}
+.home-card.top,.home-card.bottom{height:390px}
 .home-card-header{margin:0 0 .8rem}
 .home-card-header h3{font-size:clamp(1rem,1.9vw,1.18rem);line-height:1.25;margin:0;font-weight:800;white-space:nowrap}
 .home-availability-badge{position:absolute;left:1.35rem;bottom:1.05rem;display:inline-flex;align-items:center;justify-content:center;border:1px solid #65a97b;background:#f2fbf5;color:#267144;border-radius:999px;padding:.25rem .58rem;font-size:.76rem;font-weight:800;line-height:1.2;white-space:nowrap}
@@ -367,7 +366,6 @@ except (OSError, ValueError, json.JSONDecodeError) as exc:
     GLOSSARY = {"categories": [], "entries": []}
     GLOSSARY_ERROR = str(exc)
 
-EXPERIMENT_ADVISOR_STATUS = get_feature_status(BASE_DIR, EXPERIMENT_ADVISOR_PLUGIN_ID)
 JOINT_AI_CONNECTOR = AIConnector.from_feature_config(
     FEATURE_CONFIG_PATH,
     feature_id=JOINT_AI_FEATURE_ID,
@@ -1079,13 +1077,8 @@ def render_sidebar() -> None:
                     use_container_width=True,
                     key="sidebar_menu_recovery",
                 )
-            advisor_entry_enabled = (
-                EXPERIMENT_ADVISOR_STATUS.available
-                or EXPERIMENT_ADVISOR_STATUS.state == "license_required"
-            )
             if st.button(
                 "実験条件検討",
-                disabled=not advisor_entry_enabled,
                 use_container_width=True,
                 key="sidebar_menu_experiment",
             ):
@@ -1350,40 +1343,16 @@ def render_home_operation_cards() -> None:
 def render_home_support_cards() -> None:
     c1, c2, c3 = st.columns(3, gap="medium")
     with c1:
-        if EXPERIMENT_ADVISOR_STATUS.available:
-            experiment_body = (
-                "<p>実験目的、封入対象、培地・粘度、目標液滴、後工程を入力し、閉域の試作エンジンで見解とPDFを作成します。</p>"
-            )
-            experiment_badge = "有料オプション｜開発プレビュー"
-            experiment_button_label = "実験条件を検討する"
-            experiment_button_disabled = False
-            experiment_button_key = "home_open_experiment"
-        elif EXPERIMENT_ADVISOR_STATUS.state == "license_required":
-            experiment_body = (
-                "<p>機能説明と現在の利用状態を確認できます。実験条件の入力機能は有効なライセンスがある場合だけ利用できます。</p>"
-            )
-            experiment_badge = "有料オプション｜ライセンスが必要"
-            experiment_button_label = "ライセンス案内を確認"
-            experiment_button_disabled = False
-            experiment_button_key = "home_open_experiment_license"
-        else:
-            experiment_body = "<p class='home-status'>工事中</p><p>有料プラグイン対応</p>"
-            experiment_badge = ""
-            experiment_button_label = "有料プラグイン対応"
-            experiment_button_disabled = True
-            experiment_button_key = "home_experiment_pending"
         home_card(
             "実験条件検討",
-            experiment_body,
+            "<p>実験目的、封入対象、培地・粘度、目標液滴、後工程を入力し、閉域の試作エンジンで見解とPDFを作成します。</p>",
             row="bottom",
-            badge=experiment_badge,
-            badge_kind="paid",
+            badge="利用可能",
         )
         if st.button(
-            experiment_button_label,
-            disabled=experiment_button_disabled,
+            "実験条件を検討する",
             use_container_width=True,
-            key=experiment_button_key,
+            key="home_open_experiment",
         ):
             go("experiment_condition_advisor")
     with c2:
@@ -1464,7 +1433,8 @@ def render_dg_setup() -> None:
         key="dg_open_experiment_condition_advisor",
     ):
         go("experiment_condition_advisor")
-    st.write("装置、流路チップ、作製するものを上から順番に選択してください。選択後、該当するマニュアルに沿った工程を開始します。")
+    st.write("装置、流路系、作製するものを上から順番に選択してください。選択後、該当するマニュアルに沿った工程を開始します。")
+
     st.markdown('<div class="step-title"><b>① 使用する装置を選ぶ</b></div>', unsafe_allow_html=True)
     c1, c2 = st.columns(2)
     with c1:
@@ -1479,7 +1449,10 @@ def render_dg_setup() -> None:
                 use_container_width=True,
                 key="dg_select_generator",
             ):
-                st.session_state.dg_device = "generator"
+                if st.session_state.dg_device != "generator":
+                    st.session_state.dg_device = "generator"
+                    st.session_state.dg_chip = ""
+                    st.session_state.dg_product = ""
                 st.rerun()
     with c2:
         with st.container(border=True):
@@ -1487,47 +1460,82 @@ def render_dg_setup() -> None:
                 "droplet_generator_s.webp",
                 "On-chip Droplet Generator S",
             )
-            st.button(
-                "On-chip Droplet Generator S（工事中）",
-                disabled=True,
+            if st.button(
+                "On-chip Droplet Generator S",
+                type="primary" if st.session_state.dg_device == "generator_s" else "secondary",
                 use_container_width=True,
                 key="dg_select_generator_s",
-            )
-    st.caption("On-chip Droplet Generator Sはリリース前のため選択できません。")
+            ):
+                if st.session_state.dg_device != "generator_s":
+                    st.session_state.dg_device = "generator_s"
+                    st.session_state.dg_chip = ""
+                    st.session_state.dg_product = ""
+                st.rerun()
 
-    if st.session_state.dg_device != "generator":
+    if not st.session_state.dg_device:
         st.info("最初に使用する装置を選択してください。")
         return
 
-    st.markdown('<div class="step-title"><b>② 使用する流路チップを選ぶ</b></div>', unsafe_allow_html=True)
-    c1, c2 = st.columns(2)
-    chip_options = [
-        ("800", "2D Chip-800DG"),
-        ("1060_1100", "2D Chip-1060DG or 2D Chip-1100DG"),
-    ]
-    chip_images = {
-        "800": "2d_chip_800dg.webp",
-        "1060_1100": "2d_chip_1060_1100dg.webp",
-    }
-    for col, (value, label) in zip((c1, c2), chip_options):
-        with col:
-            with st.container(border=True):
-                render_selection_choice_image(
-                    chip_images[value],
-                    label,
-                    compact=True,
-                )
-                if st.button(
-                    label,
-                    type="primary" if st.session_state.dg_chip == value else "secondary",
-                    use_container_width=True,
-                    key=f"dg_select_chip_{value}",
-                ):
-                    st.session_state.dg_chip = value
-                    st.rerun()
+    if st.session_state.dg_device == "generator":
+        st.markdown('<div class="step-title"><b>② 使用する流路チップを選ぶ</b></div>', unsafe_allow_html=True)
+        c1, c2 = st.columns(2)
+        chip_options = [
+            ("800", "2D Chip-800DG"),
+            ("1060_1100", "2D Chip-1060DG or 2D Chip-1100DG"),
+        ]
+        chip_images = {
+            "800": "2d_chip_800dg.webp",
+            "1060_1100": "2d_chip_1060_1100dg.webp",
+        }
+        for col, (value, label) in zip((c1, c2), chip_options):
+            with col:
+                with st.container(border=True):
+                    render_selection_choice_image(
+                        chip_images[value],
+                        label,
+                        compact=True,
+                    )
+                    if st.button(
+                        label,
+                        type="primary" if st.session_state.dg_chip == value else "secondary",
+                        use_container_width=True,
+                        key=f"dg_select_chip_{value}",
+                    ):
+                        st.session_state.dg_chip = value
+                        st.session_state.dg_product = ""
+                        st.rerun()
+        chip_labels = {
+            "800": "2D Chip-800DG",
+            "1060_1100": "2D Chip-1060DG or 2D Chip-1100DG",
+        }
+    else:
+        st.markdown('<div class="step-title"><b>② 使用するチップホルダーを選ぶ</b></div>', unsafe_allow_html=True)
+        st.caption("Droplet Generator Sの製品仕様に合わせ、作製径に対応するホルダーを選択してください。")
+        c1, c2 = st.columns(2)
+        holder_options = [
+            ("dgs_a", "2液混合 Chip Holder（35～45 µm）"),
+            ("dgs_b", "DG1 Chip Holder（60～120 µm）"),
+        ]
+        for col, (value, label) in zip((c1, c2), holder_options):
+            with col:
+                with st.container(border=True):
+                    st.markdown(f"**{label}**")
+                    if st.button(
+                        "このホルダーを選ぶ",
+                        type="primary" if st.session_state.dg_chip == value else "secondary",
+                        use_container_width=True,
+                        key=f"dg_select_holder_{value}",
+                    ):
+                        st.session_state.dg_chip = value
+                        st.session_state.dg_product = ""
+                        st.rerun()
+        chip_labels = {
+            "dgs_a": "2液混合 Chip Holder（35～45 µm）",
+            "dgs_b": "DG1 Chip Holder（60～120 µm）",
+        }
 
     if not st.session_state.dg_chip:
-        st.info("使用する流路チップを選択してください。")
+        st.info("使用する流路系を選択してください。")
         return
 
     st.markdown('<div class="step-title"><b>③ 作りたいものを選ぶ</b></div>', unsafe_allow_html=True)
@@ -1555,30 +1563,42 @@ def render_dg_setup() -> None:
         st.info("作製するものを選択してください。")
         return
 
-    chip_labels = {
-        "800": "2D Chip-800DG",
-        "1060_1100": "2D Chip-1060DG or 2D Chip-1100DG",
-    }
     product_labels = {"wo": "W/Oドロップレット", "gmd": "GMD"}
+    device_label = (
+        "On-chip Droplet Generator"
+        if st.session_state.dg_device == "generator"
+        else "On-chip Droplet Generator S"
+    )
+    flow_label = "流路チップ" if st.session_state.dg_device == "generator" else "チップホルダー"
     st.markdown(
         '<div class="dg-summary"><b>選択内容</b><br>'
-        f'装置：On-chip Droplet Generator<br>'
-        f'流路チップ：{html.escape(chip_labels[st.session_state.dg_chip])}<br>'
+        f'装置：{html.escape(device_label)}<br>'
+        f'{flow_label}：{html.escape(chip_labels[st.session_state.dg_chip])}<br>'
         f'作製するもの：{html.escape(product_labels[st.session_state.dg_product])}</div>',
         unsafe_allow_html=True,
     )
-    if st.session_state.dg_product == "gmd" and st.session_state.dg_chip == "1060_1100":
-        st.warning("GMDのサンプル調製・ゲル化・回収はGMD作製プロトコルを、装置接続・チップ操作・初期圧力は1060DG／1100DGマニュアルを根拠に案内します。")
 
-    workflow_map = {
-        ("800", "wo"): "dg800_wo",
-        ("800", "gmd"): "dg800_gmd",
-        ("1060_1100", "wo"): "dg1060_1100_wo",
-        ("1060_1100", "gmd"): "dg1060_1100_gmd",
-    }
+    if st.session_state.dg_device == "generator":
+        if st.session_state.dg_product == "gmd" and st.session_state.dg_chip == "1060_1100":
+            st.warning("GMDのサンプル調製・ゲル化・回収はGMD作製プロトコルを、装置接続・チップ操作・初期圧力は1060DG／1100DGマニュアルを根拠に案内します。")
+        workflow_map = {
+            ("800", "wo"): "dg800_wo",
+            ("800", "gmd"): "dg800_gmd",
+            ("1060_1100", "wo"): "dg1060_1100_wo",
+            ("1060_1100", "gmd"): "dg1060_1100_gmd",
+        }
+    else:
+        if st.session_state.dg_product == "gmd":
+            st.warning("Droplet Generator SでGMDを作製する場合は、温調観察ユニットを備えるTタイプを前提に案内します。")
+        workflow_map = {
+            ("dgs_a", "wo"): "dgs_a_wo",
+            ("dgs_a", "gmd"): "dgs_a_gmd",
+            ("dgs_b", "wo"): "dgs_b_wo",
+            ("dgs_b", "gmd"): "dgs_b_gmd",
+        }
+
     if st.button("この条件で工程を開始する", type="primary", use_container_width=True, key="dg_start_selected_workflow"):
         start_workflow(workflow_map[(st.session_state.dg_chip, st.session_state.dg_product)])
-
 
 
 def render_sorting_setup() -> None:
@@ -2084,9 +2104,15 @@ def render_guide() -> None:
         and st.session_state.get("sorting_device") == "selector"
         and step.get("id") == "a08"
     ):
-        selector_check = "継ぎ足しカップ準備した"
+        branch_value = st.session_state.step_branches.get(step["id"], "")
+        if branch_value.startswith("emulsion_"):
+            selector_check = "継ぎ足しカップをセットして、カップの線よりも下までオイルを入れた"
+        elif branch_value.startswith("gmd_"):
+            selector_check = "継ぎ足しカップをセットして、カップの線よりも下まで培地を入れた"
+        else:
+            selector_check = ""
         active_checks = list(active.get("checks", []))
-        if selector_check not in active_checks:
+        if selector_check and selector_check not in active_checks:
             active = {**active, "checks": [*active_checks, selector_check]}
 
     st.markdown('<div class="section-title">やること</div>', unsafe_allow_html=True)
@@ -3073,6 +3099,18 @@ def render_products() -> None:
         key="product_catalog_query",
         placeholder="例：1060DG、Droplet Selector、蛍光、チップ",
     )
+    device_labels = {
+        "すべて": "",
+        "Droplet Selector": "DS",
+        "On-chip Sort": "OS",
+        "Droplet Generator": "DG",
+        "Droplet Generator S": "DGS",
+    }
+    device_label = st.selectbox(
+        "機種",
+        list(device_labels),
+        key="product_catalog_device",
+    )
     group_labels = [
         group.get("label", "") for group in PRODUCT_CATALOG.get("groups", [])
     ]
@@ -3113,6 +3151,7 @@ def render_products() -> None:
         query=query,
         group_label=group_label,
         category_label=category_label,
+        device_compatibility=device_labels[device_label],
     )
     notes = list(PRODUCT_CATALOG.get("notes", []))
     if group_label == "装置":
@@ -3439,27 +3478,11 @@ def render_experiment_records() -> None:
 
 
 def render_experiment_condition_advisor() -> None:
-    if not EXPERIMENT_ADVISOR_STATUS.available:
-        st.title("実験条件検討")
-        st.info(EXPERIMENT_ADVISOR_STATUS.message)
-        st.caption("この機能は有料オプションとしてコアアプリから分離されています。")
-        return
-    try:
-        render_feature(
-            EXPERIMENT_ADVISOR_STATUS,
-            {
-                "base_dir": BASE_DIR,
-                "navigation_version": VERSION,
-                "product_catalog": PRODUCT_CATALOG,
-                "find_droplet_product_candidates": find_droplet_product_candidates,
-            },
-        )
-    except Exception as exc:
-        st.title("実験条件検討")
-        st.error(f"有料プラグインを読み込めませんでした: {exc}")
-        st.caption(
-            "プラグインを外しても、既存の実験ナビ・製品一覧・測定結果・トラブル案内は利用できます。"
-        )
+    render_experiment_condition_advisor_page(
+        navigation_version=VERSION,
+        product_catalog=PRODUCT_CATALOG,
+        product_matcher=find_droplet_product_candidates,
+    )
 
 
 def render_account_setup() -> None:

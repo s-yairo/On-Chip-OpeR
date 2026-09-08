@@ -10,10 +10,11 @@
     "DG": "On-chip Droplet Generator",
     "DS": "On-chip Droplet Selector",
     "SP": "On-chip SPiS",
-    "ALL": "全製品"
+    "ALL": "全製品",
+    "DD": "On-chip Droplet Dispenser"
   },
   "notes": [
-    "※適応製品名：OS= On-chip Sort/Flow, DG= On-chip Droplet Generator, DS= On-chip Droplet Selector, SP= On-chip SPiS略称となります。",
+    "※適応製品名：OS= On-chip Sort/Flow, DG= On-chip Droplet Generator, DS= On-chip Droplet Selector, SP= On-chip SPiS, DD= On-chip Droplet Dispenser の略称となります。",
     "※SPiS Dispensing Tip 384S は 2028 年末を以って販売終了となります"
   ],
   "groups": [
@@ -821,7 +822,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "梱包単位",
@@ -839,7 +840,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "梱包単位",
@@ -857,7 +858,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "梱包単位",
@@ -875,7 +876,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "梱包単位",
@@ -1177,7 +1178,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "包装単位",
@@ -1203,7 +1204,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "包装単位",
@@ -1229,7 +1230,7 @@
                 },
                 {
                   "label": "適応製品",
-                  "value": "DG"
+                  "value": "DG, DGS"
                 },
                 {
                   "label": "包装単位",
@@ -1488,6 +1489,10 @@
                 {
                   "label": "用途",
                   "value": "Dropletシリーズ分注用"
+                },
+                {
+                  "label": "適応製品",
+                  "value": "DS・DD"
                 },
                 {
                   "label": "容量",

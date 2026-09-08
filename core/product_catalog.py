@@ -83,12 +83,22 @@ def filter_products(
     query: str = "",
     group_label: str = "すべて",
     category_label: str = "すべて",
+    device_compatibility: str = "",
 ) -> list[dict[str, Any]]:
     normalized_query = query.strip().lower()
     results: list[dict[str, Any]] = []
     for group, category, product in iter_products(catalog):
         if group_label != "すべて" and group.get("label") != group_label:
             continue
+        if device_compatibility:
+            compatibility = str(_attribute_map(product).get("適応製品", ""))
+            compatibility_tokens = {
+                token.strip()
+                for token in re.split(r"[,、・/\n]+", compatibility)
+                if token.strip()
+            }
+            if device_compatibility not in compatibility_tokens:
+                continue
         if category_label != "すべて":
             if group.get("label") == "試薬・消耗品":
                 compatibility = str(_attribute_map(product).get("適応製品", ""))

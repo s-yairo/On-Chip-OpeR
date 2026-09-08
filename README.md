@@ -633,8 +633,8 @@ On-chipデバイスやフローサイトメーターに慣れていない人で�
 ## 現行コースと状態管理
 
 - 「測定結果を確認する」12工程、「ソーティング・分注を行う」21工程
-- 「ドロップレットを作る」入口から選択する4コース（800DGのW/O 17工程、800DGのGMD 26工程、1060DG／1100DG共通のW/O 17工程、同GMD 28工程）
-- 全6コース、合計121工程
+- 「ドロップレットを作る」入口から、従来DGの4コース（800DGのW/O 17工程、800DGのGMD 26工程、1060DG／1100DG共通のW/O 17工程、同GMD 28工程）に加え、Droplet Generator Sの4コース（2液混合 Chip HolderのW/O 12工程・GMD 23工程、DG1 Chip HolderのW/O 12工程・GMD 23工程）を選択可能
+- 基本工程データは全10コース、合計191工程。SelectorではNo.367・No.370の実行時工程構成により表示工程数が変わる
 - 進行状況の外部JSON保存・再開機能はNo.300で撤去
 - 工程位置、チェック、分岐、メモ、観察履歴は、アプリを開いている現在のStreamlitセッション内だけで保持
 - 過去に書き出した進行データJSONを現行No.300へ読み込む機能はない
@@ -644,6 +644,7 @@ On-chipデバイスやフローサイトメーターに慣れていない人で�
 - On-chip Droplet Selector ユーザーマニュアル Ver. 1.0.4
 - On-chip Droplet Generator 2D Chip-800DG用マニュアル Ver. 1.3.0S
 - On-chip Droplet Generator 2D Chip-1060DG用マニュアル Ver. 2.0.0S
+- ドロップレットジェネレータ S ユーザーマニュアル Document Version 2.0.0
 - GMD作製プロトコル（アガロース）
 - 株式会社オンチップ・バイオテクノロジーズ「サポート ＞ トラブルシューティング」
 
@@ -651,10 +652,9 @@ On-chipデバイスやフローサイトメーターに慣れていない人で�
 
 ```bash
 pip install -r requirements.txt
-pip install -r optional_requirements/experiment_condition_advisor.txt
 streamlit run app.py
 ```
 
-有料プラグインを含まない配布物では、2行目は不要です。`launch.bat` は専用optional requirementsが存在する場合だけ追加インストールします。
+No.378により「実験条件検討」はメインプログラムへ統合され、PDF出力に必要なReportLabも `requirements.txt` から通常依存関係としてインストールされます。
 
 Windowsでは `launch.bat` からも起動できます。

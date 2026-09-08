@@ -4387,6 +4387,1824 @@
           ]
         }
       ]
+    },
+    "dgs_a_wo": {
+      "label": "ドロップレットを作る：Droplet Generator S／2液混合 Chip Holder（35～45 µm）／W/Oドロップレット",
+      "description": "On-chip Droplet Generator Sと2液混合 Chip Holder（35～45 µm）を使用し、W/Oドロップレットを作製します。DGSのダイヤル操作・3系統制御・リークチェックはDGSユーザーマニュアルに従って案内します。",
+      "steps": [
+        {
+          "id": "dgs_a_wo_00",
+          "title": "事前に準備するもの",
+          "instruction": "On-chip Droplet Generator SでW/Oドロップレットを作製するために、装置、2液混合 Chip Holder（35～45 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "task": "On-chip Droplet Generator SでW/Oドロップレットを作製するために、装置、2液混合 Chip Holder（35～45 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "why": "作製途中の不足や取り違えを防ぎ、装置設定から回収まで連続して進められるようにするためです。",
+          "checks": [
+            "On-chip Droplet Generator S本体を準備した",
+            "2液混合 Chip Holder（35～45 µm）を準備した",
+            "使用するチップ、配管、回収容器を準備した",
+            "SAMPLE用の水相とOIL用の油相を準備した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 1.2 特徴"
+        },
+        {
+          "id": "dgs_a_wo_01",
+          "title": "電源を入れる",
+          "instruction": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "task": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "why": "3系統ポンプの初期化が完了した状態から設定を開始するためです。",
+          "checks": [
+            "電源スイッチを押した",
+            "点滅から点灯へ変わった",
+            "SAMPLE・OIL・REAGENTの各ダイヤルに設定画面が表示された"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1 起動と電源操作",
+          "warning": "起動完了までは操作せず待ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を入れる"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_02",
+          "title": "チップ・配管・回収系をセットする",
+          "instruction": "2液混合 Chip Holder（35～45 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "task": "2液混合 Chip Holder（35～45 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "why": "流路と圧力系を正しく接続し、後のリークチェックと作製を安全に行うためです。",
+          "checks": [
+            "選択したホルダーとチップを取り付けた",
+            "SAMPLEとOILの配管を正しく接続した",
+            "回収系をセットした",
+            "接続部に緩みや明らかな折れがない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_a_wo_03",
+          "title": "SAMPLEダイヤルを設定する",
+          "instruction": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "task": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "why": "SAMPLE系統の目標圧力と、3系統共通の運転時間を決めるためです。",
+          "checks": [
+            "SAMPLEの目標圧力を確認した",
+            "動作時間（分・秒）を確認した",
+            "選択中の項目が赤色で表示されることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.1 SAMPLEダイヤルの設定",
+          "warning": "圧力値は実験条件・施設SOPで定めた値を使用してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p4.png",
+              "title": "SAMPLEダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_04",
+          "title": "OILダイヤルを設定する",
+          "instruction": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "task": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "why": "OIL系統の圧力と起動タイミングを設定するためです。",
+          "checks": [
+            "OILの目標圧力を確認した",
+            "OILのオフセットを確認した",
+            "負・0・正のオフセットの意味を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.2 OILダイヤルの設定",
+          "warning": "OILダイヤルから運転開始・停止はできません。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p5.png",
+              "title": "OILダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_05",
+          "title": "REAGENT系統を設定する",
+          "instruction": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "task": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "why": "第三の送液系統を使う条件では、SAMPLE・OILとは独立した圧力と起動タイミングを設定する必要があるためです。",
+          "checks": [],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.3 REAGENTダイヤルの設定",
+          "warning": "REAGENTダイヤルでも運転開始・停止はできません。",
+          "branches": [
+            {
+              "value": "reagent_off",
+              "label": "REAGENTを使用しない",
+              "instruction": "REAGENT系統を使用しない場合は、起動時の無効状態を維持してください。",
+              "checks": [
+                "REAGENTを使用しない条件であることを確認した",
+                "REAGENTダイヤルが無効状態であることを確認した"
+              ]
+            },
+            {
+              "value": "reagent_on",
+              "label": "REAGENTを使用する",
+              "instruction": "REAGENTダイヤルを長押しして有効化し、目標圧力とSAMPLE基準の起動オフセットを設定してください。",
+              "checks": [
+                "REAGENTダイヤルを長押しして有効化した",
+                "REAGENTの目標圧力を確認した",
+                "REAGENTのオフセットを確認した"
+              ]
+            }
+          ],
+          "branch_guidance": "REAGENT系統を使用するか選択してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p6.png",
+              "title": "REAGENT系統を設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_06",
+          "title": "リークチェックを行う",
+          "instruction": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "task": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "why": "配管、継手、チップホルダ、チップなどの漏れを作製前に確認するためです。",
+          "checks": [
+            "OILダイヤルを2秒長押ししてリークチェックを開始した",
+            "LEAK CHARGEからLEAK MEASUREへ進んだ",
+            "結果画面で使用する系統がOKであることを確認した",
+            "結果確認後、いずれかのダイヤルを短押しして設定画面へ戻った"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 5. リークチェック",
+          "warning": "LEAKINGまたは未確定が表示された場合は、配管・継手・チップホルダ・チップを確認し、原因を解消してから進んでください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p11.png",
+              "title": "リークチェックを行う"
+            },
+            {
+              "filename": "dgs_manual_p12.png",
+              "title": "リークチェック中の画面"
+            },
+            {
+              "filename": "dgs_manual_p13.png",
+              "title": "リークチェック結果画面"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_07",
+          "title": "サンプル・オイル・試薬をセットする",
+          "instruction": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "task": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "why": "設定した3系統の条件で液体を流せる状態にするためです。",
+          "checks": [
+            "SAMPLEをセットした",
+            "OILをセットした",
+            "REAGENTを使用する場合は試薬をセットした",
+            "回収先を確認した",
+            "液漏れや大きな気泡がない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_a_wo_08",
+          "title": "運転を開始する",
+          "instruction": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "task": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "why": "設定した圧力、動作時間、オフセットで3系統を連動運転するためです。",
+          "checks": [
+            "SAMPLEダイヤルを2秒長押しした",
+            "運転モードへ切り替わった",
+            "設定した起動順序で使用系統が動作した",
+            "液滴形成または送液状態を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.4 起動順序の決定ルール / 4. 運転モード",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を開始する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_09",
+          "title": "運転中の状態を確認・調整する",
+          "instruction": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "task": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "why": "運転中の圧力と作製状態を監視し、必要な範囲で圧力だけを調整するためです。",
+          "checks": [
+            "各使用系統の目標圧力と現在圧力を確認した",
+            "SAMPLEの経過時間またはOIL／REAGENTの残り時間を確認した",
+            "異常音・液漏れ・大きな気泡がない",
+            "圧力変更を行った場合はUPDATEで反映した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4.1～4.4 運転モード",
+          "warning": "運転中は動作時間とオフセットを変更できません。目標圧力へ到達しない場合は自動中断されることがあります。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "SAMPLE系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p9.png",
+              "title": "OIL系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p10.png",
+              "title": "REAGENT系統と運転中の圧力変更"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_10",
+          "title": "運転を終了して回収する",
+          "instruction": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "task": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "why": "ポンプ停止と圧力解放を完了してから安全に回収するためです。",
+          "checks": [
+            "全ポンプが停止した",
+            "大気開放後に設定モードへ戻った",
+            "圧力が解放されたことを確認した",
+            "作製物を回収した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4. 運転モード / 4.1.3 操作",
+          "warning": "ドロップレット生成中は電源をオフにできません。必ず停止操作または自動停止を完了してから電源を切ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を終了する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_wo_99",
+          "title": "シャットダウンする",
+          "instruction": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "task": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "why": "安全に装置を停止し、直前の圧力・動作時間・オフセット設定を保存するためです。",
+          "checks": [
+            "運転が停止している",
+            "圧力が解放されている",
+            "電源スイッチを押して消灯した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1.2 電源オフ",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を切る"
+            }
+          ]
+        }
+      ]
+    },
+    "dgs_a_gmd": {
+      "label": "ドロップレットを作る：Droplet Generator S／2液混合 Chip Holder（35～45 µm）／GMD",
+      "description": "On-chip Droplet Generator Sの温調観察ユニットを備えるTタイプと2液混合 Chip Holder（35～45 µm）を使用し、GMDを作製・ゲル化・回収します。装置操作はDGSユーザーマニュアル、GMD調製・回収は既存のGMD作製プロトコルに従って案内します。",
+      "steps": [
+        {
+          "id": "dgs_a_gmd_00",
+          "title": "事前に準備するもの",
+          "instruction": "On-chip Droplet Generator SでGMDを作製するために、装置、2液混合 Chip Holder（35～45 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "task": "On-chip Droplet Generator SでGMDを作製するために、装置、2液混合 Chip Holder（35～45 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "why": "作製途中の不足や取り違えを防ぎ、装置設定から回収まで連続して進められるようにするためです。",
+          "checks": [
+            "On-chip Droplet Generator S本体を準備した",
+            "2液混合 Chip Holder（35～45 µm）を準備した",
+            "使用するチップ、配管、回収容器を準備した",
+            "SAMPLE用の水相とOIL用の油相を準備した",
+            "温調観察ユニットを使用できる状態にした",
+            "GMD作製に必要な試薬と冷却手段を準備した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 1.2 特徴"
+        },
+        {
+          "id": "dgs_a_gmd_00a",
+          "title": "温度調整ユニットを設定する",
+          "instruction": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "task": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "why": "チップ内のゲル材料が作製中に固まることを防ぐためです。",
+          "checks": [
+            "目的とするチップ内部温度を実験計画で確認した",
+            "SVを目的温度+3℃に設定した",
+            "ENTで設定温度を確定した",
+            "RUN/STOPで運転を開始した",
+            "PVでステージ温度を確認した"
+          ],
+          "decision_support": [
+            "例：チップ内部を37℃にしたい場合は、温調ユニットを40℃に設定します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度条件は使用するゲル材料と施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "温度調整ユニットを設定する"
+            }
+          ],
+          "ok_state": [
+            "SVが目的温度+3℃で、PVが設定温度へ近づいている"
+          ],
+          "ng_state": [
+            "SVと目的温度の関係が不明、PVが上がらない、異常表示がある"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_00b",
+          "title": "チップホルダーを温める",
+          "instruction": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "task": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "why": "温度が安定する前に試料を入れると、アガロースが流路内で固まる可能性があるためです。",
+          "checks": [
+            "Step 3の作業から15～20分程度待った",
+            "PVが安定していることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度が安定しない場合は試料を入れないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "チップホルダーを温める"
+            }
+          ],
+          "ok_state": [
+            "PVが大きく変動せず、設定温度付近で安定している"
+          ],
+          "ng_state": [
+            "温度が安定しない、設定値から大きく外れる"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_01a",
+          "title": "GMD用フッ素オイルを調製する",
+          "instruction": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "task": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "why": "GMD形成に使用する連続相をプロトコルの条件へ合わせるためです。",
+          "checks": [
+            "008-FluoroSurfactant-5wtH-10mL と008-FluoroSurfactant-0.1wtH-100mLを2:3の比率で希釈し、約2%にした",
+            "調製後のオイルを温めている"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "試薬名と濃度を必ず確認し、施設SOPに従って調製してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMD用フッ素オイルを調製する"
+            }
+          ],
+          "ok_state": [
+            "必要量の約2%フッ素オイルを調製できた"
+          ],
+          "ng_state": [
+            "製品や濃度が確認できない、混合比が不明"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_01b",
+          "title": "低融点アガロースを溶解する",
+          "instruction": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "task": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "why": "均一なアガロース溶液を作り、作製中の固化を防ぐためです。",
+          "checks": [
+            "低融点アガロースを3%（w/v）で調製した",
+            "90～95℃で十分に溶解した",
+            "溶け残りがない",
+            "40℃で維持している"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "高温の溶液を扱うため、火傷に注意してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "低融点アガロースを溶解する"
+            }
+          ],
+          "ok_state": [
+            "透明または均一で、目立つ溶け残りがない"
+          ],
+          "ng_state": [
+            "粒や塊が残る、冷えて固まり始めている"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_01c",
+          "title": "サンプルとアガロースを混合する",
+          "instruction": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "task": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "why": "細胞や微生物を含むゲル材料を均一にドロップレットへ封入するためです。",
+          "checks": [
+            "サンプルとアガロースを等量で混合した",
+            "最終アガロース濃度が約1.5%である",
+            "必要な場合は実験計画に従って細胞濃度を調整した",
+            "混合後も40℃で維持している"
+          ],
+          "decision_support": [
+            "プロトコルでは最終アガロース濃度0.5～2%の範囲が示されています。",
+            "微生物封入の例では、直径約35 µm作製時に最終濃度1×10^7個/mL程度が示されています。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "細胞濃度とゲル濃度は実験計画および施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "サンプルとアガロースを混合する"
+            }
+          ],
+          "ok_state": [
+            "サンプルが均一に混ざり、固化していない"
+          ],
+          "ng_state": [
+            "塊がある、冷えて固まる、濃度計算が確認できない"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_01",
+          "title": "電源を入れる",
+          "instruction": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "task": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "why": "3系統ポンプの初期化が完了した状態から設定を開始するためです。",
+          "checks": [
+            "電源スイッチを押した",
+            "点滅から点灯へ変わった",
+            "SAMPLE・OIL・REAGENTの各ダイヤルに設定画面が表示された"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1 起動と電源操作",
+          "warning": "起動完了までは操作せず待ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を入れる"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_02",
+          "title": "チップ・配管・回収系をセットする",
+          "instruction": "2液混合 Chip Holder（35～45 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "task": "2液混合 Chip Holder（35～45 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "why": "流路と圧力系を正しく接続し、後のリークチェックと作製を安全に行うためです。",
+          "checks": [
+            "選択したホルダーとチップを取り付けた",
+            "SAMPLEとOILの配管を正しく接続した",
+            "回収系をセットした",
+            "接続部に緩みや明らかな折れがない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_a_gmd_03",
+          "title": "SAMPLEダイヤルを設定する",
+          "instruction": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "task": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "why": "SAMPLE系統の目標圧力と、3系統共通の運転時間を決めるためです。",
+          "checks": [
+            "SAMPLEの目標圧力を確認した",
+            "動作時間（分・秒）を確認した",
+            "選択中の項目が赤色で表示されることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.1 SAMPLEダイヤルの設定",
+          "warning": "圧力値は実験条件・施設SOPで定めた値を使用してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p4.png",
+              "title": "SAMPLEダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_04",
+          "title": "OILダイヤルを設定する",
+          "instruction": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "task": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "why": "OIL系統の圧力と起動タイミングを設定するためです。",
+          "checks": [
+            "OILの目標圧力を確認した",
+            "OILのオフセットを確認した",
+            "負・0・正のオフセットの意味を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.2 OILダイヤルの設定",
+          "warning": "OILダイヤルから運転開始・停止はできません。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p5.png",
+              "title": "OILダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_05",
+          "title": "REAGENT系統を設定する",
+          "instruction": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "task": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "why": "第三の送液系統を使う条件では、SAMPLE・OILとは独立した圧力と起動タイミングを設定する必要があるためです。",
+          "checks": [],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.3 REAGENTダイヤルの設定",
+          "warning": "REAGENTダイヤルでも運転開始・停止はできません。",
+          "branches": [
+            {
+              "value": "reagent_off",
+              "label": "REAGENTを使用しない",
+              "instruction": "REAGENT系統を使用しない場合は、起動時の無効状態を維持してください。",
+              "checks": [
+                "REAGENTを使用しない条件であることを確認した",
+                "REAGENTダイヤルが無効状態であることを確認した"
+              ]
+            },
+            {
+              "value": "reagent_on",
+              "label": "REAGENTを使用する",
+              "instruction": "REAGENTダイヤルを長押しして有効化し、目標圧力とSAMPLE基準の起動オフセットを設定してください。",
+              "checks": [
+                "REAGENTダイヤルを長押しして有効化した",
+                "REAGENTの目標圧力を確認した",
+                "REAGENTのオフセットを確認した"
+              ]
+            }
+          ],
+          "branch_guidance": "REAGENT系統を使用するか選択してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p6.png",
+              "title": "REAGENT系統を設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_06",
+          "title": "リークチェックを行う",
+          "instruction": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "task": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "why": "配管、継手、チップホルダ、チップなどの漏れを作製前に確認するためです。",
+          "checks": [
+            "OILダイヤルを2秒長押ししてリークチェックを開始した",
+            "LEAK CHARGEからLEAK MEASUREへ進んだ",
+            "結果画面で使用する系統がOKであることを確認した",
+            "結果確認後、いずれかのダイヤルを短押しして設定画面へ戻った"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 5. リークチェック",
+          "warning": "LEAKINGまたは未確定が表示された場合は、配管・継手・チップホルダ・チップを確認し、原因を解消してから進んでください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p11.png",
+              "title": "リークチェックを行う"
+            },
+            {
+              "filename": "dgs_manual_p12.png",
+              "title": "リークチェック中の画面"
+            },
+            {
+              "filename": "dgs_manual_p13.png",
+              "title": "リークチェック結果画面"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_07",
+          "title": "サンプル・オイル・試薬をセットする",
+          "instruction": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "task": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "why": "設定した3系統の条件で液体を流せる状態にするためです。",
+          "checks": [
+            "SAMPLEをセットした",
+            "OILをセットした",
+            "REAGENTを使用する場合は試薬をセットした",
+            "回収先を確認した",
+            "液漏れや大きな気泡がない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_a_gmd_08",
+          "title": "運転を開始する",
+          "instruction": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "task": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "why": "設定した圧力、動作時間、オフセットで3系統を連動運転するためです。",
+          "checks": [
+            "SAMPLEダイヤルを2秒長押しした",
+            "運転モードへ切り替わった",
+            "設定した起動順序で使用系統が動作した",
+            "液滴形成または送液状態を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.4 起動順序の決定ルール / 4. 運転モード",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を開始する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_09",
+          "title": "運転中の状態を確認・調整する",
+          "instruction": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "task": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "why": "運転中の圧力と作製状態を監視し、必要な範囲で圧力だけを調整するためです。",
+          "checks": [
+            "各使用系統の目標圧力と現在圧力を確認した",
+            "SAMPLEの経過時間またはOIL／REAGENTの残り時間を確認した",
+            "異常音・液漏れ・大きな気泡がない",
+            "圧力変更を行った場合はUPDATEで反映した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4.1～4.4 運転モード",
+          "warning": "運転中は動作時間とオフセットを変更できません。目標圧力へ到達しない場合は自動中断されることがあります。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "SAMPLE系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p9.png",
+              "title": "OIL系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p10.png",
+              "title": "REAGENT系統と運転中の圧力変更"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_10",
+          "title": "運転を終了して回収する",
+          "instruction": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "task": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "why": "ポンプ停止と圧力解放を完了してから安全に回収するためです。",
+          "checks": [
+            "全ポンプが停止した",
+            "大気開放後に設定モードへ戻った",
+            "圧力が解放されたことを確認した",
+            "作製物を回収した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4. 運転モード / 4.1.3 操作",
+          "warning": "ドロップレット生成中は電源をオフにできません。必ず停止操作または自動停止を完了してから電源を切ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を終了する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_post_01",
+          "title": "GMDをゲル化する",
+          "instruction": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "task": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "why": "アガロースを固め、オイル除去後も粒子形状を保つためです。",
+          "checks": [
+            "回収チューブを氷上または4℃へ置いた",
+            "20分程度静置した",
+            "チューブを強く振っていない"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プロトコルには、必要に応じて37℃培養後にゲル化する方法も記載されています。実験計画を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMDをゲル化する"
+            }
+          ],
+          "ok_state": [
+            "ドロップレットがゲル化する条件で静置できた"
+          ],
+          "ng_state": [
+            "室温で長時間放置した、ゲル化前に強く混ぜた"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_post_02",
+          "title": "下層のオイルを除去する",
+          "instruction": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "task": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "why": "後の水相回収へ持ち込むオイル量を減らすためです。",
+          "checks": [
+            "チューブ内の層を確認した",
+            "下層のオイルをゆっくり除去した",
+            "GMDを吸い込まないよう注意した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "境界付近は無理に取り切らず、GMDの回収を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "下層のオイルを除去する"
+            }
+          ],
+          "ok_state": [
+            "上層のGMDを残しながら下層オイルを減らせた"
+          ],
+          "ng_state": [
+            "GMDを一緒に吸い取った、層を確認せずに操作した"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_post_03",
+          "title": "PFO溶液と水相を加える",
+          "instruction": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "task": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "why": "W/O界面を壊し、ゲルボールを水相へ移す準備をするためです。",
+          "checks": [
+            "10% PFO溶液を確認した",
+            "ドロップレット液と等量～2倍量を加えた",
+            "軽く転倒混和した",
+            "等量の培地またはバッファーを上から加えた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "PFOとHFE7500の取扱いは試薬の安全データシートと施設SOPに従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "PFO溶液と水相を加える"
+            }
+          ],
+          "ok_state": [
+            "層を保ちながら指定順序で液を加えた"
+          ],
+          "ng_state": [
+            "強く振とうした、加える順序や濃度が不明"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_post_04",
+          "title": "W/Oドロップレットを壊す",
+          "instruction": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "task": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "why": "ゲル化した粒子をオイル相から水相へ移すためです。",
+          "checks": [
+            "施設SOPで認められた方法を選んだ",
+            "W/Oドロップレットが壊れるまで待った",
+            "チューブの状態を観察した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プラズマボールを使用する場合は、施設の電気安全ルールと機器の取扱説明に従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "W/Oドロップレットを壊す"
+            }
+          ],
+          "ok_state": [
+            "エマルションが崩れ、水相とオイル相の境界が確認できる"
+          ],
+          "ng_state": [
+            "エマルションが残る、強く振ってゲルボールを損傷した"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_post_05",
+          "title": "ゲルボールを水相へ回収する",
+          "instruction": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "task": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "why": "オイルの持ち込みを抑えながらゲルボールを回収するためです。",
+          "checks": [
+            "上清をゆっくりピペッティングした",
+            "境界付近のゲルボールを水相へ分散させた",
+            "上清を新しいチューブへ移した",
+            "なるべくオイルを取り込まなかった"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "少量の上清を残してもよいので、オイルを無理に吸い込まないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "ゲルボールを水相へ回収する"
+            }
+          ],
+          "ok_state": [
+            "新しいチューブの水相にゲルボールを回収できた"
+          ],
+          "ng_state": [
+            "下層オイルを多く吸い込んだ、ゲルボールが元チューブに大量に残った"
+          ]
+        },
+        {
+          "id": "dgs_a_gmd_post_06",
+          "title": "次の工程へ進む準備をする",
+          "instruction": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "task": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "why": "回収したGMDを目的の実験条件へ移すためです。",
+          "checks": [
+            "回収量と状態を確認した",
+            "必要な培地またはバッファーを追加した",
+            "チューブへ試料名と日時を記録した",
+            "次工程の保存または培養条件を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "dgs_a_gmd_99",
+          "title": "シャットダウンする",
+          "instruction": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "task": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "why": "安全に装置を停止し、直前の圧力・動作時間・オフセット設定を保存するためです。",
+          "checks": [
+            "運転が停止している",
+            "圧力が解放されている",
+            "電源スイッチを押して消灯した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1.2 電源オフ",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を切る"
+            }
+          ]
+        }
+      ]
+    },
+    "dgs_b_wo": {
+      "label": "ドロップレットを作る：Droplet Generator S／DG1 Chip Holder（60～120 µm）／W/Oドロップレット",
+      "description": "On-chip Droplet Generator SとDG1 Chip Holder（60～120 µm）を使用し、W/Oドロップレットを作製します。DGSのダイヤル操作・3系統制御・リークチェックはDGSユーザーマニュアルに従って案内します。",
+      "steps": [
+        {
+          "id": "dgs_b_wo_00",
+          "title": "事前に準備するもの",
+          "instruction": "On-chip Droplet Generator SでW/Oドロップレットを作製するために、装置、DG1 Chip Holder（60～120 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "task": "On-chip Droplet Generator SでW/Oドロップレットを作製するために、装置、DG1 Chip Holder（60～120 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "why": "作製途中の不足や取り違えを防ぎ、装置設定から回収まで連続して進められるようにするためです。",
+          "checks": [
+            "On-chip Droplet Generator S本体を準備した",
+            "DG1 Chip Holder（60～120 µm）を準備した",
+            "使用するチップ、配管、回収容器を準備した",
+            "SAMPLE用の水相とOIL用の油相を準備した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 1.2 特徴"
+        },
+        {
+          "id": "dgs_b_wo_01",
+          "title": "電源を入れる",
+          "instruction": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "task": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "why": "3系統ポンプの初期化が完了した状態から設定を開始するためです。",
+          "checks": [
+            "電源スイッチを押した",
+            "点滅から点灯へ変わった",
+            "SAMPLE・OIL・REAGENTの各ダイヤルに設定画面が表示された"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1 起動と電源操作",
+          "warning": "起動完了までは操作せず待ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を入れる"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_02",
+          "title": "チップ・配管・回収系をセットする",
+          "instruction": "DG1 Chip Holder（60～120 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "task": "DG1 Chip Holder（60～120 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "why": "流路と圧力系を正しく接続し、後のリークチェックと作製を安全に行うためです。",
+          "checks": [
+            "選択したホルダーとチップを取り付けた",
+            "SAMPLEとOILの配管を正しく接続した",
+            "回収系をセットした",
+            "接続部に緩みや明らかな折れがない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_b_wo_03",
+          "title": "SAMPLEダイヤルを設定する",
+          "instruction": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "task": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "why": "SAMPLE系統の目標圧力と、3系統共通の運転時間を決めるためです。",
+          "checks": [
+            "SAMPLEの目標圧力を確認した",
+            "動作時間（分・秒）を確認した",
+            "選択中の項目が赤色で表示されることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.1 SAMPLEダイヤルの設定",
+          "warning": "圧力値は実験条件・施設SOPで定めた値を使用してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p4.png",
+              "title": "SAMPLEダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_04",
+          "title": "OILダイヤルを設定する",
+          "instruction": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "task": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "why": "OIL系統の圧力と起動タイミングを設定するためです。",
+          "checks": [
+            "OILの目標圧力を確認した",
+            "OILのオフセットを確認した",
+            "負・0・正のオフセットの意味を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.2 OILダイヤルの設定",
+          "warning": "OILダイヤルから運転開始・停止はできません。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p5.png",
+              "title": "OILダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_05",
+          "title": "REAGENT系統を設定する",
+          "instruction": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "task": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "why": "第三の送液系統を使う条件では、SAMPLE・OILとは独立した圧力と起動タイミングを設定する必要があるためです。",
+          "checks": [],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.3 REAGENTダイヤルの設定",
+          "warning": "REAGENTダイヤルでも運転開始・停止はできません。",
+          "branches": [
+            {
+              "value": "reagent_off",
+              "label": "REAGENTを使用しない",
+              "instruction": "REAGENT系統を使用しない場合は、起動時の無効状態を維持してください。",
+              "checks": [
+                "REAGENTを使用しない条件であることを確認した",
+                "REAGENTダイヤルが無効状態であることを確認した"
+              ]
+            },
+            {
+              "value": "reagent_on",
+              "label": "REAGENTを使用する",
+              "instruction": "REAGENTダイヤルを長押しして有効化し、目標圧力とSAMPLE基準の起動オフセットを設定してください。",
+              "checks": [
+                "REAGENTダイヤルを長押しして有効化した",
+                "REAGENTの目標圧力を確認した",
+                "REAGENTのオフセットを確認した"
+              ]
+            }
+          ],
+          "branch_guidance": "REAGENT系統を使用するか選択してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p6.png",
+              "title": "REAGENT系統を設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_06",
+          "title": "リークチェックを行う",
+          "instruction": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "task": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "why": "配管、継手、チップホルダ、チップなどの漏れを作製前に確認するためです。",
+          "checks": [
+            "OILダイヤルを2秒長押ししてリークチェックを開始した",
+            "LEAK CHARGEからLEAK MEASUREへ進んだ",
+            "結果画面で使用する系統がOKであることを確認した",
+            "結果確認後、いずれかのダイヤルを短押しして設定画面へ戻った"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 5. リークチェック",
+          "warning": "LEAKINGまたは未確定が表示された場合は、配管・継手・チップホルダ・チップを確認し、原因を解消してから進んでください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p11.png",
+              "title": "リークチェックを行う"
+            },
+            {
+              "filename": "dgs_manual_p12.png",
+              "title": "リークチェック中の画面"
+            },
+            {
+              "filename": "dgs_manual_p13.png",
+              "title": "リークチェック結果画面"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_07",
+          "title": "サンプル・オイル・試薬をセットする",
+          "instruction": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "task": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "why": "設定した3系統の条件で液体を流せる状態にするためです。",
+          "checks": [
+            "SAMPLEをセットした",
+            "OILをセットした",
+            "REAGENTを使用する場合は試薬をセットした",
+            "回収先を確認した",
+            "液漏れや大きな気泡がない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_b_wo_08",
+          "title": "運転を開始する",
+          "instruction": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "task": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "why": "設定した圧力、動作時間、オフセットで3系統を連動運転するためです。",
+          "checks": [
+            "SAMPLEダイヤルを2秒長押しした",
+            "運転モードへ切り替わった",
+            "設定した起動順序で使用系統が動作した",
+            "液滴形成または送液状態を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.4 起動順序の決定ルール / 4. 運転モード",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を開始する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_09",
+          "title": "運転中の状態を確認・調整する",
+          "instruction": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "task": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "why": "運転中の圧力と作製状態を監視し、必要な範囲で圧力だけを調整するためです。",
+          "checks": [
+            "各使用系統の目標圧力と現在圧力を確認した",
+            "SAMPLEの経過時間またはOIL／REAGENTの残り時間を確認した",
+            "異常音・液漏れ・大きな気泡がない",
+            "圧力変更を行った場合はUPDATEで反映した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4.1～4.4 運転モード",
+          "warning": "運転中は動作時間とオフセットを変更できません。目標圧力へ到達しない場合は自動中断されることがあります。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "SAMPLE系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p9.png",
+              "title": "OIL系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p10.png",
+              "title": "REAGENT系統と運転中の圧力変更"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_10",
+          "title": "運転を終了して回収する",
+          "instruction": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "task": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "why": "ポンプ停止と圧力解放を完了してから安全に回収するためです。",
+          "checks": [
+            "全ポンプが停止した",
+            "大気開放後に設定モードへ戻った",
+            "圧力が解放されたことを確認した",
+            "作製物を回収した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4. 運転モード / 4.1.3 操作",
+          "warning": "ドロップレット生成中は電源をオフにできません。必ず停止操作または自動停止を完了してから電源を切ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を終了する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_wo_99",
+          "title": "シャットダウンする",
+          "instruction": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "task": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "why": "安全に装置を停止し、直前の圧力・動作時間・オフセット設定を保存するためです。",
+          "checks": [
+            "運転が停止している",
+            "圧力が解放されている",
+            "電源スイッチを押して消灯した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1.2 電源オフ",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を切る"
+            }
+          ]
+        }
+      ]
+    },
+    "dgs_b_gmd": {
+      "label": "ドロップレットを作る：Droplet Generator S／DG1 Chip Holder（60～120 µm）／GMD",
+      "description": "On-chip Droplet Generator Sの温調観察ユニットを備えるTタイプとDG1 Chip Holder（60～120 µm）を使用し、GMDを作製・ゲル化・回収します。装置操作はDGSユーザーマニュアル、GMD調製・回収は既存のGMD作製プロトコルに従って案内します。",
+      "steps": [
+        {
+          "id": "dgs_b_gmd_00",
+          "title": "事前に準備するもの",
+          "instruction": "On-chip Droplet Generator SでGMDを作製するために、装置、DG1 Chip Holder（60～120 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "task": "On-chip Droplet Generator SでGMDを作製するために、装置、DG1 Chip Holder（60～120 µm）、チップ、配管、液体、回収容器を準備してください。",
+          "why": "作製途中の不足や取り違えを防ぎ、装置設定から回収まで連続して進められるようにするためです。",
+          "checks": [
+            "On-chip Droplet Generator S本体を準備した",
+            "DG1 Chip Holder（60～120 µm）を準備した",
+            "使用するチップ、配管、回収容器を準備した",
+            "SAMPLE用の水相とOIL用の油相を準備した",
+            "温調観察ユニットを使用できる状態にした",
+            "GMD作製に必要な試薬と冷却手段を準備した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 1.2 特徴"
+        },
+        {
+          "id": "dgs_b_gmd_00a",
+          "title": "温度調整ユニットを設定する",
+          "instruction": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "task": "チップホルダー内部の目的温度を確認し、温調ユニットを目的温度+3℃に設定してください。",
+          "why": "チップ内のゲル材料が作製中に固まることを防ぐためです。",
+          "checks": [
+            "目的とするチップ内部温度を実験計画で確認した",
+            "SVを目的温度+3℃に設定した",
+            "ENTで設定温度を確定した",
+            "RUN/STOPで運転を開始した",
+            "PVでステージ温度を確認した"
+          ],
+          "decision_support": [
+            "例：チップ内部を37℃にしたい場合は、温調ユニットを40℃に設定します。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度条件は使用するゲル材料と施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "温度調整ユニットを設定する"
+            }
+          ],
+          "ok_state": [
+            "SVが目的温度+3℃で、PVが設定温度へ近づいている"
+          ],
+          "ng_state": [
+            "SVと目的温度の関係が不明、PVが上がらない、異常表示がある"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_00b",
+          "title": "チップホルダーを温める",
+          "instruction": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "task": "設定後、チップホルダー内部が温まるまで15～20分程度待ってください。",
+          "why": "温度が安定する前に試料を入れると、アガロースが流路内で固まる可能性があるためです。",
+          "checks": [
+            "Step 3の作業から15～20分程度待った",
+            "PVが安定していることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "温度が安定しない場合は試料を入れないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "チップホルダーを温める"
+            }
+          ],
+          "ok_state": [
+            "PVが大きく変動せず、設定温度付近で安定している"
+          ],
+          "ng_state": [
+            "温度が安定しない、設定値から大きく外れる"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_01a",
+          "title": "GMD用フッ素オイルを調製する",
+          "instruction": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "task": "5%界面活性剤入りフッ素オイルを、0.1%界面活性剤入り希釈用オイルで2.5倍に希釈し、界面活性剤約2%のオイルを調製して温めてください。",
+          "why": "GMD形成に使用する連続相をプロトコルの条件へ合わせるためです。",
+          "checks": [
+            "008-FluoroSurfactant-5wtH-10mL と008-FluoroSurfactant-0.1wtH-100mLを2:3の比率で希釈し、約2%にした",
+            "調製後のオイルを温めている"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "試薬名と濃度を必ず確認し、施設SOPに従って調製してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMD用フッ素オイルを調製する"
+            }
+          ],
+          "ok_state": [
+            "必要量の約2%フッ素オイルを調製できた"
+          ],
+          "ng_state": [
+            "製品や濃度が確認できない、混合比が不明"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_01b",
+          "title": "低融点アガロースを溶解する",
+          "instruction": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "task": "低融点アガロースを3%（w/v）になるよう90～95℃でよく溶解し、40℃で維持してください。",
+          "why": "均一なアガロース溶液を作り、作製中の固化を防ぐためです。",
+          "checks": [
+            "低融点アガロースを3%（w/v）で調製した",
+            "90～95℃で十分に溶解した",
+            "溶け残りがない",
+            "40℃で維持している"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "高温の溶液を扱うため、火傷に注意してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "低融点アガロースを溶解する"
+            }
+          ],
+          "ok_state": [
+            "透明または均一で、目立つ溶け残りがない"
+          ],
+          "ng_state": [
+            "粒や塊が残る、冷えて固まり始めている"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_01c",
+          "title": "サンプルとアガロースを混合する",
+          "instruction": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "task": "サンプルと3%アガロースストックを等量で混合し、最終アガロース濃度を約1.5%として40℃で維持してください。",
+          "why": "細胞や微生物を含むゲル材料を均一にドロップレットへ封入するためです。",
+          "checks": [
+            "サンプルとアガロースを等量で混合した",
+            "最終アガロース濃度が約1.5%である",
+            "必要な場合は実験計画に従って細胞濃度を調整した",
+            "混合後も40℃で維持している"
+          ],
+          "decision_support": [
+            "プロトコルでは最終アガロース濃度0.5～2%の範囲が示されています。",
+            "微生物封入の例では、直径約35 µm作製時に最終濃度1×10^7個/mL程度が示されています。"
+          ],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "細胞濃度とゲル濃度は実験計画および施設SOPを優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "サンプルとアガロースを混合する"
+            }
+          ],
+          "ok_state": [
+            "サンプルが均一に混ざり、固化していない"
+          ],
+          "ng_state": [
+            "塊がある、冷えて固まる、濃度計算が確認できない"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_01",
+          "title": "電源を入れる",
+          "instruction": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "task": "Droplet Generator Sの電源スイッチを押し、初期化が完了して電源スイッチが点灯し、各ダイヤルが設定画面へ切り替わるまで待ってください。",
+          "why": "3系統ポンプの初期化が完了した状態から設定を開始するためです。",
+          "checks": [
+            "電源スイッチを押した",
+            "点滅から点灯へ変わった",
+            "SAMPLE・OIL・REAGENTの各ダイヤルに設定画面が表示された"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1 起動と電源操作",
+          "warning": "起動完了までは操作せず待ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を入れる"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_02",
+          "title": "チップ・配管・回収系をセットする",
+          "instruction": "DG1 Chip Holder（60～120 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "task": "DG1 Chip Holder（60～120 µm）、使用するチップ、SAMPLE／OIL／必要に応じてREAGENTの配管、回収系を施設SOPとチップ手順に従って取り付けてください。",
+          "why": "流路と圧力系を正しく接続し、後のリークチェックと作製を安全に行うためです。",
+          "checks": [
+            "選択したホルダーとチップを取り付けた",
+            "SAMPLEとOILの配管を正しく接続した",
+            "回収系をセットした",
+            "接続部に緩みや明らかな折れがない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_b_gmd_03",
+          "title": "SAMPLEダイヤルを設定する",
+          "instruction": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "task": "SAMPLEダイヤルで目標圧力と全ポンプ共通の動作時間を設定してください。短押しで設定項目を切り替え、回転で値を変更します。",
+          "why": "SAMPLE系統の目標圧力と、3系統共通の運転時間を決めるためです。",
+          "checks": [
+            "SAMPLEの目標圧力を確認した",
+            "動作時間（分・秒）を確認した",
+            "選択中の項目が赤色で表示されることを確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.1 SAMPLEダイヤルの設定",
+          "warning": "圧力値は実験条件・施設SOPで定めた値を使用してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p4.png",
+              "title": "SAMPLEダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_04",
+          "title": "OILダイヤルを設定する",
+          "instruction": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "task": "OILダイヤルで目標圧力と、SAMPLEを基準にした起動オフセットを設定してください。",
+          "why": "OIL系統の圧力と起動タイミングを設定するためです。",
+          "checks": [
+            "OILの目標圧力を確認した",
+            "OILのオフセットを確認した",
+            "負・0・正のオフセットの意味を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.2 OILダイヤルの設定",
+          "warning": "OILダイヤルから運転開始・停止はできません。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p5.png",
+              "title": "OILダイヤルを設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_05",
+          "title": "REAGENT系統を設定する",
+          "instruction": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "task": "REAGENTを使用するか選択し、使用する場合はダイヤルを有効化して圧力とオフセットを設定してください。",
+          "why": "第三の送液系統を使う条件では、SAMPLE・OILとは独立した圧力と起動タイミングを設定する必要があるためです。",
+          "checks": [],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.3 REAGENTダイヤルの設定",
+          "warning": "REAGENTダイヤルでも運転開始・停止はできません。",
+          "branches": [
+            {
+              "value": "reagent_off",
+              "label": "REAGENTを使用しない",
+              "instruction": "REAGENT系統を使用しない場合は、起動時の無効状態を維持してください。",
+              "checks": [
+                "REAGENTを使用しない条件であることを確認した",
+                "REAGENTダイヤルが無効状態であることを確認した"
+              ]
+            },
+            {
+              "value": "reagent_on",
+              "label": "REAGENTを使用する",
+              "instruction": "REAGENTダイヤルを長押しして有効化し、目標圧力とSAMPLE基準の起動オフセットを設定してください。",
+              "checks": [
+                "REAGENTダイヤルを長押しして有効化した",
+                "REAGENTの目標圧力を確認した",
+                "REAGENTのオフセットを確認した"
+              ]
+            }
+          ],
+          "branch_guidance": "REAGENT系統を使用するか選択してください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p6.png",
+              "title": "REAGENT系統を設定する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_06",
+          "title": "リークチェックを行う",
+          "instruction": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "task": "設定モードでOILダイヤルを2秒長押しし、3系統のリークチェックを開始してください。結果表示まで待ち、各系統がOKであることを確認します。",
+          "why": "配管、継手、チップホルダ、チップなどの漏れを作製前に確認するためです。",
+          "checks": [
+            "OILダイヤルを2秒長押ししてリークチェックを開始した",
+            "LEAK CHARGEからLEAK MEASUREへ進んだ",
+            "結果画面で使用する系統がOKであることを確認した",
+            "結果確認後、いずれかのダイヤルを短押しして設定画面へ戻った"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 5. リークチェック",
+          "warning": "LEAKINGまたは未確定が表示された場合は、配管・継手・チップホルダ・チップを確認し、原因を解消してから進んでください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p11.png",
+              "title": "リークチェックを行う"
+            },
+            {
+              "filename": "dgs_manual_p12.png",
+              "title": "リークチェック中の画面"
+            },
+            {
+              "filename": "dgs_manual_p13.png",
+              "title": "リークチェック結果画面"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_07",
+          "title": "サンプル・オイル・試薬をセットする",
+          "instruction": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "task": "使用するチップの手順と施設SOPに従い、SAMPLE、OIL、必要な場合はREAGENTをセットし、回収先を確認してください。",
+          "why": "設定した3系統の条件で液体を流せる状態にするためです。",
+          "checks": [
+            "SAMPLEをセットした",
+            "OILをセットした",
+            "REAGENTを使用する場合は試薬をセットした",
+            "回収先を確認した",
+            "液漏れや大きな気泡がない"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 1.1 構成機器 / 5.6 リークが発生したときは"
+        },
+        {
+          "id": "dgs_b_gmd_08",
+          "title": "運転を開始する",
+          "instruction": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "task": "SAMPLEダイヤルを2秒長押しして運転を開始してください。各ポンプはSAMPLE基準のオフセットから自動的に起動順序が決まります。",
+          "why": "設定した圧力、動作時間、オフセットで3系統を連動運転するためです。",
+          "checks": [
+            "SAMPLEダイヤルを2秒長押しした",
+            "運転モードへ切り替わった",
+            "設定した起動順序で使用系統が動作した",
+            "液滴形成または送液状態を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 3.4 起動順序の決定ルール / 4. 運転モード",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を開始する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_09",
+          "title": "運転中の状態を確認・調整する",
+          "instruction": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "task": "SAMPLE／OIL／REAGENTの現在圧力と時間表示を確認してください。必要な場合は短押しと回転で圧力を変更し、UPDATEを選択して反映します。",
+          "why": "運転中の圧力と作製状態を監視し、必要な範囲で圧力だけを調整するためです。",
+          "checks": [
+            "各使用系統の目標圧力と現在圧力を確認した",
+            "SAMPLEの経過時間またはOIL／REAGENTの残り時間を確認した",
+            "異常音・液漏れ・大きな気泡がない",
+            "圧力変更を行った場合はUPDATEで反映した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4.1～4.4 運転モード",
+          "warning": "運転中は動作時間とオフセットを変更できません。目標圧力へ到達しない場合は自動中断されることがあります。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "SAMPLE系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p9.png",
+              "title": "OIL系統の運転画面"
+            },
+            {
+              "filename": "dgs_manual_p10.png",
+              "title": "REAGENT系統と運転中の圧力変更"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_10",
+          "title": "運転を終了して回収する",
+          "instruction": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "task": "設定した動作時間の終了を待つか、必要な場合はSAMPLEダイヤルを2秒長押しして運転を中断してください。停止後の自動大気開放を待ってから、作製物を回収してください。",
+          "why": "ポンプ停止と圧力解放を完了してから安全に回収するためです。",
+          "checks": [
+            "全ポンプが停止した",
+            "大気開放後に設定モードへ戻った",
+            "圧力が解放されたことを確認した",
+            "作製物を回収した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 4. 運転モード / 4.1.3 操作",
+          "warning": "ドロップレット生成中は電源をオフにできません。必ず停止操作または自動停止を完了してから電源を切ってください。",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p8.png",
+              "title": "運転を終了する"
+            }
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_post_01",
+          "title": "GMDをゲル化する",
+          "instruction": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "task": "回収したドロップレットを氷上または4℃で20分程度静置してゲル化してください。",
+          "why": "アガロースを固め、オイル除去後も粒子形状を保つためです。",
+          "checks": [
+            "回収チューブを氷上または4℃へ置いた",
+            "20分程度静置した",
+            "チューブを強く振っていない"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プロトコルには、必要に応じて37℃培養後にゲル化する方法も記載されています。実験計画を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "GMDをゲル化する"
+            }
+          ],
+          "ok_state": [
+            "ドロップレットがゲル化する条件で静置できた"
+          ],
+          "ng_state": [
+            "室温で長時間放置した、ゲル化前に強く混ぜた"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_post_02",
+          "title": "下層のオイルを除去する",
+          "instruction": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "task": "マイクロピペットで下層のオイルをできる限り除去してください。",
+          "why": "後の水相回収へ持ち込むオイル量を減らすためです。",
+          "checks": [
+            "チューブ内の層を確認した",
+            "下層のオイルをゆっくり除去した",
+            "GMDを吸い込まないよう注意した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "境界付近は無理に取り切らず、GMDの回収を優先してください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "下層のオイルを除去する"
+            }
+          ],
+          "ok_state": [
+            "上層のGMDを残しながら下層オイルを減らせた"
+          ],
+          "ng_state": [
+            "GMDを一緒に吸い取った、層を確認せずに操作した"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_post_03",
+          "title": "PFO溶液と水相を加える",
+          "instruction": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "task": "ドロップレット液と等量～2倍量の10% PFO in HFE7500を加えて軽く転倒混和し、その後、ドロップレット液と等量の培地またはバッファーを上から加えてください。",
+          "why": "W/O界面を壊し、ゲルボールを水相へ移す準備をするためです。",
+          "checks": [
+            "10% PFO溶液を確認した",
+            "ドロップレット液と等量～2倍量を加えた",
+            "軽く転倒混和した",
+            "等量の培地またはバッファーを上から加えた"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "PFOとHFE7500の取扱いは試薬の安全データシートと施設SOPに従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p1.png",
+              "title": "PFO溶液と水相を加える"
+            }
+          ],
+          "ok_state": [
+            "層を保ちながら指定順序で液を加えた"
+          ],
+          "ng_state": [
+            "強く振とうした、加える順序や濃度が不明"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_post_04",
+          "title": "W/Oドロップレットを壊す",
+          "instruction": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "task": "チューブをプラズマボールへ近づけてW/Oドロップレットを壊してください。プラズマボールを使用しない場合は、約5分静置して壊れるのを待ってください。",
+          "why": "ゲル化した粒子をオイル相から水相へ移すためです。",
+          "checks": [
+            "施設SOPで認められた方法を選んだ",
+            "W/Oドロップレットが壊れるまで待った",
+            "チューブの状態を観察した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "プラズマボールを使用する場合は、施設の電気安全ルールと機器の取扱説明に従ってください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "W/Oドロップレットを壊す"
+            }
+          ],
+          "ok_state": [
+            "エマルションが崩れ、水相とオイル相の境界が確認できる"
+          ],
+          "ng_state": [
+            "エマルションが残る、強く振ってゲルボールを損傷した"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_post_05",
+          "title": "ゲルボールを水相へ回収する",
+          "instruction": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "task": "上清をゆっくりピペッティングしてゲルボールを分散させ、上清のみを新しいチューブへ移してください。",
+          "why": "オイルの持ち込みを抑えながらゲルボールを回収するためです。",
+          "checks": [
+            "上清をゆっくりピペッティングした",
+            "境界付近のゲルボールを水相へ分散させた",
+            "上清を新しいチューブへ移した",
+            "なるべくオイルを取り込まなかった"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": true,
+          "warning": "少量の上清を残してもよいので、オイルを無理に吸い込まないでください。",
+          "screen_images": [
+            {
+              "filename": "gmd_protocol_p2.png",
+              "title": "ゲルボールを水相へ回収する"
+            }
+          ],
+          "ok_state": [
+            "新しいチューブの水相にゲルボールを回収できた"
+          ],
+          "ng_state": [
+            "下層オイルを多く吸い込んだ、ゲルボールが元チューブに大量に残った"
+          ]
+        },
+        {
+          "id": "dgs_b_gmd_post_06",
+          "title": "次の工程へ進む準備をする",
+          "instruction": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "task": "必要に応じて培地などを追加し、培養または解析へ進める状態にしてください。",
+          "why": "回収したGMDを目的の実験条件へ移すためです。",
+          "checks": [
+            "回収量と状態を確認した",
+            "必要な培地またはバッファーを追加した",
+            "チューブへ試料名と日時を記録した",
+            "次工程の保存または培養条件を確認した"
+          ],
+          "decision_support": [],
+          "show_screen_section": false,
+          "show_result_sections": false
+        },
+        {
+          "id": "dgs_b_gmd_99",
+          "title": "シャットダウンする",
+          "instruction": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "task": "運転が停止し圧力が解放されていることを確認してから、Droplet Generator Sの電源スイッチを押して電源をオフにしてください。",
+          "why": "安全に装置を停止し、直前の圧力・動作時間・オフセット設定を保存するためです。",
+          "checks": [
+            "運転が停止している",
+            "圧力が解放されている",
+            "電源スイッチを押して消灯した"
+          ],
+          "decision_support": [],
+          "show_screen_section": true,
+          "show_result_sections": false,
+          "reference": "DGSユーザーマニュアル 2.1.2 電源オフ",
+          "screen_images": [
+            {
+              "filename": "dgs_manual_p3.png",
+              "title": "電源を切る"
+            }
+          ]
+        }
+      ]
     }
   },
   "troubleshooting": [
