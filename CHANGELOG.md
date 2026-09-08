@@ -6,6 +6,42 @@ On-Chip OpeR の変更履歴です。見出しの番号は開発依頼の連番�
 
 アプリの概要とインストール方法は [README.md](README.md) を参照してください。
 
+## No.371-No.378の変更
+
+### Droplet Generator Sのドロップレット作製コース
+
+- `ドロップレットを作る` の装置選択でOn-chip Droplet Generator Sを選択可能にし、工事中・選択不可の状態を解除
+- Generator Sを選んだ場合は②を流路チップ選択からチップホルダー選択へ切り替え、`2液混合 Chip Holder（35～45 µm）` と `DG1 Chip Holder（60～120 µm）` から選択
+- 4コースを追加。`dgs_a_wo` 12工程、`dgs_a_gmd` 23工程、`dgs_b_wo` 12工程、`dgs_b_gmd` 23工程の合計70工程
+- 基本工程データは6コース・121工程から10コース・191工程へ変更
+- ドロップレットジェネレータ S ユーザーマニュアル Document Version 2.0.0 由来の画面画像10点を追加
+- Generator SでGMDを選択した場合、温調観察ユニットを備えるTタイプを前提とする注意を表示
+- 装置選択を切り替えたとき、チップ・チップホルダーと作製するものの選択を初期化
+- 圧力、動作時間、オフセットの具体値はマニュアルに記載のない範囲を生成せず、実験条件と施設SOPで定めた値を使用する案内に統一
+- 2液混合 Chip HolderとDG1 Chip Holderの2コースは、現時点ではホルダー名称と対応径の記載だけが異なり、ダイヤル設定、リークチェック、運転中確認の手順は共通
+
+### 実験条件検討のメインプログラム統合（No.378）
+
+- `plugins/experiment_condition_advisor/` を `core/experiment_condition_advisor/` へ移し、`app.py` から直接importする通常ページへ変更
+- `config/features.json` の有料オプション設定と、トップカード・サイドバーのライセンス状態による表示分岐を削除
+- PDF出力に使うReportLabを `optional_requirements/` から `requirements.txt` の通常依存関係へ移動し、`launch.bat` の追加インストール処理を削除
+- 閉域見解エンジン、入力項目、計算、承認済み文献メタデータ、PDF出力内容は変更していない
+
+### 製品一覧とその他
+
+- 製品一覧へ機種（Droplet Selector／On-chip Sort／Droplet Generator／Droplet Generator S）による絞り込みを追加
+- 適応製品へ `DGS` を反映し、略称一覧へ `DD`（On-chip Droplet Dispenser）を追加
+- On-chip Droplet Selectorの `チップとバッファーを準備・設置` で、Emulsion系とGMD系の分岐に応じて継ぎ足しカップの確認文言を出し分け
+- `.gitignore` を追加し、追跡済みだった `__pycache__` を追跡対象から除外
+
+### 変更していない範囲
+
+- 既存6コースの工程数、工程ID、工程順、工程データ上の確認項目（`data/manual_steps.json` の既存6ワークフローは追記のみで、内容は完全に同一）
+- 製品71件、用語集319語・8分野、トラブル案内13項目
+- JointAIのダミー接続。`AIConnector` 経由、provider=`dummy`、固定回答 `これはテストです` を維持
+- 進行状況の外部保存・再開を行わない状態
+- 画面表示版 `v34-no354`
+
 ## No.327-No.335の変更
 
 - トップページのJointAIサイドバーへ自由質問欄と質問ボタンを追加し、参考資料欄の案内を `参考資料をここにドラッグ＆ドロップするか、ファイルを選択し、質問してください。` へ変更
