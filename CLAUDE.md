@@ -109,8 +109,9 @@ app.py 冒頭の `PRODUCT_IMAGE_BY_NUMBER`（製品番号→ファイル名）�
 
 ## 開発の進め方（このリポジトリ固有）
 
-- 変更依頼は `No.XXX` という連番で来る。README.md の先頭と AUDIT_REPORT.md に、
-  その番号範囲で何を変えて何を変えなかったかを追記するのが慣行。README は事実上の変更履歴。
+- 変更依頼は `No.XXX` という連番で来る。CHANGELOG.md の先頭と AUDIT_REPORT.md に、
+  その番号範囲で何を変えて何を変えなかったかを追記するのが慣行（新しい番号が上）。
+  README.md はリポジトリの説明書であり、変更履歴を書き足す場所ではない。
 - app.py 内のコメントも `# No.370: ...` の形で変更根拠の番号を残す。
 - `VERSION`（app.py 冒頭）はアプリ表示版。README/AUDIT_REPORT の記載と食い違うことがあるので、
   現在値は必ず app.py を見る。AUDIT_REPORT.md は最新コードより遅れている場合がある。
