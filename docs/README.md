@@ -6,6 +6,7 @@ On-Chip OpeR の内部構造を記録するディレクトリです。コード�
 
 | ファイル | 内容 |
 | --- | --- |
+| [workflow-data.md](workflow-data.md) | `data/manual_steps.json` の工程データ仕様、描画順序、`app.py` との結合点、コースを追加する手順 |
 | [plugin-architecture.md](plugin-architecture.md) | 有料オプションプラグイン機構（`plugins/`、`optional_requirements/`、`core/feature_registry.py`）の仕様と、No.378でメインプログラムへ統合するまでの経緯 |
 
 ## 記載方針

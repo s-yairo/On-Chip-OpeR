@@ -42,9 +42,10 @@ UI 変更時は工程数・チェック件数・製品件数が変わってい�
 
 ### データ駆動：工程は JSON に書く、Python には書かない
 
-`data/manual_steps.json` の `workflows` 配下に6ワークフロー（`analysis` 12 / `sorting` 21 /
-`dg800_wo` 17 / `dg800_gmd` 26 / `dg1060_1100_wo` 17 / `dg1060_1100_gmd` 28、合計121工程）。
-各 step の主なキー：
+`data/manual_steps.json` の `workflows` 配下に10ワークフロー（`analysis` 12 / `sorting` 21 /
+`dg800_wo` 17 / `dg800_gmd` 26 / `dg1060_1100_wo` 17 / `dg1060_1100_gmd` 28 /
+`dgs_a_wo` 12 / `dgs_a_gmd` 23 / `dgs_b_wo` 12 / `dgs_b_gmd` 23、合計191工程）。
+全キーの仕様と既定値の連鎖は [docs/workflow-data.md](docs/workflow-data.md)。主なキー：
 
 - `id`（`a04`、`d8w_03` など。進行状態のキーになるので変更しない）、`title`、`instruction`、`task`、`why`
 - `checks`：チェックボックス。**全部にチェックが入るまで「次へ」が押せない**
@@ -56,6 +57,9 @@ UI 変更時は工程数・チェック件数・製品件数が変わってい�
 
 `current_workflow_steps()` だけが例外的に Python 側で工程列を加工する（Selector 選択時に工程を1件挿入し
 1件を移動）。したがって画面上の工程数は JSON の件数と一致しないことがある。
+
+コースの入口はハードコード。`DATA["workflows"]` は現在のコースを引くだけで走査されないため、
+JSON にコースを足しても `render_dg_setup()` の `workflow_map` などへ配線しない限り画面に出ない。
 
 その他のデータ：`product_catalog.json`（製品71件・価格項目を含まないことを `load_product_catalog` が検証）、
 `glossary.json`（用語集・工程内ホバーと共通ソース）、`experiment_records.json`（実験記録の永続化）。
