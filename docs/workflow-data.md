@@ -147,7 +147,8 @@
 | 場所 | 対象 | 内容 |
 | --- | --- | --- |
 | `current_workflow_steps()` | `a11`、`a10` | No.370。Selector選択時に `a11` を `a10` の直後へ移動 |
-| `current_workflow_steps()` | `a04` | No.367。Selector選択時に `a04` の直後へブランク工程を挿入 |
+| `current_workflow_steps()` | `a04` | No.367／No.382／No.383。Selector選択時に `a04` の直後へ「ディスペンシングパラメータの書き換え」工程を挿入。この工程はJSONではなく `app.py` 内に定義されている |
+| `current_workflow_steps()` | 挿入位置 `16` | No.388。`sorting` かつSelectorのとき、`a11` の複製を `selector_run_again`（再度Run）としてSTEP 17へ挿入する。**配列の添字を直接指定しているため、`sorting` の工程を増減すると挿入位置がずれる** |
 | `render_guide()` | `a08` | Selector選択時、分岐の `value` の接頭辞（`emulsion_` / `gmd_`）に応じて継ぎ足しカップの確認項目を追加 |
 | `render_guide()` | `a03` | `analysis` / `sorting` のとき「アカウントの設定方法」リンクを併記 |
 | `render_guide()` | 確認項目の文言 | `SampleとOilを準備した` に一致する項目の直下へOil調製の注釈を出す |
@@ -162,23 +163,26 @@
 
 ### 9.2 `app.py` に入口を配線する
 
-`DATA["workflows"]` は現在の1コースを引くためだけに使われており、全コースを走査している箇所がありません。コース開始も次の3か所しかなく、いずれも遷移先が固定です。
+`DATA["workflows"]` は現在の1コースを引くためだけに使われており、全コースを走査している箇所がありません。コース開始も次の4か所しかなく、いずれも遷移先が固定です。
 
 ```
-app.py:1601  start_workflow(workflow_map[(dg_chip, dg_product)])   # ドロップレット作製の8コース
-app.py:1650  start_workflow("analysis")                            # On-chip Sort
-app.py:1693  start_workflow(workflow)                              # Selector（分注なら sorting、バルクなら analysis）
+app.py:1656  start_workflow(workflow_map[(dg_chip, dg_product)])   # ドロップレット作製の8コース
+app.py:1705  start_workflow("analysis")                            # On-chip Sort
+app.py:1748  start_workflow(workflow)                              # Selector（分注なら sorting、バルクなら analysis）
+app.py:1835  start_workflow(workflow)                              # 取り出し（手作業なら recovery_manual、自動なら recovery_workstation）
 ```
 
 ドロップレット作製へ流路チップを1つ増やす場合、`render_dg_setup()` の次の3か所に追記します。
 
 | 場所 | 追記内容 |
 | --- | --- |
-| `chip_options`（app.py:1482） | `("新チップの値", "画面に出す名称")` |
-| `chip_labels`（app.py:1507） | 選択内容の要約に出す名称 |
-| `workflow_map`（app.py:1584） | `("新チップの値", "wo")` → 新コースキー |
+| `chip_options`（app.py:1537） | `("新チップの値", "画面に出す名称")` |
+| `chip_labels`（app.py:1562） | 選択内容の要約に出す名称 |
+| `workflow_map`（app.py:1639） | `("新チップの値", "wo")` → 新コースキー |
 
-作りたいものが `wo` / `gmd` 以外になる場合は、③の選択ボタン（app.py:1541以降。`dg_select_product_wo` / `dg_select_product_gmd` の2つが直接書かれています）と `product_labels`（app.py:1566）にも追記が必要です。**新しい装置カテゴリを足す場合**は、DG-Sを追加したときのように、②の選択ステップ自体を装置ごとに分岐させる必要があります（`render_dg_setup()` の `if st.session_state.dg_device == "generator":` 以下）。
+作りたいものが `wo` / `gmd` 以外になる場合は、③の選択ボタン（app.py:1596以降。`dg_select_product_wo` / `dg_select_product_gmd` の2つが直接書かれています）と `product_labels`（app.py:1621）にも追記が必要です。**新しい装置カテゴリを足す場合**は、DG-Sを追加したときのように、②の選択ステップ自体を装置ごとに分岐させる必要があります（`render_dg_setup()` の `if st.session_state.dg_device == "generator":` 以下）。
+
+**トップページに新しいエントリーを足す場合**は、「ドロップレットから取り出す」を追加したときのように、選択ページの関数（`render_recovery_setup()`）、`app.py` 末尾のルーター分岐、`init_state()` の選択状態キー（`recovery_method`）、トップカードとサイドバーのボタン、必要なら `GLOSSARY_HOVER_PAGES` への追加が要ります。
 
 ### 9.3 画像を配置する
 

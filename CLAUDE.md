@@ -26,7 +26,8 @@ python -c "import ast,pathlib; [ast.parse(p.read_text(encoding='utf-8')) for p i
 python -c "import json,pathlib; [json.load(open(p,encoding='utf-8')) for p in pathlib.Path('data').glob('*.json')]"
 ```
 
-加えて、6ワークフロー・全121工程を疑似 Streamlit で描画して例外が出ないことを確認する慣行がある。
+加えて、全ワークフロー・全工程を疑似 Streamlit（`streamlit.testing.v1.AppTest`）で描画して
+例外が出ないことを確認する慣行がある。分岐のある工程は分岐ごとに描画する。
 UI 変更時は工程数・チェック件数・製品件数が変わっていないことを必ず数えて確認する（下記「不変条件」）。
 
 ## アーキテクチャ
@@ -42,9 +43,10 @@ UI 変更時は工程数・チェック件数・製品件数が変わってい�
 
 ### データ駆動：工程は JSON に書く、Python には書かない
 
-`data/manual_steps.json` の `workflows` 配下に10ワークフロー（`analysis` 12 / `sorting` 21 /
+`data/manual_steps.json` の `workflows` 配下に12ワークフロー（`analysis` 12 / `sorting` 21 /
 `dg800_wo` 17 / `dg800_gmd` 26 / `dg1060_1100_wo` 17 / `dg1060_1100_gmd` 28 /
-`dgs_a_wo` 12 / `dgs_a_gmd` 23 / `dgs_b_wo` 12 / `dgs_b_gmd` 23、合計191工程）。
+`dgs_a_wo` 12 / `dgs_a_gmd` 23 / `dgs_b_wo` 12 / `dgs_b_gmd` 23 /
+`recovery_manual` 5 / `recovery_workstation` 11、合計207工程）。
 全キーの仕様と既定値の連鎖は [docs/workflow-data.md](docs/workflow-data.md)。主なキー：
 
 - `id`（`a04`、`d8w_03` など。進行状態のキーになるので変更しない）、`title`、`instruction`、`task`、`why`
@@ -115,7 +117,9 @@ app.py 冒頭の `PRODUCT_IMAGE_BY_NUMBER`（製品番号→ファイル名）�
 - 依頼された範囲だけを変更する。特に工程数・工程ID・工程順・チェック総数・製品件数・用語集件数は
   明示的な指示がない限り変えない（AUDIT_REPORT の「明示的に変更していない範囲」節が毎回この確認をしている）。
 - 文言は既存の敬体・表記ゆれに合わせる。マニュアルにない具体値（圧力・流量・濃度など）を新規に作らない。
-- git リポジトリではないため、変更前後の差分確認は自前でファイルを退避して行う。
+- git 管理下にある。作業コピーが外部のビルド一式で上書きされることがあるため、
+  コミット前に `git diff` で「意図した変更」と「上書きによる巻き戻り」を必ず切り分ける。
+  特に README.md は、旧形式（変更履歴を含むもの）へ戻っていないか確認する。
 
 ## 不変条件（変更時に壊しやすい点）
 

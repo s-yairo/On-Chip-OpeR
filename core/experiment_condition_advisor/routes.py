@@ -29,6 +29,16 @@ DATA_SCHEMA_VERSION = 1
 REPORT_STATE_KEY = "eca_generated_opinion"
 
 
+def _render_concentration_simulator_button() -> None:
+    """Reserved UI hook for No.381; simulator body is intentionally not bundled yet."""
+    st.button(
+        "濃度シミュレーター",
+        key="eca_open_concentration_simulator",
+        use_container_width=True,
+        disabled=True,
+    )
+
+
 def _load_sources(feature_dir: Path) -> list[dict[str, Any]]:
     path = feature_dir / "data" / "approved_sources.json"
     try:
@@ -101,14 +111,18 @@ def _build_case_data() -> dict[str, Any]:
                 "最大サイズ（µm、未測定は0）", min_value=0.0, value=0.0, step=0.1, key="eca_sample_max_size_um"
             )
         with c2:
-            sample_concentration_per_ml = st.number_input(
-                "濃度（cells、CFU、particles等 / mL）",
-                min_value=0.0,
-                value=0.0,
-                step=1000.0,
-                format="%.4g",
-                key="eca_sample_concentration",
-            )
+            concentration_col, simulator_col = st.columns([3.35, 1.45], vertical_alignment="bottom")
+            with concentration_col:
+                sample_concentration_per_ml = st.number_input(
+                    "濃度（cells、CFU、particles等 / mL）",
+                    min_value=0.0,
+                    value=0.0,
+                    step=1000.0,
+                    format="%.4g",
+                    key="eca_sample_concentration",
+                )
+            with simulator_col:
+                _render_concentration_simulator_button()
             aggregation = st.selectbox("凝集の有無", ["不明", "なし", "少ない", "あり", "多い"], key="eca_aggregation")
             sedimentation = st.selectbox("沈降しやすさ", ["不明", "低い", "中程度", "高い"], key="eca_sedimentation")
             viability_required = st.checkbox("作製後の生存性・活性が必要", value=True, key="eca_viability_required")

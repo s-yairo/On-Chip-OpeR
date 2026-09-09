@@ -96,7 +96,7 @@ CONTACT_EMAIL = "tech@on-chip.co.jp"
 COMPANY_NAME = "On-chip Biotechnologies"
 JOINT_AI_FEATURE_ID = "joint_ai"
 JOINT_AI_USAGE_NOTE = "JointAIは施設内AIを介して応答します。所属施設のAI利用ルールに従ってご質問ください。"
-GLOSSARY_HOVER_PAGES = {"dg_setup", "sorting_setup", "guide", "complete"}
+GLOSSARY_HOVER_PAGES = {"dg_setup", "sorting_setup", "recovery_setup", "guide", "complete"}
 
 @lru_cache(maxsize=32)
 def product_image_data_uri(path_text: str) -> str:
@@ -132,7 +132,7 @@ h1{font-size:3rem!important;line-height:1.2!important;letter-spacing:.01em}
 .home-lead{font-size:1.02rem;margin-bottom:1rem}
 .home-card{position:relative;border:1px solid #d8e1eb;border-radius:15px;padding:1.35rem 1.35rem 1.15rem;background:#fff;box-shadow:0 1px 3px rgba(20,45,75,.04);box-sizing:border-box;overflow:hidden}
 .home-card.has-badge{padding-bottom:3.35rem}
-.home-card.top,.home-card.bottom{height:390px}
+.home-card.top{height:354px}.home-card.bottom{height:332px}
 .home-card-header{margin:0 0 .8rem}
 .home-card-header h3{font-size:clamp(1rem,1.9vw,1.18rem);line-height:1.25;margin:0;font-weight:800;white-space:nowrap}
 .home-availability-badge{position:absolute;left:1.35rem;bottom:1.05rem;display:inline-flex;align-items:center;justify-content:center;border:1px solid #65a97b;background:#f2fbf5;color:#267144;border-radius:999px;padding:.25rem .58rem;font-size:.76rem;font-weight:800;line-height:1.2;white-space:nowrap}
@@ -199,13 +199,21 @@ div[data-testid="stRadio"] label:hover{border:none!important;background:transpar
 
 div[data-testid="stButton"]>button[kind="primary"]{background-color:#1677c8!important;border-color:#1677c8!important;color:#fff!important}
 div[data-testid="stButton"]>button[kind="primary"]:disabled{background-color:#1677c8!important;border-color:#1677c8!important;color:#fff!important;opacity:1!important}
-.st-key-home_start_beginner button,.st-key-home_start_sorting button,.st-key-home_experiment_pending button,.st-key-home_open_experiment button,.st-key-home_open_results button,.st-key-home_open_trouble button{background-color:#1677c8!important;border-color:#1677c8!important;color:#fff!important;opacity:1!important}
+.st-key-home_start_beginner button,.st-key-home_start_sorting button,.st-key-home_start_recovery button,.st-key-home_experiment_pending button,.st-key-home_open_experiment button,.st-key-home_open_results button,.st-key-home_open_trouble button{background-color:#1677c8!important;border-color:#1677c8!important;color:#fff!important;opacity:1!important}
 .st-key-home_start_beginner button:disabled,.st-key-home_experiment_pending button:disabled{background-color:#1677c8!important;border-color:#1677c8!important;color:#fff!important;opacity:1!important}
-.st-key-home_start_recovery button,.st-key-home_start_recovery button:disabled,.st-key-home_start_recovery div[data-testid="stButton"]>button[kind="primary"]:disabled,.st-key-home_start_recovery[data-testid="stButton"]>button[kind="primary"]:disabled{background-color:#b95a5a!important;border-color:#b95a5a!important;color:#fff!important;opacity:.68!important;cursor:not-allowed!important}
 .home-disabled{border:1px solid #d6dce3;border-radius:8px;text-align:center;padding:.58rem;color:#a5adb7;margin-top:.55rem}
 .dg-choice-card{border:1px solid #c9d9e8;border-radius:14px;background:#fff;padding:1rem 1.1rem;margin:.35rem 0 .8rem;box-shadow:0 1px 3px rgba(20,45,75,.04)}
 .dg-choice-card strong{font-size:1.05rem}.dg-choice-note{font-size:.9rem;color:#52677b;line-height:1.55;margin-top:.35rem}
 .dg-summary{border:2px solid #70aee1;background:#f5faff;border-radius:14px;padding:1rem 1.15rem;margin:1rem 0}
+.recovery-summary-selected{font-weight:800;color:#0b5fa5}
+.recovery-choice-marker{display:block;width:0;height:0;overflow:hidden}
+.recovery-choice-title{font-size:1.05rem;font-weight:800;color:#173d66;margin:.15rem 0 .35rem}
+.recovery-choice-note{font-size:.9rem;color:#52677b;line-height:1.58;min-height:3.1rem;margin:.1rem 0 .85rem}
+.recovery-choice-double{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.2rem}
+div[data-testid="stVerticalBlockBorderWrapper"]:has(.recovery-choice-marker){border:1px solid #c9d9e8!important;border-radius:14px!important;background:#fff!important;margin:.3rem 0 .8rem!important;box-shadow:0 1px 4px rgba(20,45,75,.05)!important;height:100%}
+div[data-testid="stVerticalBlockBorderWrapper"]:has(.recovery-choice-marker)>div{padding:.78rem!important;height:100%}
+div[data-testid="stVerticalBlockBorderWrapper"]:has(.recovery-choice-marker) div[data-testid="stButton"]{margin-top:auto!important}
+
 section[data-testid="stSidebar"]{background:#f3f6fa}
 section[data-testid="stSidebar"] .block-container{padding-top:1.6rem}
 .sidebar-step{font-size:.92rem;padding:.35rem 0;border-bottom:1px solid #dfe6ee}
@@ -426,6 +434,7 @@ def init_state() -> None:
         "dg_product": "",
         "sorting_device": "",
         "sorting_purpose": "",
+        "recovery_method": "",
         "result_step": "",
         "account_setup_device": "",
         "active_experiment_record_id": "",
@@ -747,15 +756,43 @@ def current_workflow_steps(workflow: dict) -> list[dict]:
         if laser_index is not None:
             selector_steps.insert(laser_index + 1, apply_sample_step)
 
-    # No.367: Selectorの元のSTEP 5とSTEP 6の間へブランク工程を追加する。
+    # No.367 / No.382 / No.383: Selectorの元のSTEP 5とSTEP 6の間へ
+    # 分注機のディスペンシングパラメータ書き換え工程を追加する。
     parameter_step = {
         "id": "selector_dispensing_parameters",
         "title": "ディスペンシングパラメータの書き換え",
-        "instruction": "",
-        "task": "",
-        "checks": [],
+        "instruction": (
+            "分注機のパラメーターの書き換えをおこないます。 "
+            "※サンプル特徴が前回と同じ内容なら本作業は不要"
+        ),
+        "current_status": "ディスペンシングパラメータを書き換える前の状態です。",
+        "task": (
+            "分注機のパラメーターの書き換えをおこないます。 "
+            "※サンプル特徴が前回と同じ内容なら本作業は不要"
+        ),
+        "why": "今回のサンプル特徴に合わせて、分注機のディスペンシングパラメータを確認・設定するためです。",
+        "checks": [
+            "０アドミニストレーターを選択した",
+            "メニュー開いた",
+            "セット１のタブを選択した",
+            "ディスペンシングパラメータに手入力で書き換えた",
+        ],
+        "check_help": {
+            "ディスペンシングパラメータに手入力で書き換えた": (
+                "注釈：デスクトップにあるパラメーターリストに基準の数字が入っているので"
+                "それに準じて書き換え"
+            )
+        },
+        "ok_state": [
+            "０アドミニストレーター、メニュー、セット１の順に設定画面を開いている",
+            "デスクトップのパラメーターリストに準じてディスペンシングパラメータを書き換えている",
+        ],
+        "ng_state": [
+            "別のアドミニストレーターまたは別のセットを選択している",
+            "デスクトップのパラメーターリストと異なる値を入力している",
+        ],
         "show_screen_section": False,
-        "show_result_sections": False,
+        "show_result_sections": True,
     }
     sample_file_index = next(
         (i for i, step in enumerate(selector_steps) if step.get("id") == "a04"),
@@ -764,10 +801,27 @@ def current_workflow_steps(workflow: dict) -> list[dict]:
     if sample_file_index is not None:
         selector_steps.insert(sample_file_index + 1, parameter_step)
 
+    # No.388: Selectorの分離・分注ルートでは、No.367/370反映後の
+    # STEP 16とSTEP 17の間に、Apply SampleしてRunと同内容の「再度Run」を追加する。
+    # バルクルートは全工程数が16未満のため、この番号位置は存在せず対象外。
+    if st.session_state.workflow_key == "sorting" and len(selector_steps) >= 17 and apply_sample_step is not None:
+        run_again_step = {
+            **apply_sample_step,
+            "id": "selector_run_again",
+            "title": "再度Run",
+            "current_status": "「再度Run」を始める前の状態です。",
+        }
+        selector_steps.insert(16, run_again_step)
+
     return selector_steps
 
 
 def open_dg_setup() -> None:
+    # No.379: ドロップレット作製画面へ入るたびに前回の選択状態を破棄し、
+    # 装置選択からやり直せる初期状態に戻す。
+    st.session_state.dg_device = ""
+    st.session_state.dg_chip = ""
+    st.session_state.dg_product = ""
     st.session_state.page = "dg_setup"
     request_scroll_to_top()
     st.rerun()
@@ -777,6 +831,14 @@ def open_sorting_setup() -> None:
     st.session_state.sorting_device = ""
     st.session_state.sorting_purpose = ""
     st.session_state.page = "sorting_setup"
+    request_scroll_to_top()
+    st.rerun()
+
+
+def open_recovery_setup() -> None:
+    # No.389: 「サンプルを取り出す」へ入るたびに前回のルート選択を破棄する。
+    st.session_state.recovery_method = ""
+    st.session_state.page = "recovery_setup"
     request_scroll_to_top()
     st.rerun()
 
@@ -1071,12 +1133,12 @@ def render_sidebar() -> None:
                     open_dg_setup()
                 if st.button("ソーティング・分注を行う", use_container_width=True, key="sidebar_menu_sorting"):
                     open_sorting_setup()
-                st.button(
+                if st.button(
                     "ドロップレットから取り出す",
-                    disabled=True,
                     use_container_width=True,
                     key="sidebar_menu_recovery",
-                )
+                ):
+                    open_recovery_setup()
             if st.button(
                 "実験条件検討",
                 use_container_width=True,
@@ -1305,7 +1367,6 @@ def render_home_operation_cards() -> None:
         <p class="home-purpose">W/Oドロップレット・ゲルマイクロドロップ（GMD）作製</p>
         <div class="home-first-use-note">初めてご使用になる方は、事前に実験条件の検討をお済ませのうえ、ご使用いただくことをおすすめします。</div>""",
             row="top",
-            badge="利用可能",
         )
         if st.button("ドロップレットを作製する", type="primary", use_container_width=True, key="home_start_beginner"):
             open_dg_setup()
@@ -1317,7 +1378,6 @@ def render_home_operation_cards() -> None:
         <p class="home-purpose">サンプル解析・分離・分注</p>
         <div class="home-first-use-note">初めて装置を使用する方は、先に「測定結果を確認する」をお読みください。</div>""",
             row="top",
-            badge="利用可能",
         )
         if st.button("ソーティング・分注を行う", type="primary", use_container_width=True, key="home_start_sorting"):
             open_sorting_setup()
@@ -1325,19 +1385,17 @@ def render_home_operation_cards() -> None:
         home_card(
             "ドロップレットから取り出す",
             """
-        <div class="home-models"><strong>対応機種</strong><br>On-chip Merge<br>On-chip Droplet Dispenser</div>
-        <p class="home-purpose">サンプルの解放</p>""",
+        <div class="home-models"><strong>方法</strong><br>手作業：Droplet Generator付属プラズマボール<br>自動：On-chip Droplet Work Station</div>
+        <p class="home-purpose">分注済みドロップレットからサンプルを解放</p>""",
             row="top",
-            badge="利用不可",
-            badge_kind="unavailable",
         )
-        st.button(
+        if st.button(
             "サンプルを取り出す",
             type="primary",
-            disabled=True,
             use_container_width=True,
             key="home_start_recovery",
-        )
+        ):
+            open_recovery_setup()
 
 
 def render_home_support_cards() -> None:
@@ -1347,7 +1405,6 @@ def render_home_support_cards() -> None:
             "実験条件検討",
             "<p>実験目的、封入対象、培地・粘度、目標液滴、後工程を入力し、閉域の試作エンジンで見解とPDFを作成します。</p>",
             row="bottom",
-            badge="利用可能",
         )
         if st.button(
             "実験条件を検討する",
@@ -1360,7 +1417,6 @@ def render_home_support_cards() -> None:
             "測定結果を確認する",
             "<ul class='home-feature-list'><li>フローサイトメーターの原理</li><li>各種のプロットの見方</li><li>その他の測定結果を読み解くための機能解説</li></ul><p class='home-status'><span style='font-size:.88rem;font-weight:600'>JointAI解析は準備中</span></p>",
             row="bottom",
-            badge="利用可能",
         )
         if st.button("プロット解説を見る", use_container_width=True, key="home_open_results"):
             open_results()
@@ -1369,7 +1425,6 @@ def render_home_support_cards() -> None:
             "トラブルを解決する",
             "<p>エラーや異常が発生した際、症状から確認項目と対応候補を探します。</p>",
             row="bottom",
-            badge="利用可能",
         )
         if st.button("トラブルを解決する", use_container_width=True, key="home_open_trouble"):
             go("trouble")
@@ -1692,6 +1747,92 @@ def render_sorting_setup() -> None:
         workflow = "sorting" if st.session_state.sorting_purpose == "dispense" else "analysis"
         start_workflow(workflow)
 
+
+
+def render_recovery_setup() -> None:
+    st.title("ドロップレットから取り出す")
+    st.write(
+        "取り出し方法を選択してください。どちらの方法も、分注済みプレートへ培地入りの空ドロップレットを加え、"
+        "電気処理でドロップレットを壊して内容物を培地相へ戻す流れです。"
+    )
+
+    st.markdown('<div class="step-title"><b>① 取り出し方法を選ぶ</b></div>', unsafe_allow_html=True)
+    c1, c2 = st.columns(2, gap="medium")
+    with c1:
+        with st.container(border=True):
+            st.markdown('<div class="recovery-choice-marker"></div>', unsafe_allow_html=True)
+            render_selection_choice_image(
+                "droplet_generator.webp",
+                "Droplet Generator付属プラズマボール",
+            )
+            st.markdown('<div class="recovery-choice-title">手作業（Droplet Generator付属プラズマボール）</div>', unsafe_allow_html=True)
+            st.markdown(
+                '<div class="recovery-choice-note">ピペット等で空ドロップレットを全ウェルへ加え、プラズマボールで均等に電気をかけます。</div>',
+                unsafe_allow_html=True,
+            )
+            if st.button(
+                "手作業を選ぶ",
+                type="primary" if st.session_state.recovery_method == "manual" else "secondary",
+                use_container_width=True,
+                key="recovery_select_manual",
+            ):
+                st.session_state.recovery_method = "manual"
+                st.rerun()
+
+    with c2:
+        with st.container(border=True):
+            st.markdown('<div class="recovery-choice-marker"></div>', unsafe_allow_html=True)
+            image_c1, image_c2 = st.columns(2, gap="small")
+            with image_c1:
+                render_selection_choice_image(
+                    "onchip_microdispenser.webp",
+                    "On-chip Droplet Microdispenser",
+                    compact=True,
+                )
+            with image_c2:
+                render_selection_choice_image(
+                    "onchip_merge.webp",
+                    "On-chip Merge",
+                    compact=True,
+                )
+            st.markdown('<div class="recovery-choice-title">On-chip Droplet Work Station</div>', unsafe_allow_html=True)
+            st.markdown(
+                '<div class="recovery-choice-note">Droplet Microdispenserで空ドロップレットを分注し、On-chip Mergeで破壊・融合処理を行います。</div>',
+                unsafe_allow_html=True,
+            )
+            if st.button(
+                "Work Stationを選ぶ",
+                type="primary" if st.session_state.recovery_method == "workstation" else "secondary",
+                use_container_width=True,
+                key="recovery_select_workstation",
+            ):
+                st.session_state.recovery_method = "workstation"
+                st.rerun()
+
+    if not st.session_state.recovery_method:
+        st.info("最初に取り出し方法を選択してください。")
+        return
+
+    manual_selected = ' <span class="recovery-summary-selected">（選択中）</span>' if st.session_state.recovery_method == "manual" else ""
+    workstation_selected = ' <span class="recovery-summary-selected">（選択中）</span>' if st.session_state.recovery_method == "workstation" else ""
+    st.markdown(
+        '<div class="home-models"><strong>方法</strong><br>'
+        f'手作業：Droplet Generator付属プラズマボール{manual_selected}<br>'
+        f'自動：On-chip Droplet Work Station{workstation_selected}</div>',
+        unsafe_allow_html=True,
+    )
+    if st.button(
+        "この方法で工程を開始する",
+        type="primary",
+        use_container_width=True,
+        key="recovery_start_selected_workflow",
+    ):
+        workflow = (
+            "recovery_manual"
+            if st.session_state.recovery_method == "manual"
+            else "recovery_workstation"
+        )
+        start_workflow(workflow)
 
 
 def render_supplemental_information(active: dict) -> None:
@@ -3506,6 +3647,8 @@ def render_complete() -> None:
     st.success("以上で作業は終了となります。")
     if st.session_state.workflow_key.startswith("dg"):
         st.write("作製物の回収、チューブの表示、保存または次工程の条件、装置と温調ユニットの停止を確認してください。")
+    elif st.session_state.workflow_key.startswith("recovery_"):
+        st.write("ドロップレットが十分に破壊され、内容物が培地相へ戻っていることと、次工程に使用するサンプルを確保できていることを確認してください。")
     else:
         st.write("必要なデータが正しく保存されていることを確認してください。")
     if st.button(
@@ -3532,6 +3675,8 @@ elif st.session_state.page == "dg_setup":
     render_dg_setup()
 elif st.session_state.page == "sorting_setup":
     render_sorting_setup()
+elif st.session_state.page == "recovery_setup":
+    render_recovery_setup()
 elif st.session_state.page == "guide":
     render_guide()
 elif st.session_state.page == "complete":
